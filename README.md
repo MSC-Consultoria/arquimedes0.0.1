@@ -1,56 +1,50 @@
 # arquimedes0.0.1
 
-## Descrição
-Projeto Arquimedes versão 0.0.1
+Projeto base para estruturar serviços do Arquimedes na versão 0.0.1. Este repositório define a organização inicial de diretórios, scripts de automação e documentação de suporte para instalação, arquitetura e criação de imagens containerizadas.
 
-## Configuração Inicial do Repositório
+## Estrutura de Pastas
 
-### Configurando um novo repositório local
-
-Se você está começando um novo projeto a partir deste repositório, siga os passos abaixo:
-
-1. **Inicialize o repositório Git** (se ainda não foi inicializado):
-   ```bash
-   git init
-   ```
-
-2. **Adicione o repositório remoto**:
-   ```bash
-   git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPO.git
-   ```
-   
-   Substitua `SEU_USUARIO` pelo seu nome de usuário do GitHub e `NOME_DO_REPO` pelo nome do seu repositório.
-
-3. **Adicione os arquivos ao staging**:
-   ```bash
-   git add .
-   ```
-
-4. **Faça o commit inicial**:
-   ```bash
-   git commit -m "Initial commit"
-   ```
-
-5. **Envie para o repositório remoto**:
-   ```bash
-   git push -u origin main
-   ```
-
-### Clonando o repositório existente
-
-Se você deseja trabalhar com este repositório:
-
-```bash
-git clone https://github.com/MSC-Consultoria/arquimedes0.0.1.git
-cd arquimedes0.0.1
 ```
+.
+├── docs/
+│   ├── ARQUITETURA.md
+│   ├── CRIACAO_IMAGEM.md
+│   └── GUIA_INSTALACAO.md
+├── scripts/
+│   ├── build_image.sh
+│   ├── run_tests.sh
+│   └── setup_env.sh
+├── src/
+│   └── .gitkeep
+├── CONTRIBUTING.md
+├── Dockerfile
+└── README.md
+```
+
+- **docs/**: documentação detalhada do projeto.
+- **scripts/**: automações para preparar ambiente, executar testes e gerar imagens.
+- **src/**: código-fonte da aplicação (a ser adicionado conforme as features forem implementadas).
+
+## Automação
+
+- `scripts/setup_env.sh`: cria e configura um ambiente virtual Python (usa `requirements.txt` se existir).
+- `scripts/run_tests.sh`: executa a suíte de testes com `pytest` quando houver testes definidos.
+- `scripts/build_image.sh`: gera a imagem Docker usando o `Dockerfile` na raiz, permitindo definir a tag como argumento opcional.
+
+Consulte a pasta `docs/` para instruções detalhadas sobre instalação, arquitetura e geração da imagem.
 
 ## Contribuindo
 
-Para contribuir com este projeto:
+1. Crie uma branch a partir da `main` (`git checkout -b feature/minha-feature`).
+2. Desenvolva e mantenha o código e a documentação sincronizados com a estrutura descrita acima.
+3. Execute os scripts de automação relevantes antes de abrir o PR.
+4. Abra o Pull Request seguindo as orientações de `CONTRIBUTING.md`.
 
-1. Fork o repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
-5. Abra um Pull Request
+## Tópicos recomendados
+
+Adicione tags no repositório para facilitar a descoberta (via interface do GitHub): `arquimedes`, `template`, `devops`, `docker`, `python`, `automation`.
+
+## Observações
+
+- A revisão e o merge do PR #1 devem ser feitos manualmente na plataforma de versionamento.
+- Ajuste os scripts conforme as dependências específicas do serviço forem definidas.
