@@ -1340,3 +1340,36 @@
 - [x] Total: 3 páginas, 6000+ palavras de conteúdo
 - [ ] Testar navegação completa
 - [ ] Salvar checkpoint
+
+
+## 📊 Módulo 6: Proporção e Razão ✅ COMPLETO
+
+### Estrutura do Módulo
+- [x] Verificar ID e estrutura do Módulo 6 no banco (ID 5, order 6)
+- [x] Página 1: O que é Proporção
+  * Conteúdo educacional completo (1800+ palavras)
+  * Conceito de proporção, propriedade fundamental
+  * Grandezas direta e inversamente proporcionais
+  * Exemplos do cotidiano (receitas, mapas, velocidade, construção)
+  * Técnica de identificação (setas)
+  * Vídeo educacional (15 min)
+- [x] Página 2: Razão e Comparação
+  * Conteúdo educacional completo (2000+ palavras)
+  * O que é razão, termos da razão
+  * Razões equivalentes, simplificação (MDC)
+  * Comparação de quantidades (preço/kg, rendimento, custo-benefício)
+  * Razões especiais (escala, porcentagem, densidade)
+  * Aplicações práticas (diluição, divisão proporcional, misturas)
+  * Vídeo educacional (18 min)
+- [x] Página 3: Regra de Três Simples
+  * Conteúdo educacional completo (2200+ palavras)
+  * Regra de três direta (mesmo sentido)
+  * Regra de três inversa (sentidos opostos)
+  * Método prático passo a passo
+  * 5 exercícios do cotidiano (combustível, impressão, construção, mapa, água)
+  * Técnica das setas para identificar tipo
+  * Dicas para não errar, erros comuns
+  * Vídeo educacional (20 min)
+- [x] Total: 3 páginas, 6000+ palavras de conteúdo
+- [ ] Testar navegação completa
+- [ ] Salvar checkpoint

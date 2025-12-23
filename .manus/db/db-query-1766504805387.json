@@ -1,0 +1,22 @@
+{
+  "query": "SELECT id, name, slug, `order` FROM modules WHERE name LIKE '%Propor%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute SELECT id, name, slug, `order` FROM modules WHERE name LIKE '%Propor%'",
+  "rows": [
+    {
+      "id": "60004",
+      "name": "Razão e Proporção",
+      "slug": "razao-proporcao",
+      "order": "8"
+    },
+    {
+      "id": "90001",
+      "name": "Proporção e Razão",
+      "slug": "proporcao-e-razao",
+      "order": "6"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\torder\n60004\tRazão e Proporção\trazao-proporcao\t8\n90001\tProporção e Razão\tproporcao-e-razao\t6\n",
+  "stderr": "",
+  "execution_time_ms": 77
+}
