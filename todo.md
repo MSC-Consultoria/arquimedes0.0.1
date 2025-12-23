@@ -999,3 +999,42 @@
 - [ ] Adicionar confete ao subir de nível
 - [x] Testar animações em diferentes dispositivos
 - [x] Garantir que não afeta performance
+
+
+## Estratégia de SEO Completa (v2.27.0)
+
+### SEO Técnico
+- [x] Criar helpers de structured data (Schema.org) em lib/structuredData.ts
+- [x] Criar componente StructuredData para injeção de JSON-LD
+- [x] Criar gerador de sitemap.xml dinâmico em server/sitemap.ts
+- [ ] Integrar sitemap.xml às rotas do servidor
+- [ ] Criar og-image.png personalizada (1200x630px)
+- [ ] Implementar componente SEO para meta tags
+- [ ] Configurar Google Search Console
+- [ ] Configurar Google Analytics 4
+- [ ] Adicionar breadcrumbs estruturados
+
+### Estratégia de Conteúdo
+- [x] Pesquisar palavras-chave principais e volume de busca
+- [x] Criar pauta editorial completa (30+ tópicos em 4 pilares)
+- [x] Definir calendário de publicações (12 semanas)
+- [ ] Criar estrutura de blog no projeto
+- [ ] Escrever primeiro artigo: "Como Aprender Matemática do Zero"
+- [ ] Escrever segundo artigo: "Por Que Tenho Dificuldade em Matemática"
+- [ ] Escrever terceiro artigo: "Tabuada: 7 Técnicas Comprovadas"
+
+### Preparação para Anúncios
+- [x] Criar estrutura completa de campanhas Google Ads (4 campanhas)
+- [x] Criar estrutura completa de campanhas Meta Ads (3 campanhas)
+- [x] Definir landing pages para conversão
+- [x] Documentar estratégia de anúncios pagos (orçamento R$3.000/mês)
+- [x] Documentar pixels de rastreamento (Google + Meta)
+- [ ] Implementar Google Tag Manager
+- [ ] Implementar Meta Pixel
+- [ ] Criar criativos para campanhas (banners, vídeos)
+
+### Documentação
+- [x] Criar documento completo de estratégia de SEO (20+ páginas)
+- [x] Documentar palavras-chave e volume de busca
+- [x] Criar pauta editorial com diretrizes de qualidade
+- [x] Criar estratégia de anúncios pagos com grupos e criativos
