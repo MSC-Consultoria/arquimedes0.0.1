@@ -261,3 +261,34 @@
 
 **Última revisão:** Dezembro 2024  
 **Próxima revisão:** Janeiro 2025
+
+
+### Onboarding Mobile-First para Primeiros Usuários
+- [x] Planejar estrutura do onboarding (7 etapas)
+- [x] Criar componente OnboardingTour.tsx mobile-first
+- [x] Etapa 1: Boas-vindas e explicação da plataforma (👋)
+- [x] Etapa 2: Tour pelo Dashboard (XP, Níveis, Sequência) (📊)
+- [x] Etapa 3: Explicar Sala de Exercícios Interativos (🎯)
+- [x] Etapa 4: Explicar Módulos e Minhas Disciplinas (📚)
+- [x] Etapa 5: Explicar Sistema de Conquistas (🏆)
+- [x] Etapa 6: Explicar Dicas Estratégicas (💡)
+- [x] Etapa 7: Chamada para ação "Pronto para Começar!" (🚀)
+- [x] Integrar onboarding com Dashboard
+- [x] Usar campo hasCompletedOnboarding do banco de dados
+- [x] Criar mutation completeOnboarding via tRPC
+- [x] Botão "Pular Tour" para usuários avançados
+- [x] Barra de progresso visual (Passo X de 7)
+- [x] Botões Voltar/Próximo com navegação
+- [x] Design mobile-first responsivo
+- [x] Animações fade-in e zoom-in
+- [x] Testar onboarding em mobile e desktop
+- [x] Testar todas as 7 etapas de navegação
+- [x] Testar botão "Voltar" (desabilitado na etapa 1, habilitado depois)
+- [x] Testar botão "Próximo" (muda para "Começar" na etapa 7)
+- [x] Testar botão X para fechar
+- [x] Testar link "Pular tour"
+- [x] Confirmar barra de progresso visual funcionando
+- [x] Confirmar completeOnboarding mutation atualizando banco
+- [x] Confirmar hasCompletedOnboarding = true após conclusão
+- [x] Confirmar onboarding não aparece novamente após conclusão
+- [ ] Salvar checkpoint v2.43.0

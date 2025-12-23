@@ -7,7 +7,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { MobileNav } from "@/components/MobileNav";
 import { Link, useLocation } from "wouter";
 import { useEffect, useState } from "react";
-import OnboardingModal from "@/components/OnboardingModal";
+import { OnboardingTour } from "@/components/OnboardingTour";
 import { motion } from "framer-motion";
 
 // Variantes de animação
@@ -73,6 +73,17 @@ export default function Dashboard() {
   });
 
   const checkDailyLoginMutation = trpc.points.checkDailyLogin.useMutation();
+  const completeOnboardingMutation = trpc.user.completeOnboarding.useMutation();
+
+  const handleOnboardingComplete = async () => {
+    await completeOnboardingMutation.mutateAsync();
+    setShowOnboarding(false);
+  };
+
+  const handleOnboardingSkip = async () => {
+    await completeOnboardingMutation.mutateAsync();
+    setShowOnboarding(false);
+  };
 
   // Check daily login points on mount
   useEffect(() => {
@@ -472,11 +483,11 @@ export default function Dashboard() {
       </div>
       </div>
 
-      {/* Onboarding Modal */}
+      {/* Onboarding Tour */}
       {showOnboarding && (
-        <OnboardingModal
-          isOpen={showOnboarding}
-          onComplete={() => setShowOnboarding(false)}
+        <OnboardingTour
+          onComplete={handleOnboardingComplete}
+          onSkip={handleOnboardingSkip}
         />
       )}
     </>
