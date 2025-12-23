@@ -149,3 +149,18 @@
 - [x] Adicionar hover effects e elevação aos cards
 - [x] Criar ícones SVG customizados (Adição, Subtração, Multiplicação, Divisão)
 - [x] Implementar cores específicas por módulo (verde, laranja, roxo, cyan)
+
+
+## Otimização Mobile First
+- [x] Reduzir tamanhos de fonte para mobile (hero, títulos, parágrafos)
+- [x] Ajustar espaçamentos e padding para telas pequenas
+- [x] Otimizar cards de dashboard para layout vertical mobile
+- [x] Melhorar botões e áreas de toque (min 48x48px)
+- [x] Simplificar navegação para mobile (breadcrumb scroll horizontal)
+- [x] Otimizar ExerciseCard para mobile (inputs e botões empilhados)
+- [x] Otimizar LessonPage para mobile
+- [x] Otimizar Home para mobile
+- [ ] Testar em viewport 375px (iPhone SE)
+- [ ] Testar em viewport 390px (iPhone 12/13/14)
+- [ ] Garantir scroll suave e performance
+- [ ] Adicionar meta viewport tag

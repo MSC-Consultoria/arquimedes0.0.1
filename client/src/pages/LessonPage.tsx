@@ -141,8 +141,8 @@ export default function LessonPage() {
       <div className="min-h-screen bg-muted/30">
       {/* Header */}
       <div className="bg-background border-b">
-        <div className="container max-w-4xl py-6">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+        <div className="container max-w-4xl py-4 sm:py-6">
+          <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 overflow-x-auto whitespace-nowrap pb-2">
             <Link href="/" className="hover:text-foreground">
               Início
             </Link>
@@ -163,8 +163,8 @@ export default function LessonPage() {
 
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <h1 className="text-3xl font-bold mb-2">{page.title}</h1>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <h1 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight">{page.title}</h1>
+              <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground flex-wrap">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
                   <span>{page.estimatedMinutes} minutos</span>
@@ -182,7 +182,7 @@ export default function LessonPage() {
       </div>
 
       {/* Content */}
-      <div className="container max-w-4xl py-8 space-y-8">
+      <div className="container max-w-4xl py-4 sm:py-6 md:py-8 space-y-4 sm:space-y-6 md:space-y-8">
         {/* Main Text */}
         {page.mainText && (
           <Card>
@@ -200,8 +200,8 @@ export default function LessonPage() {
 
         {/* Exercises */}
         {exercises.length > 0 && (
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold">Exercícios Práticos</h2>
+          <div className="space-y-3 sm:space-y-4">
+            <h2 className="text-xl sm:text-2xl font-bold">Exercícios Práticos</h2>
             {exercises.map((exercise) => (
               <ExerciseCard
                 key={exercise.id}
@@ -216,7 +216,7 @@ export default function LessonPage() {
         {page.conceptSummary && (
           <Card className="bg-accent/10 border-accent">
             <CardHeader>
-              <CardTitle className="text-lg">💡 Resumo do Conceito</CardTitle>
+              <CardTitle className="text-base sm:text-lg">💡 Resumo do Conceito</CardTitle>
             </CardHeader>
             <CardContent>
               <MathContent content={page.conceptSummary} />
@@ -226,8 +226,8 @@ export default function LessonPage() {
 
         {/* Mark as Complete */}
         {isAuthenticated && !progress?.completed && (
-          <div className="flex justify-center">
-            <Button size="lg" onClick={handleMarkComplete} disabled={updateProgressMutation.isPending}>
+          <div className="flex justify-center px-4">
+            <Button size="lg" onClick={handleMarkComplete} disabled={updateProgressMutation.isPending} className="w-full sm:w-auto min-h-[48px] text-base">
               {updateProgressMutation.isPending ? "Salvando..." : "Marcar como Concluído"}
             </Button>
           </div>

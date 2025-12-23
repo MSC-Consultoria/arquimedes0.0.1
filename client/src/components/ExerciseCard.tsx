@@ -80,9 +80,9 @@ export function ExerciseCard({ exercise, onComplete }: ExerciseCardProps) {
   };
 
   return (
-    <Card className="card-shadow">
+    <Card className="shadow-md">
       <CardHeader>
-        <CardTitle className="text-xl flex items-start gap-2">
+        <CardTitle className="text-base sm:text-lg md:text-xl flex items-start gap-2">
           <span className="text-primary">📝</span>
           <div className="flex-1">
             <MathContent content={exercise.question} />
@@ -96,7 +96,7 @@ export function ExerciseCard({ exercise, onComplete }: ExerciseCardProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         {/* Answer Input */}
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <Input
             type="text"
             placeholder="Digite sua resposta..."
@@ -104,11 +104,12 @@ export function ExerciseCard({ exercise, onComplete }: ExerciseCardProps) {
             onChange={(e) => setAnswer(e.target.value)}
             onKeyPress={handleKeyPress}
             disabled={submitMutation.isPending || feedback.type === "correct"}
-            className="flex-1"
+            className="flex-1 min-h-[48px] text-base"
           />
           <Button
             onClick={handleSubmit}
             disabled={submitMutation.isPending || feedback.type === "correct"}
+            className="w-full sm:w-auto min-h-[48px] text-base"
           >
             {submitMutation.isPending ? "Enviando..." : "Enviar"}
           </Button>

@@ -34,16 +34,16 @@ export default function Home() {
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
         </div>
-        <div className="container py-16 md:py-24 relative z-10">
+        <div className="container py-8 sm:py-12 md:py-24 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white drop-shadow-lg leading-tight">
               Arquimedes: Matemática Descomplicada
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/95 drop-shadow-md">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/95 drop-shadow-md leading-relaxed">
               Aprenda matemática básica de forma clara, prática e sem infantilização. 
               Educação de qualidade para adultos.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               {!isAuthenticated ? (
                 <Button size="lg" variant="secondary" asChild>
                   <a href={getLoginUrl()}>
@@ -52,9 +52,9 @@ export default function Home() {
                   </a>
                 </Button>
               ) : (
-              <div className="flex items-center gap-4">
-                <p className="text-lg">Bem-vindo, {user?.name || user?.email}!</p>
-                <Button variant="secondary" onClick={() => logoutMutation.mutate()}>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+                <p className="text-base sm:text-lg truncate max-w-[200px] sm:max-w-none">Bem-vindo, {user?.name || user?.email}!</p>
+                <Button variant="secondary" size="sm" onClick={() => logoutMutation.mutate()} className="w-full sm:w-auto">
                   <LogOut className="h-4 w-4 mr-2" />
                   Sair
                 </Button>
@@ -70,12 +70,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container py-12 space-y-12">
+      <div className="container py-6 sm:py-8 md:py-12 space-y-6 sm:space-y-8 md:space-y-12">
         {/* Dashboard for authenticated users */}
         {isAuthenticated && dashboard && (
-          <div className="grid gap-6 md:grid-cols-3 animate-fade-in">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Card className="shadow-lg border-none hover:shadow-xl transition-shadow">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 p-4 sm:p-6">
                 <CardTitle className="text-sm font-medium">Aulas Concluídas</CardTitle>
                 <BookOpen className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
@@ -85,7 +85,7 @@ export default function Home() {
             </Card>
 
             <Card className="shadow-lg border-none hover:shadow-xl transition-shadow">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 p-4 sm:p-6">
                 <CardTitle className="text-sm font-medium">Pontuação Média</CardTitle>
                 <TrendingUp className="h-4 w-4 text-green-600" />
               </CardHeader>
@@ -95,7 +95,7 @@ export default function Home() {
             </Card>
 
             <Card className="shadow-lg border-none hover:shadow-xl transition-shadow">
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 p-4 sm:p-6">
                 <CardTitle className="text-sm font-medium">Conquistas</CardTitle>
                 <Award className="h-4 w-4 text-amber-600" />
               </CardHeader>
@@ -119,7 +119,7 @@ export default function Home() {
             <CardContent>
               <div className="space-y-2">
                 <p className="text-sm text-muted-foreground">{recommendation.discipline.name}</p>
-                <h3 className="text-xl font-semibold">{recommendation.module.name}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold">{recommendation.module.name}</h3>
                 <p className="text-lg">{recommendation.page.title}</p>
                 <Button asChild className="mt-4">
                   <Link
@@ -138,12 +138,12 @@ export default function Home() {
         <div className="space-y-6">
           <div>
             <h2 className="text-3xl font-bold mb-2">Disciplinas Disponíveis</h2>
-            <p className="text-muted-foreground">
+            <p className="text-sm sm:text-base text-muted-foreground">
               Escolha uma disciplina para começar sua jornada de aprendizado
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
             {disciplines.map((discipline) => (
               <DisciplineCard key={discipline.id} discipline={discipline} />
             ))}
@@ -151,33 +151,33 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="grid gap-8 md:grid-cols-3 pt-12">
-          <div className="text-center space-y-2">
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 sm:pt-12">
+          <div className="text-center space-y-2 px-4 sm:px-0">
             <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <BookOpen className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold">Conteúdo Estruturado</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg sm:text-xl font-semibold">Conteúdo Estruturado</h3>
+            <p className="text-sm sm:text-base text-muted-foreground">
               Aulas organizadas em módulos progressivos, do básico ao avançado
             </p>
           </div>
 
-          <div className="text-center space-y-2">
+          <div className="text-center space-y-2 px-4 sm:px-0">
             <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <Target className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold">Exercícios Práticos</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg sm:text-xl font-semibold">Exercícios Práticos</h3>
+            <p className="text-sm sm:text-base text-muted-foreground">
               Pratique com exercícios contextualizados e receba feedback imediato
             </p>
           </div>
 
-          <div className="text-center space-y-2">
+          <div className="text-center space-y-2 px-4 sm:px-0">
             <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <TrendingUp className="h-6 w-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold">Acompanhe seu Progresso</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg sm:text-xl font-semibold">Acompanhe seu Progresso</h3>
+            <p className="text-sm sm:text-base text-muted-foreground">
               Veja seu desenvolvimento e conquiste marcos de aprendizado
             </p>
           </div>
