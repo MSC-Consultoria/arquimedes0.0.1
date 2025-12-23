@@ -1007,7 +1007,7 @@
 - [x] Reorganizar estrutura de diretórios (4 subpastas criadas)
 - [x] Atualizar README.md principal
 - [x] Atualizar CHANGELOG.md (v2.18.2 até v2.28.0)
-- [ ] Fazer commit organizado no GitHub
+- [x] Fazer commit organizado no GitHub (commit a309bf5)
 
 ## Estratégia de SEO Completa (v2.27.0)
 
