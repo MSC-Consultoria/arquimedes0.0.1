@@ -421,4 +421,4 @@
 - [x] Implementar proteção de rotas (redirect se não autenticado)
 - [ ] Testar fluxo de login com Google OAuth
 - [ ] Testar cadastro automático de novos usuários
-- [ ] Fazer commit no GitHub
+- [x] Fazer commit no GitHub (commit local 9433654)
