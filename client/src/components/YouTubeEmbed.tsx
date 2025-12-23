@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Play } from "lucide-react";
+import { Play, ExternalLink, AlertCircle } from "lucide-react";
+import { Button } from "./ui/button";
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -29,6 +30,7 @@ export function YouTubeEmbed({
   className = "",
 }: YouTubeEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   // Construir URL do embed com parâmetros
   const embedUrl = `https://www.youtube.com/embed/${videoId}?${new URLSearchParams({
@@ -42,17 +44,31 @@ export function YouTubeEmbed({
   // URL da thumbnail do vídeo
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
+  // URL para abrir no app YouTube
+  const youtubeAppUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+  // Função para abrir vídeo no YouTube (app ou navegador)
+  const openInYouTube = () => {
+    window.open(youtubeAppUrl, '_blank');
+  };
+
+  // Detectar erro de carregamento do iframe
+  const handleIframeError = () => {
+    setHasError(true);
+  };
+
   return (
     <div className={`relative w-full ${className}`}>
       {/* Container responsivo 16:9 */}
       <div className="relative w-full pb-[56.25%] bg-gray-900 rounded-lg overflow-hidden shadow-lg">
-        {!isLoaded && (
+        {!isLoaded && !hasError && (
           <>
             {/* Thumbnail de preview */}
             <img
               src={thumbnailUrl}
               alt={title}
               className="absolute inset-0 w-full h-full object-cover"
+              onError={() => setHasError(true)}
             />
             
             {/* Overlay com botão de play */}
@@ -74,22 +90,56 @@ export function YouTubeEmbed({
         )}
 
         {/* iFrame do YouTube (carregado apenas quando usuário clicar) */}
-        {isLoaded && (
+        {isLoaded && !hasError && (
           <iframe
             src={embedUrl}
             title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 w-full h-full"
+            onError={handleIframeError}
           />
+        )}
+
+        {/* Fallback: Erro ao carregar vídeo */}
+        {hasError && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 p-6 text-center">
+            <AlertCircle className="w-16 h-16 text-yellow-500 mb-4" />
+            <p className="text-white font-semibold text-lg mb-2">
+              Não foi possível carregar o vídeo
+            </p>
+            <p className="text-gray-400 text-sm max-w-md mb-6">
+              O vídeo pode estar indisponível ou sua conexão pode estar instável.
+              Tente abrir diretamente no YouTube.
+            </p>
+            <Button
+              onClick={openInYouTube}
+              variant="default"
+              className="bg-red-600 hover:bg-red-700 text-white"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Abrir no YouTube
+            </Button>
+          </div>
         )}
       </div>
 
       {/* Título do vídeo (opcional) */}
       {title && (
-        <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
-          {title}
-        </p>
+        <div className="mt-3 flex items-center justify-between">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            {title}
+          </p>
+          {!hasError && (
+            <button
+              onClick={openInYouTube}
+              className="text-xs text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
+            >
+              <ExternalLink className="w-3 h-3" />
+              Ver no YouTube
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

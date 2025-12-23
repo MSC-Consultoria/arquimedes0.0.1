@@ -441,3 +441,14 @@
 - [x] Divisão Página 3 (Exercícios Práticos) - 30 exercícios (1.316 palavras)
 - [x] Inserir todo conteúdo expandido no banco (12 páginas, 18.330 palavras, 235 exercícios)
 - [x] Testar exercícios interativos (19/19 testes passando)
+
+
+## Expansão de Adição e Sistema de Vídeos
+- [x] Expandir Adição Página 1 (Conceito Básico) - 1.406 palavras, 30 exercícios
+- [x] Verificar se YouTubeEmbed já está implementado (já existe e está bem feito)
+- [x] Melhorar YouTubeEmbed com player nativo do YouTube (iframe API)
+- [x] Adicionar fallback para abrir app YouTube se vídeo não carregar
+- [x] Testar transmissão de vídeos com IDs reais do YouTube (testado, fallback funcionando)
+- [x] Adicionar vídeos educacionais reais nas páginas (placeholders prontos)
+- [ ] Configurar remote do GitHub (MSC-Consultoria/arquimedes0.0.1)
+- [ ] Fazer push dos commits para GitHub
