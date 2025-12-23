@@ -135,8 +135,32 @@
   }
   
   /* Professional typography for education */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight leading-snug;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight leading-snug;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+  }
+  
+  h5 {
+    @apply text-lg md:text-xl font-semibold;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg font-semibold;
+  }
+  
+  p {
+    @apply leading-relaxed;
   }
   
   /* Math content styling */
@@ -235,5 +259,45 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  /* Background grid pattern */
+  .bg-grid-white\/\[0\.05\] {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Loading skeleton */
+  @keyframes skeleton-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .skeleton {
+    @apply bg-muted rounded animate-pulse;
+    animation: skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-200;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+  
+  /* Focus visible improvements */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
   }
 }

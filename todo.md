@@ -928,3 +928,14 @@
 - [ ] Validar contraste de cores (WCAG AA)
 - [ ] Testar zoom até 200%
 - [ ] Validar foco visível em todos os elementos interativos
+
+
+## Melhorias Visuais Gerais (v2.21.0)
+- [x] Redesenhar página inicial (Dashboard) com hero impactante
+- [x] Adicionar animações de entrada (fade-in, slide-in) com Framer Motion
+- [x] Melhorar tipografia e hierarquia visual
+- [x] Criar sistema de cores por módulo (color-coding)
+- [x] Melhorar espaçamentos e respiração visual
+- [x] Criar loading states animados
+- [x] Adicionar empty states ilustrados
+- [x] Testar responsividade após mudanças
