@@ -297,3 +297,38 @@
 - [ ] Melhorar espaçamentos e respiração visual
 - [ ] Criar loading states animados
 - [ ] Adicionar empty states ilustrados
+
+
+## Expansão Profunda de Conteúdo (5000+ palavras por página)
+
+### Adição
+- [x] Expandir Página 1: O que é Adicionar (Combinar) - 5000+ palavras
+  - [x] Adicionar 5+ exemplos de orçamento familiar
+  - [x] Incluir calculadora de orçamento mensal
+  - [x] Adicionar exercícios de planejamento financeiro
+- [ ] Expandir Página 2: A Reta Numérica - 5000+ palavras
+  - [ ] Visualização interativa de reta numérica
+  - [ ] Exemplos de saldo bancário
+  - [ ] Exercícios de movimentação financeira
+  - [ ] Placeholder para vídeo do YouTube
+  - [ ] Diagramas SVG de reta numérica
+- [ ] Expandir Página 3: Exercícios Práticos - 5000+ palavras
+  - [ ] 10+ problemas de orçamento real
+  - [ ] Cenários de compras e economia
+  - [ ] Desafios progressivos
+  - [ ] Componentes interativos com feedback sonoro
+
+### Subtração
+- [ ] Expandir Página 1: O que é Subtrair - 5000+ palavras
+- [ ] Expandir Página 2: Visualizando o Movimento - 5000+ palavras
+- [ ] Expandir Página 3: Exercícios Práticos - 5000+ palavras
+
+### Multiplicação
+- [ ] Expandir Página 1: Soma Repetida - 5000+ palavras
+- [ ] Expandir Página 2: A Tabuada - 5000+ palavras
+- [ ] Expandir Página 3: Visualização em Matrizes - 5000+ palavras
+
+### Divisão
+- [ ] Expandir Página 1: Operação Inversa - 5000+ palavras
+- [ ] Expandir Página 2: Repartição Justa - 5000+ palavras
+- [ ] Expandir Página 3: Conceito de Resto - 5000+ palavras
