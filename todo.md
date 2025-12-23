@@ -589,3 +589,24 @@
 - [x] Criar estrutura progressiva (níveis)
 - [x] Testar escaneabilidade e ritmo
 - [x] Corrigir teste de pontos (daily login)
+
+
+## Correção de Loop de Login OAuth
+- [ ] Investigar por que OAuth redireciona para /login em vez de /dashboard
+- [ ] Verificar lógica de redirecionamento no servidor OAuth
+- [ ] Verificar se usuário está sendo autenticado corretamente
+- [ ] Simplificar LoginPage (remover Manus e GitHub, manter apenas Google)
+- [ ] Remover campos de usuário/senha
+- [ ] Testar login com Google end-to-end
+- [ ] Garantir redirecionamento para /dashboard após login bem-sucedido
+
+
+## Correção de Loop de Login OAuth
+- [x] Investigar por que OAuth redireciona para /login em vez de /dashboard
+- [x] Verificar lógica de redirecionamento no servidor OAuth
+- [x] Verificar se usuário está sendo autenticado corretamente
+- [x] Simplificar LoginPage (remover Manus e GitHub, manter apenas Google)
+- [x] Remover campos de usuário/senha
+- [x] Testar login com Google end-to-end
+- [x] Garantir redirecionamento para /dashboard após login bem-sucedido
+- [x] Remover logout forçado do LoginPage (sessionStorage.clear)

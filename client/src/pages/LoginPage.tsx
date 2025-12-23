@@ -1,21 +1,36 @@
 import { useEffect } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { getLoginUrl } from "@/const";
+import { trpc } from "@/lib/trpc";
 
 export default function LoginPage() {
-  // Logout automático ao acessar a página de login
-  useEffect(() => {
-    sessionStorage.clear();
-    localStorage.removeItem("user");
-  }, []);
+  const [, setLocation] = useLocation();
+  const { data: user, isLoading } = trpc.auth.me.useQuery();
 
-  const handleOAuthLogin = () => {
-    // Redireciona para o fluxo OAuth do Manus
+  // Se já estiver autenticado, redireciona para dashboard
+  useEffect(() => {
+    if (!isLoading && user) {
+      setLocation("/dashboard");
+    }
+  }, [user, isLoading, setLocation]);
+
+  const handleGoogleLogin = () => {
+    // Redireciona para o fluxo OAuth do Manus (que suporta Google)
     // Após login bem-sucedido, o callback redirecionará para /dashboard
     window.location.href = getLoginUrl();
   };
+
+  // Mostra loading enquanto verifica autenticação
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900">
+        <div className="text-white text-xl">Carregando...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900">
@@ -42,72 +57,28 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Card de Login Minimalista */}
+        {/* Card de Login Minimalista - Apenas Google */}
         <Card className="w-full max-w-sm p-8 bg-white/95 backdrop-blur-sm shadow-2xl border-0">
-          <div className="space-y-4">
-            {/* Botões de Login OAuth */}
-            <Button
-              type="button"
-              onClick={handleOAuthLogin}
-              className="w-full h-14 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-base"
-            >
-              <svg
-                className="w-5 h-5 mr-3 flex-shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2L2 7L12 12L22 7L12 2Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M2 17L12 22L22 17"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M2 12L12 17L22 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Entrar com Manus
-            </Button>
-
-            {/* Divider */}
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-gray-500">ou</span>
-              </div>
+          <div className="space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl font-bold text-gray-900">Entrar</h2>
+              <p className="text-sm text-gray-600">
+                Faça login para começar a aprender
+              </p>
             </div>
 
             <Button
               type="button"
-              variant="outline"
-              onClick={handleOAuthLogin}
-              className="w-full h-14 border-2 border-gray-300 hover:border-red-500 hover:bg-red-50 transition-all duration-200 font-medium text-base"
+              onClick={handleGoogleLogin}
+              className="w-full h-14 bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-300 hover:border-gray-400 font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-base"
             >
               <Mail className="w-5 h-5 mr-3 text-red-600 flex-shrink-0" />
-              Entrar com Google
+              Continuar com Google
             </Button>
 
-            <Button
-              type="button"
-              variant="outline"
-              onClick={handleOAuthLogin}
-              className="w-full h-14 border-2 border-gray-300 hover:border-gray-700 hover:bg-gray-50 transition-all duration-200 font-medium text-base"
-            >
-              <Github className="w-5 h-5 mr-3 text-gray-800 flex-shrink-0" />
-              Entrar com GitHub
-            </Button>
+            <p className="text-xs text-center text-gray-500">
+              Ao continuar, você concorda com nossos Termos de Uso
+            </p>
           </div>
         </Card>
 
