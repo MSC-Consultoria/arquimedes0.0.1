@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
+import { Check, X, Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSounds } from "@/lib/sounds";
 import { useHaptic } from "@/lib/useHaptic";
@@ -24,6 +24,7 @@ interface FillInBlanksProps {
   onComplete?: (correct: boolean, answers: Record<string, string>) => void;
   showFeedback?: boolean;
   className?: string;
+  hint?: string; // Dica contextual para ajudar na resolução
 }
 
 export function FillInBlanks({
@@ -32,9 +33,11 @@ export function FillInBlanks({
   onComplete,
   showFeedback = false,
   className,
+  hint,
 }: FillInBlanksProps) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const { playSuccess, playError } = useSounds();
   const haptic = useHaptic();
 
@@ -159,6 +162,29 @@ export function FillInBlanks({
   return (
     <Card className={cn("p-6 space-y-6", className)}>
       <div className="text-lg leading-relaxed">{renderText()}</div>
+
+      {/* Botão de Dica */}
+      {hint && !submitted && (
+        <div className="space-y-2">
+          <Button
+            onClick={() => setShowHint(!showHint)}
+            variant="outline"
+            size="sm"
+            className="gap-2"
+          >
+            <Lightbulb className="h-4 w-4" />
+            {showHint ? "Ocultar Dica" : "💡 Dica"}
+          </Button>
+          {showHint && (
+            <div className="p-4 rounded-lg bg-yellow-50 border border-yellow-200 animate-in fade-in slide-in-from-top-2 duration-300">
+              <div className="flex items-start gap-3">
+                <Lightbulb className="h-5 w-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-yellow-900 leading-relaxed">{hint}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="space-y-4">
         {!submitted && (

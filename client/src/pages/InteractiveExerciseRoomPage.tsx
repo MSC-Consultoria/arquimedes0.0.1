@@ -247,7 +247,7 @@ export default function InteractiveExerciseRoomPage() {
                     min={0}
                     max={300}
                     correctValue={245}
-                    // tolerance={10}
+                    hint="Dica: Some os preços dos 3 itens que você quer comprar. Não precisa considerar o R$ 150 que você tem, apenas calcule o total da compra."
                     unit="R$"
                     onSubmit={(value: number, isCorrect: boolean) => handleExerciseComplete("adicao-slider-1", 10, isCorrect)}
                   />
@@ -299,6 +299,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "Associativa", right: "(2 + 3) + 4 = 2 + (3 + 4)" },
                       { id: "3", left: "Elemento Neutro", right: "7 + 0 = 7" },
                     ]}
+                    hint="Dica: A propriedade COMUTATIVA diz que a ordem não altera o resultado. A ASSOCIATIVA permite reagrupar os números. O ELEMENTO NEUTRO é o zero, que não muda o valor quando somado."
                     onComplete={(isCorrect) => handleExerciseComplete("adicao-match-1", 15, isCorrect)}
                   />
                 </CardContent>
@@ -398,6 +399,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "Comparar", right: "João tem 12 anos, Maria tem 8" },
                       { id: "3", left: "Completar", right: "Tenho R$ 20, faltam R$ 5 para R$ 25" },
                     ]}
+                    hint="Dica: TIRAR/REMOVER é quando algo é retirado. COMPARAR é encontrar a diferença entre dois valores. COMPLETAR é descobrir quanto falta para chegar a um total."
                     onComplete={(isCorrect) => handleExerciseComplete("subtracao-match-1", 15, isCorrect)}
                   />
                 </CardContent>
@@ -470,7 +472,7 @@ export default function InteractiveExerciseRoomPage() {
                     min={0}
                     max={200}
                     correctValue={96}
-                    // tolerance={5}
+                    hint="Dica: A área de um retângulo é calculada multiplicando comprimento × largura. Pense em quantos quadrados de 1m² cabem dentro do retângulo."
                     unit="m²"
                     onSubmit={(value: number, isCorrect: boolean) => handleExerciseComplete("multiplicacao-slider-1", 10, isCorrect)}
                   />
@@ -497,6 +499,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "Associativa", right: "(2 × 3) × 4 = 2 × (3 × 4)" },
                       { id: "3", left: "Distributiva", right: "3 × (4 + 5) = 3 × 4 + 3 × 5" },
                     ]}
+                    hint="Dica: COMUTATIVA permite trocar a ordem. ASSOCIATIVA permite reagrupar. DISTRIBUTIVA distribui a multiplicação sobre a soma (multiplica cada termo dentro dos parênteses)."
                     onComplete={(isCorrect) => handleExerciseComplete("multiplicacao-match-1", 15, isCorrect)}
                   />
                 </CardContent>
@@ -596,6 +599,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "Divisor", right: "O número pelo qual dividimos" },
                       { id: "3", left: "Quociente", right: "O resultado da divisão" },
                     ]}
+                    hint="Dica: Em 20 ÷ 4 = 5, o DIVIDENDO é 20 (o que está sendo dividido), o DIVISOR é 4 (por quanto dividimos), e o QUOCIENTE é 5 (o resultado)."
                     onComplete={(isCorrect) => handleExerciseComplete("divisao-match-1", 15, isCorrect)}
                   />
                 </CardContent>
@@ -647,7 +651,7 @@ export default function InteractiveExerciseRoomPage() {
                     min={0}
                     max={200}
                     correctValue={150}
-                    // tolerance={10}
+                    hint="Dica: Primeiro divida 200 por 4 (o denominador) para encontrar 1/4. Depois multiplique o resultado por 3 (o numerador) para encontrar 3/4."
                     unit="R$"
                     onSubmit={(value: number, isCorrect: boolean) => handleExerciseComplete("fracoes-slider-1", 10, isCorrect)}
                   />
@@ -674,6 +678,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "1/3", right: "2/6" },
                       { id: "3", left: "2/5", right: "4/10" },
                     ]}
+                    hint="Dica: Frações equivalentes têm o mesmo valor. Para encontrá-las, multiplique o numerador E o denominador pelo mesmo número. Ex: 1/2 = (1×2)/(2×2) = 2/4."
                     onComplete={(isCorrect) => handleExerciseComplete("fracoes-match-1", 15, isCorrect)}
                   />
                 </CardContent>
@@ -752,6 +757,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "Inversamente Proporcional", right: "Mais pessoas, menos tempo" },
                       { id: "3", left: "Razão", right: "Comparação entre duas quantidades" },
                     ]}
+                    hint="Dica: DIRETAMENTE proporcional = ambos aumentam juntos. INVERSAMENTE proporcional = um aumenta, o outro diminui. RAZÃO é uma divisão que compara valores (ex: 10/5 = 2)."
                     onComplete={(isCorrect) => handleExerciseComplete("proporcao-match-1", 15, isCorrect)}
                   />
                 </CardContent>
@@ -824,7 +830,7 @@ export default function InteractiveExerciseRoomPage() {
                     min={1000}
                     max={1200}
                     correctValue={1050}
-                    // tolerance={10}
+                    hint="Dica: Calcule 5% de 1.000 (que é 50) e some ao valor inicial. Ou pense: 100% + 5% = 105% do valor original."
                     unit="R$"
                     onSubmit={(value: number, isCorrect: boolean) => handleExerciseComplete("porcentagem-slider-1", 10, isCorrect)}
                   />
@@ -851,6 +857,7 @@ export default function InteractiveExerciseRoomPage() {
                       { id: "2", left: "Acréscimo", right: "Aumento sobre o valor inicial" },
                       { id: "3", left: "Juros", right: "Rendimento sobre capital investido" },
                     ]}
+                    hint="Dica: DESCONTO diminui o valor (10% de desconto = pagar 90%). ACRÉSCIMO aumenta o valor (10% de acréscimo = pagar 110%). JUROS são ganhos ou pagos sobre dinheiro ao longo do tempo."
                     onComplete={(isCorrect) => handleExerciseComplete("porcentagem-match-1", 15, isCorrect)}
                   />
                 </CardContent>

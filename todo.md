@@ -1452,3 +1452,21 @@
 - [x] Confirmar navegação entre 7 tabs (Adição, Subtração, Multiplicação, Divisão, Frações, Proporção, Porcentagem)
 - [x] Confirmar Sidebar visível e funcionando
 - [x] Confirmar cards de estatísticas (Exercícios Completados, Pontos Ganhos, Taxa de Acerto)
+
+### Sistema de Dicas Contextuais
+- [x] Adicionar prop `hint` opcional aos componentes FillInBlanks, InteractiveSlider e MatchingGame
+- [x] Criar botão "💡 Dica" que aparece quando hint está disponível
+- [x] Implementar estado de dica revelada/oculta (showHint)
+- [x] Adicionar dicas estratégicas para 7 MatchingGame (exercícios difíceis 15 pts)
+- [x] Adicionar dicas para 4 InteractiveSlider selecionados (exercícios moderados 10 pts)
+- [x] Estilizar card de dica com fundo amarelo claro (bg-yellow-50), borda amarela e ícone Lightbulb
+- [x] Adicionar animação fade-in ao revelar dica
+- [x] Testar sistema de dicas no browser
+- [x] Testar dica do InteractiveSlider de Adição (Estimativa de Orçamento)
+- [x] Testar dica do MatchingGame de Adição (Propriedades)
+- [x] Testar dica do InteractiveSlider de Frações (3/4 de R$ 200)
+- [x] Confirmar card amarelo com ícone de lâmpada em todos os componentes
+- [x] Confirmar botão alterna entre "💡 Dica" e "Ocultar Dica"
+- [x] Confirmar animação fade-in ao revelar dica
+- [x] Confirmar que dicas ensinam estratégias sem entregar respostas diretas
+- [ ] Salvar checkpoint v2.42.0

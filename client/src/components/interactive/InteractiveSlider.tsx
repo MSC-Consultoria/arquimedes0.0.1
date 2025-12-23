@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSounds } from "@/lib/sounds";
 import { useHaptic } from "@/lib/useHaptic";
@@ -18,6 +19,7 @@ interface InteractiveSliderProps {
   onValueChange?: (value: number) => void;
   onSubmit?: (value: number, isCorrect: boolean) => void;
   className?: string;
+  hint?: string; // Dica contextual para ajudar na resolução
 }
 
 export function InteractiveSlider({
@@ -32,10 +34,12 @@ export function InteractiveSlider({
   onValueChange,
   onSubmit,
   className,
+  hint,
 }: InteractiveSliderProps) {
   const [value, setValue] = useState(defaultValue);
   const [submitted, setSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const { playSuccess, playError } = useSounds();
   const haptic = useHaptic();
 
@@ -89,6 +93,29 @@ export function InteractiveSlider({
           {unit && <span className="text-xl text-muted-foreground">{unit}</span>}
         </div>
       </div>
+
+      {/* Botão de Dica */}
+      {hint && !submitted && (
+        <div className="space-y-2">
+          <Button
+            onClick={() => setShowHint(!showHint)}
+            variant="outline"
+            size="sm"
+            className="gap-2"
+          >
+            <Lightbulb className="h-4 w-4" />
+            {showHint ? "Ocultar Dica" : "💡 Dica"}
+          </Button>
+          {showHint && (
+            <div className="p-4 rounded-lg bg-yellow-50 border border-yellow-200 animate-in fade-in slide-in-from-top-2 duration-300">
+              <div className="flex items-start gap-3">
+                <Lightbulb className="h-5 w-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-yellow-900 leading-relaxed">{hint}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="space-y-4">
         <Slider
