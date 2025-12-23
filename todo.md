@@ -814,3 +814,22 @@
 - [x] Fazer commit local no repositório
 - [x] Documentar processo de deploy (DEPLOY.md)
 - [ ] Push para GitHub (requer autenticação do usuário)
+
+
+## Organização do Repositório (v2.16.0)
+- [x] Mover arquivos de documentação para pasta `docs/`
+- [x] Mover scripts de seed para pasta `scripts/`
+- [x] Mover arquivos de conteúdo para pasta `content/`
+- [x] Limpar arquivos temporários da raiz
+- [x] Criar READMEs nas pastas docs/ e scripts/
+- [x] Estrutura organizada e limpa
+
+## Status Deploy VPS Hostinger
+- [x] Script de deploy criado e testado
+- [x] Aplicação buildada com sucesso
+- [x] PM2 configurado e rodando
+- [x] Nginx configurado
+- [x] OAuth Manus funcionando
+- [ ] Resolver erro 403 (troubleshooting em andamento)
+- [ ] SSL/HTTPS (aguardando DNS)
+- **Decisão:** Focar desenvolvimento no Manus por enquanto
