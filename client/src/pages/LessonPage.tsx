@@ -13,6 +13,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { SEO } from "@/components/SEO";
 import { MobileNav } from "@/components/MobileNav";
 import { useScrollToBottom } from "@/hooks/useScrollToBottom";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
 
 export default function LessonPage() {
   const params = useParams<{ disciplineSlug: string; moduleSlug: string; pageSlug: string }>();
@@ -146,6 +147,7 @@ export default function LessonPage() {
 
   return (
     <>
+      <ReadingProgressBar show={!progress?.completed} />
       <MobileNav />
       <SEO 
         title={seoTitle}

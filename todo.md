@@ -966,3 +966,12 @@
 - [x] Integrar marcação automática ao chegar no final (threshold 200px)
 - [x] Adicionar indicador visual de progresso de leitura
 - [x] Testar com diferentes tamanhos de tela
+
+
+## Barra de Progresso de Leitura (v2.24.0)
+- [x] Criar hook useReadingProgress para calcular % de scroll
+- [x] Criar componente ReadingProgressBar reutilizável
+- [x] Integrar barra no topo do LessonPage
+- [x] Adicionar animação suave de preenchimento (transition-all duration-150)
+- [x] Testar responsividade em mobile
+- [x] Garantir que não interfere com navegação (z-50, fixed, altura 3px)
