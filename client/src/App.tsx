@@ -9,6 +9,7 @@ import DisciplinePage from "./pages/DisciplinePage";
 import ModulePage from "./pages/ModulePage";
 import LessonPage from "./pages/LessonPage";
 import VisualsDemo from "./pages/VisualsDemo";
+import ComponentsDemo from "./pages/ComponentsDemo";
 import { SoundToggle } from "./components/SoundToggle";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/visuals" component={VisualsDemo} />
+      <Route path="/components" component={ComponentsDemo} />
       <Route path="/disciplina/:disciplineSlug" component={DisciplinePage} />
       <Route path="/disciplina/:disciplineSlug/modulo/:moduleSlug" component={ModulePage} />
       <Route

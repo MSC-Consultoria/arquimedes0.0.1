@@ -404,3 +404,11 @@
 - [ ] Criar componente Slider para valores dinâmicos
 - [ ] Criar componente Canvas de exploração livre
 - [ ] Integrar componentes nas páginas de exercícios
+
+
+## Componentes Interativos React
+- [x] Criar componente NumberLine (reta numérica animada com highlights)
+- [x] Criar componente ExerciseCard (exercícios com validação e hints)
+- [x] Criar componente YouTubeEmbed (player de vídeo responsivo)
+- [x] Integrar componentes nas páginas de conteúdo (criada página /components)
+- [x] Testar todos os componentes interativos (página de demo criada)
