@@ -72,6 +72,20 @@ export default function ExerciseRoomPage() {
     }
   };
 
+  // Helper para fazer parse seguro de options
+  const parseOptions = (options: any): string[] => {
+    if (Array.isArray(options)) return options;
+    if (typeof options === 'string') {
+      try {
+        const parsed = JSON.parse(options);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="container mx-auto px-4 py-8">
@@ -217,7 +231,7 @@ export default function ExerciseRoomPage() {
                     <div className="space-y-4">
                       {/* Options */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {(exercise.options as string[]).map((option: string, index: number) => (
+                        {parseOptions(exercise.options).map((option: string, index: number) => (
                           <div
                             key={index}
                             className="p-3 border border-gray-200 rounded-lg bg-white hover:bg-gray-50 transition-colors"

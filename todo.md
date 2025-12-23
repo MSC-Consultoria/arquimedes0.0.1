@@ -833,3 +833,9 @@
 - [ ] Resolver erro 403 (troubleshooting em andamento)
 - [ ] SSL/HTTPS (aguardando DNS)
 - **Decisão:** Focar desenvolvimento no Manus por enquanto
+
+
+## Correções de Bugs (v2.16.1)
+- [x] Corrigir parse de exercise.options no ExerciseRoomPage
+- [x] Corrigir parse de exercise.options no DailyChallengePage
+- [x] Adicionar helper parseOptions() para parse seguro de JSON

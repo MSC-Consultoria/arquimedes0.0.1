@@ -82,6 +82,20 @@ export default function DailyChallengePage() {
     }
   };
 
+  // Helper para fazer parse seguro de options
+  const parseOptions = (options: any): string[] => {
+    if (Array.isArray(options)) return options;
+    if (typeof options === 'string') {
+      try {
+        const parsed = JSON.parse(options);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  };
+
   if (isLoading) {
     return (
       <div className="flex min-h-screen">
@@ -186,7 +200,7 @@ export default function DailyChallengePage() {
                 const isSubmitted = submittedExercises.has(exercise.id);
                 const result = results[exercise.id];
                 const selectedAnswer = selectedAnswers[exercise.id];
-                const options = exercise.options as string[];
+                const options = parseOptions(exercise.options);
 
                 return (
                   <Card
