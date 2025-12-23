@@ -1,0 +1,29 @@
+{
+  "query": "SELECT id, title, SUBSTRING(mainText, 1, 800) as preview FROM pages WHERE id = 1",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute SELECT id, title, SUBSTRING(mainText, 1, 800) as preview FROM pages WHERE id = 1",
+  "rows": [
+    {
+      "id": "1",
+      "title": "O que é Adicionar (Combinar)",
+      "preview": "# Adição Página 1: O Conceito Básico de Somar"
+    }
+  ],
+  "messages": [
+    "## Introdução: O Que É Adição?",
+    "Adição é a operação matemática mais fundamental e natural. Desde criança, você já somava sem perceber: \"Se eu tenho 2 balas e ganho mais 3, fico com 5 balas\". **Somar é juntar quantidades**.",
+    "<YouTubeEmbed videoId=\"dQw4w9WgXcQ\" title=\"Adição: O Conceito Básico Explicado\" />",
+    "**Exemplo do dia a dia:**",
+    "- Você tem R$ 50 na carteira e recebe R$ 100 de pagamento → 50 + 100 = R$ 150",
+    "- Trabalhou 8 horas ontem e 6 horas hoje → 8 + 6 = 14 horas trabalhadas",
+    "- Comprou 3 pães pela manhã e 5 à tarde → 3 + 5 = 8 pães no total",
+    "## Parte 1: Entendendo os Termos",
+    "Quando escrevemos **5 + 3 = 8**, cada número tem um nome:",
+    "- **5** → Primeira parcela",
+    "- **3** → Segunda parcela",
+    "- **8** → Soma (ou total, ou resultado)",
+    "- **+** → Sinal "
+  ],
+  "stdout": "id\ttitle\tpreview\n1\tO que é Adicionar (Combinar)\t# Adição Página 1: O Conceito Básico de Somar\n\n## Introdução: O Que É Adição?\n\nAdição é a operação matemática mais fundamental e natural. Desde criança, você já somava sem perceber: \"Se eu tenho 2 balas e ganho mais 3, fico com 5 balas\". **Somar é juntar quantidades**.\n\n<YouTubeEmbed videoId=\"dQw4w9WgXcQ\" title=\"Adição: O Conceito Básico Explicado\" />\n\n**Exemplo do dia a dia:**\n- Você tem R$ 50 na carteira e recebe R$ 100 de pagamento → 50 + 100 = R$ 150\n- Trabalhou 8 horas ontem e 6 horas hoje → 8 + 6 = 14 horas trabalhadas\n- Comprou 3 pães pela manhã e 5 à tarde → 3 + 5 = 8 pães no total\n\n## Parte 1: Entendendo os Termos\n\nQuando escrevemos **5 + 3 = 8**, cada número tem um nome:\n\n- **5** → Primeira parcela\n- **3** → Segunda parcela\n- **8** → Soma (ou total, ou resultado)\n- **+** → Sinal \n",
+  "stderr": "",
+  "execution_time_ms": 64
+}

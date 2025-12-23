@@ -1,66 +1,143 @@
-import { useEffect, useRef } from "react";
-import katex from "katex";
-import "katex/dist/katex.min.css";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
+import { Card } from './ui/card';
+import { YouTubeEmbed } from './YouTubeEmbed';
 
 interface MathContentProps {
   content: string;
   className?: string;
+  videoUrl?: string | null;
+  videoTitle?: string;
 }
 
-/**
- * Component to render mathematical content with LaTeX support
- * Converts inline $...$ and display $$...$$ math to rendered equations
- */
-export function MathContent({ content, className = "" }: MathContentProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+export function MathContent({ content, className = "", videoUrl, videoTitle }: MathContentProps) {
+  if (!content) return null;
 
-  useEffect(() => {
-    if (!containerRef.current || !content) return;
-
-    // Process the content to render LaTeX
-    const processedContent = renderMathInText(content);
-    containerRef.current.innerHTML = processedContent;
-  }, [content]);
+  // Converter separadores ; em quebras de linha Markdown
+  let cleanContent = content
+    .replace(/;\s*/g, '\n\n') // Substituir ; por quebras de linha duplas
+    .replace(/\n{3,}/g, '\n\n') // Remover quebras excessivas
+    .replace(/<ExerciseCard[\s\S]*?\/>/g, ''); // Remover ExerciseCard tags
+  
+  // Dividir conteúdo em partes (antes e depois do vídeo)
+  const hasVideoPlaceholder = /<YouTubeEmbed[\s\S]*?\/>/.test(cleanContent);
+  let contentParts: string[] = [];
+  
+  if (hasVideoPlaceholder && videoUrl) {
+    contentParts = cleanContent.split(/<YouTubeEmbed[\s\S]*?\/>/);
+  } else {
+    contentParts = [cleanContent];
+  }
+  
+  const processedParts = contentParts.map(part => processLatex(part));
 
   return (
-    <div 
-      ref={containerRef} 
-      className={`math-content ${className}`}
-    />
+    <div className={`math-content prose prose-lg max-w-none ${className}`}>
+      {/* Primeira parte do conteúdo */}
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        components={markdownComponents}
+      >
+        {processedParts[0]}
+      </ReactMarkdown>
+      
+      {/* Vídeo integrado naturalmente */}
+      {hasVideoPlaceholder && videoUrl && (
+        <div className="my-8">
+          <YouTubeEmbed
+            videoId={videoUrl}
+            title={videoTitle || "Vídeo Educacional"}
+          />
+        </div>
+      )}
+      
+      {/* Segunda parte do conteúdo (se existir) */}
+      {processedParts[1] && (
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw]}
+          components={markdownComponents}
+        >
+          {processedParts[1]}
+        </ReactMarkdown>
+      )}
+    </div>
   );
 }
 
-/**
- * Process text content and render LaTeX expressions
- */
-function renderMathInText(text: string): string {
+const markdownComponents = {
+  h1: ({ children }: any) => (
+    <h1 className="text-3xl font-bold text-blue-900 mt-8 mb-4 border-b-2 border-blue-200 pb-2">
+      {children}
+    </h1>
+  ),
+  h2: ({ children }: any) => (
+    <h2 className="text-2xl font-bold text-blue-800 mt-6 mb-3">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }: any) => (
+    <h3 className="text-xl font-semibold text-blue-700 mt-5 mb-2">
+      {children}
+    </h3>
+  ),
+  p: ({ children }: any) => (
+    <p className="text-gray-700 leading-relaxed mb-4 text-base">
+      {children}
+    </p>
+  ),
+  a: ({ href, children }: any) => (
+    <a
+      href={href}
+      className="text-blue-600 hover:text-blue-800 underline font-medium"
+      target={href?.startsWith('http') ? '_blank' : undefined}
+      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+    >
+      {children}
+    </a>
+  ),
+  strong: ({ children }: any) => (
+    <strong className="font-bold text-blue-900">
+      {children}
+    </strong>
+  ),
+  ul: ({ children }: any) => (
+    <ul className="list-disc list-inside space-y-2 my-4 ml-4">
+      {children}
+    </ul>
+  ),
+  ol: ({ children }: any) => (
+    <ol className="list-decimal list-inside space-y-2 my-4 ml-4">
+      {children}
+    </ol>
+  ),
+  blockquote: ({ children }: any) => (
+    <Card className="my-4 border-l-4 border-blue-500 bg-blue-50 p-4">
+      <div className="text-gray-800 italic">
+        {children}
+      </div>
+    </Card>
+  ),
+};
+
+function processLatex(text: string): string {
   if (!text) return "";
-
-  // Convert markdown-style formatting
-  let processed = text
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Bold
-    .replace(/\*(.*?)\*/g, "<em>$1</em>") // Italic
-    .replace(/\n\n/g, "</p><p>"); // Paragraphs
-
-  // Wrap in paragraph tags if not already
-  if (!processed.startsWith("<p>")) {
-    processed = `<p>${processed}</p>`;
-  }
-
-  // Process display math ($$...$$)
+  let processed = text;
   processed = processed.replace(/\$\$(.*?)\$\$/g, (match, math) => {
     try {
-      return `<div class="my-4 overflow-x-auto">${katex.renderToString(math.trim(), {
+      const rendered = katex.renderToString(math.trim(), {
         displayMode: true,
         throwOnError: false,
-      })}</div>`;
+      });
+      return `<div class="my-4 overflow-x-auto flex justify-center">${rendered}</div>`;
     } catch (e) {
-      console.error("KaTeX display math error:", e);
       return match;
     }
   });
-
-  // Process inline math ($...$)
   processed = processed.replace(/\$(.*?)\$/g, (match, math) => {
     try {
       return katex.renderToString(math.trim(), {
@@ -68,10 +145,8 @@ function renderMathInText(text: string): string {
         throwOnError: false,
       });
     } catch (e) {
-      console.error("KaTeX inline math error:", e);
       return match;
     }
   });
-
   return processed;
 }

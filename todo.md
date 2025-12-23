@@ -470,3 +470,31 @@
 - [x] Atualizar arquivos .md com IDs de vídeos reais
 - [x] Atualizar banco de dados com vídeos reais (12 vídeos)
 - [x] Testar todos os vídeos no navegador (YouTubeEmbed integrado no LessonPage)
+
+
+## Correção de Renderização de Markdown
+- [ ] Instalar react-markdown e remark-gfm
+- [ ] Substituir MathContent por parser de Markdown adequado
+- [ ] Criar componentes customizados para headings (h1, h2, h3)
+- [ ] Criar componentes customizados para parágrafos e listas
+- [ ] Criar componentes customizados para destaques (strong, em, blockquote)
+- [ ] Criar componente para renderizar ExerciseCard a partir de código
+- [ ] Esconder código de exercícios (expectedAnswer, alternativeAnswers, hints)
+- [ ] Estilizar links em azul (#2563eb)
+- [ ] Adicionar espaçamento entre parágrafos
+- [ ] Adicionar cards visuais para seções importantes
+- [ ] Testar renderização em todas as páginas
+
+
+## Correções de Formatação Visual (v2.2.0)
+- [x] Adicionar fontes Inter e Lexend via Google Fonts
+- [x] Configurar font-family no body para suportar acentos brasileiros
+- [x] Converter separadores ; em quebras de linha Markdown (\n\n)
+- [x] Reescrever MathContent para processar vídeos integrados no conteúdo
+- [x] Mover vídeo do topo para posição natural no meio do texto
+- [x] Garantir que títulos (h1, h2, h3) renderizem com hierarquia visual
+- [x] Garantir que parágrafos tenham espaçamento adequado
+- [x] Garantir que listas (ul, ol) renderizem corretamente
+- [x] Garantir que negrito e links apareçam com cores corretas (azul)
+- [x] Remover código de exercícios visível (ExerciseCard tags)
+- [x] Executar todos os 19 testes unitários (100% passando)
