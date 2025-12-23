@@ -701,3 +701,40 @@
 - [x] Adicionar histórico de atividades recentes
 - [x] Sidebar responsiva mobile com menu hambúrguer
 - [x] Testar sidebar e perfil completo
+
+
+## Sala de Exercícios e Sala de Vídeos
+- [ ] Criar tabela `standalone_exercises` (id, title, question, options, correctAnswer, difficulty, points, disciplineId, moduleId, pageId)
+- [ ] Criar tabela `standalone_videos` (id, title, youtubeId, duration, description, disciplineId, moduleId, pageId)
+- [ ] Criar tabela `exercise_attempts` (userId, exerciseId, isCorrect, timestamp)
+- [ ] Criar tabela `video_views` (userId, videoId, watchedAt)
+- [ ] Implementar procedures de exercícios (list, submit, stats)
+- [ ] Implementar procedures de vídeos (list, markWatched, stats)
+- [ ] Criar página ExerciseRoomPage com filtros e níveis de dificuldade
+- [ ] Criar página VideoRoomPage com player e filtros
+- [ ] Adicionar links na Sidebar para ambas as salas
+- [ ] Popular banco com exercícios de exemplo (fácil, moderado, difícil)
+- [ ] Popular banco com vídeos de exemplo do YouTube
+- [ ] Testar sistema de pontuação por dificuldade
+- [ ] Testar filtros e estatísticas
+
+
+## Sala de Exercícios e Sala de Vídeos (v2.12.0)
+- [x] Criar tabelas `standaloneExercises` e `standaloneVideos` no banco
+- [x] Criar tabelas `standaloneExerciseAttempts` e `standaloneVideoViews` para rastreamento
+- [x] Implementar helpers no db.ts para exercícios standalone
+- [x] Implementar helpers no db.ts para vídeos standalone
+- [x] Criar routers tRPC para Sala de Exercícios
+- [x] Criar routers tRPC para Sala de Vídeos
+- [x] Criar página ExerciseRoomPage.tsx com filtros e submissão
+- [x] Criar página VideoRoomPage.tsx com player YouTube
+- [x] Adicionar rotas /exercicios e /videos no App.tsx
+- [x] Adicionar links na Sidebar para as novas seções
+- [x] Popular banco com 15 exercícios de exemplo (3 níveis de dificuldade)
+- [x] Popular banco com 10 vídeos educacionais do YouTube
+- [x] Implementar sistema de pontos para exercícios (5/10/15 pts)
+- [x] Implementar sistema de pontos para vídeos (3 pts por vídeo)
+- [x] Criar estatísticas de exercícios (tentativas, acertos, taxa de acerto)
+- [x] Criar estatísticas de vídeos (total assistido)
+- [x] Escrever 11 testes unitários (100% passando)
+- [x] Integrar com sistema de pontos acumulativos

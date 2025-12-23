@@ -451,5 +451,80 @@ Retorne APENAS um JSON com:
       return { earned: false, points: 0 };
     }),
   }),
+
+  // ============= STANDALONE EXERCISES (SALA DE EXERCÍCIOS) =============
+  standaloneExercises: router({
+    getAll: publicProcedure.query(async () => {
+      return await db.getAllStandaloneExercises();
+    }),
+    
+    getByDiscipline: publicProcedure
+      .input(z.object({ disciplineId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getStandaloneExercisesByDiscipline(input.disciplineId);
+      }),
+    
+    getByDifficulty: publicProcedure
+      .input(z.object({ difficulty: z.enum(["easy", "moderate", "hard"]) }))
+      .query(async ({ input }) => {
+        return await db.getStandaloneExercisesByDifficulty(input.difficulty);
+      }),
+    
+    submit: protectedProcedure
+      .input(z.object({
+        exerciseId: z.number(),
+        userAnswer: z.number(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const result = await db.submitStandaloneExercise(
+          ctx.user.id,
+          input.exerciseId,
+          input.userAnswer
+        );
+        
+        // Award points if correct
+        if (result.isCorrect && result.points > 0) {
+          await db.addPoints(ctx.user.id, "exercise_completed", result.points);
+        }
+        
+        return result;
+      }),
+    
+    getStats: protectedProcedure.query(async ({ ctx }) => {
+      return await db.getStandaloneExerciseStats(ctx.user.id);
+    }),
+  }),
+
+  // ============= STANDALONE VIDEOS (SALA DE VÍDEOS) =============
+  standaloneVideos: router({
+    getAll: publicProcedure.query(async () => {
+      return await db.getAllStandaloneVideos();
+    }),
+    
+    getByDiscipline: publicProcedure
+      .input(z.object({ disciplineId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getStandaloneVideosByDiscipline(input.disciplineId);
+      }),
+    
+    markWatched: protectedProcedure
+      .input(z.object({ videoId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        await db.markVideoAsWatched(ctx.user.id, input.videoId);
+        
+        // Award 3 points for watching a video
+        await db.addPoints(ctx.user.id, "video_watched", 3);
+        
+        return { success: true };
+      }),
+    
+    getWatched: protectedProcedure.query(async ({ ctx }) => {
+      return await db.getWatchedVideos(ctx.user.id);
+    }),
+    
+    getStats: protectedProcedure.query(async ({ ctx }) => {
+      return await db.getStandaloneVideoStats(ctx.user.id);
+    }),
+  }),
 });
 export type AppRouter = typeof appRouter;

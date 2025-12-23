@@ -14,7 +14,11 @@ import {
   userXP, UserXP, InsertUserXP,
   xpTransactions, XPTransaction, InsertXPTransaction,
   userPointsLog, UserPointsLog, InsertUserPointsLog,
-  userEnrollments, UserEnrollment, InsertUserEnrollment
+  userEnrollments, UserEnrollment, InsertUserEnrollment,
+  standaloneExercises, StandaloneExercise, InsertStandaloneExercise,
+  standaloneExerciseAttempts, StandaloneExerciseAttempt, InsertStandaloneExerciseAttempt,
+  standaloneVideos, StandaloneVideo, InsertStandaloneVideo,
+  standaloneVideoViews, StandaloneVideoView, InsertStandaloneVideoView
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -912,4 +916,126 @@ export async function getUserWeeklyProgress(userId: number) {
     .orderBy(sql`DATE(${pageProgress.lastAccessedAt})`);
   
   return progress;
+}
+
+
+// ============================================
+// Standalone Exercises (Sala de Exercícios)
+// ============================================
+
+export async function getAllStandaloneExercises() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(standaloneExercises);
+}
+
+export async function getStandaloneExercisesByDiscipline(disciplineId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return await db
+    .select()
+    .from(standaloneExercises)
+    .where(eq(standaloneExercises.disciplineId, disciplineId));
+}
+
+export async function getStandaloneExercisesByDifficulty(difficulty: "easy" | "moderate" | "hard") {
+  const db = await getDb();
+  if (!db) return [];
+  return await db
+    .select()
+    .from(standaloneExercises)
+    .where(eq(standaloneExercises.difficulty, difficulty));
+}
+
+export async function submitStandaloneExercise(
+  userId: number,
+  exerciseId: number,
+  userAnswer: number
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const exercise = await db
+    .select()
+    .from(standaloneExercises)
+    .where(eq(standaloneExercises.id, exerciseId))
+    .limit(1);
+
+  if (exercise.length === 0) {
+    throw new Error("Exercise not found");
+  }
+
+  const isCorrect = exercise[0].correctAnswer === userAnswer;
+
+  await db.insert(standaloneExerciseAttempts).values({
+    userId,
+    exerciseId,
+    isCorrect,
+  });
+
+  return { isCorrect, points: isCorrect ? exercise[0].points : 0 };
+}
+
+export async function getStandaloneExerciseStats(userId: number) {
+  const db = await getDb();
+  if (!db) return { totalAttempts: 0, correctAnswers: 0, accuracy: 0 };
+  
+  const attempts = await db
+    .select()
+    .from(standaloneExerciseAttempts)
+    .where(eq(standaloneExerciseAttempts.userId, userId));
+
+  const total = attempts.length;
+  const correct = attempts.filter((a) => a.isCorrect).length;
+  const accuracy = total > 0 ? (correct / total) * 100 : 0;
+
+  return {
+    totalAttempts: total,
+    correctAnswers: correct,
+    accuracy: Math.round(accuracy),
+  };
+}
+
+// ============================================
+// Standalone Videos (Sala de Vídeos)
+// ============================================
+
+export async function getAllStandaloneVideos() {
+  const db = await getDb();
+  if (!db) return [];
+  return await db.select().from(standaloneVideos);
+}
+
+export async function getStandaloneVideosByDiscipline(disciplineId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return await db
+    .select()
+    .from(standaloneVideos)
+    .where(eq(standaloneVideos.disciplineId, disciplineId));
+}
+
+export async function markVideoAsWatched(userId: number, videoId: number) {
+  const db = await getDb();
+  if (!db) return;
+  await db.insert(standaloneVideoViews).values({
+    userId,
+    videoId,
+  });
+}
+
+export async function getWatchedVideos(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return await db
+    .select()
+    .from(standaloneVideoViews)
+    .where(eq(standaloneVideoViews.userId, userId));
+}
+
+export async function getStandaloneVideoStats(userId: number) {
+  const watched = await getWatchedVideos(userId);
+  return {
+    totalWatched: watched.length,
+  };
 }

@@ -274,3 +274,72 @@ export const userEnrollments = mysqlTable("userEnrollments", {
 
 export type UserEnrollment = typeof userEnrollments.$inferSelect;
 export type InsertUserEnrollment = typeof userEnrollments.$inferInsert;
+
+/**
+ * Standalone Exercises (Sala de Exercícios)
+ * Exercícios independentes organizados por disciplina/módulo/página
+ */
+export const standaloneExercises = mysqlTable("standalone_exercises", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  question: text("question").notNull(),
+  options: json("options").notNull(), // Array de strings: ["Opção A", "Opção B", "Opção C", "Opção D"]
+  correctAnswer: int("correctAnswer").notNull(), // Índice da opção correta (0-3)
+  difficulty: mysqlEnum("difficulty", ["easy", "moderate", "hard"]).notNull(), // fácil, moderado, difícil
+  points: int("points").notNull(), // 5 (fácil), 10 (moderado), 15 (difícil)
+  disciplineId: int("disciplineId"), // Opcional: vinculado a disciplina
+  moduleId: int("moduleId"), // Opcional: vinculado a módulo
+  pageId: int("pageId"), // Opcional: vinculado a página
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type StandaloneExercise = typeof standaloneExercises.$inferSelect;
+export type InsertStandaloneExercise = typeof standaloneExercises.$inferInsert;
+
+/**
+ * Standalone Exercise Attempts (Tentativas de Exercícios Standalone)
+ * Rastreia tentativas dos usuários em exercícios da Sala de Exercícios
+ */
+export const standaloneExerciseAttempts = mysqlTable("standalone_exercise_attempts", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  exerciseId: int("exerciseId").notNull(),
+  isCorrect: boolean("isCorrect").notNull(),
+  attemptedAt: timestamp("attemptedAt").defaultNow().notNull(),
+});
+
+export type StandaloneExerciseAttempt = typeof standaloneExerciseAttempts.$inferSelect;
+export type InsertStandaloneExerciseAttempt = typeof standaloneExerciseAttempts.$inferInsert;
+
+/**
+ * Standalone Videos (Sala de Vídeos)
+ * Vídeos do YouTube organizados por disciplina/módulo/página
+ */
+export const standaloneVideos = mysqlTable("standalone_videos", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  youtubeId: varchar("youtubeId", { length: 20 }).notNull(), // ID do vídeo do YouTube
+  duration: varchar("duration", { length: 20 }), // Duração (ex: "5:30")
+  description: text("description"),
+  disciplineId: int("disciplineId"), // Opcional: vinculado a disciplina
+  moduleId: int("moduleId"), // Opcional: vinculado a módulo
+  pageId: int("pageId"), // Opcional: vinculado a página
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type StandaloneVideo = typeof standaloneVideos.$inferSelect;
+export type InsertStandaloneVideo = typeof standaloneVideos.$inferInsert;
+
+/**
+ * Standalone Video Views (Visualizações de Vídeos Standalone)
+ * Rastreia quando usuários assistem vídeos da Sala de Vídeos
+ */
+export const standaloneVideoViews = mysqlTable("standalone_video_views", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  videoId: int("videoId").notNull(),
+  watchedAt: timestamp("watchedAt").defaultNow().notNull(),
+});
+
+export type StandaloneVideoView = typeof standaloneVideoViews.$inferSelect;
+export type InsertStandaloneVideoView = typeof standaloneVideoViews.$inferInsert;

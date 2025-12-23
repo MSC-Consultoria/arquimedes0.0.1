@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Home, User, BookOpen, LogOut, Menu, X } from "lucide-react";
+import { Home, User, BookOpen, LogOut, Menu, X, Target, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trpc } from "@/lib/trpc";
 import { useState } from "react";
@@ -18,6 +18,8 @@ export function Sidebar() {
   const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: Home },
     { name: "Perfil", href: "/perfil", icon: User },
+    { name: "Sala de Exercícios", href: "/exercicios", icon: Target },
+    { name: "Sala de Vídeos", href: "/videos", icon: Video },
     { name: "Minhas Disciplinas", href: "/disciplinas", icon: BookOpen },
   ];
 
