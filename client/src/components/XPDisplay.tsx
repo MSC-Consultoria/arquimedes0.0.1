@@ -1,10 +1,24 @@
+import { useEffect, useRef } from "react";
 import { Star, TrendingUp } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { useSounds } from "@/lib/sounds";
 
 export default function XPDisplay() {
   const { data: xp, isLoading } = trpc.gamification.xp.useQuery();
+  const { playLevelUp } = useSounds();
+  const previousLevel = useRef<number | null>(null);
+
+  // Tocar som quando subir de nível (DEVE estar antes de qualquer return)
+  useEffect(() => {
+    if (xp && previousLevel.current !== null && xp.level > previousLevel.current) {
+      playLevelUp();
+    }
+    if (xp) {
+      previousLevel.current = xp.level;
+    }
+  }, [xp, playLevelUp]);
 
   if (isLoading) {
     return (

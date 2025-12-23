@@ -1,7 +1,9 @@
+import { useEffect, useRef } from "react";
 import { Award, Trophy, Zap, BookOpen } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useSounds } from "@/lib/sounds";
 
 const achievementIcons = {
   module_completed: Trophy,
@@ -19,6 +21,18 @@ const achievementColors = {
 
 export default function AchievementsDisplay() {
   const { data: achievements, isLoading } = trpc.gamification.achievements.useQuery();
+  const { playAchievement } = useSounds();
+  const previousCount = useRef<number>(0);
+
+  // Tocar som quando desbloquear nova conquista (DEVE estar antes de qualquer return)
+  useEffect(() => {
+    if (achievements && achievements.length > previousCount.current && previousCount.current > 0) {
+      playAchievement();
+    }
+    if (achievements) {
+      previousCount.current = achievements.length;
+    }
+  }, [achievements, playAchievement]);
 
   if (isLoading) {
     return (

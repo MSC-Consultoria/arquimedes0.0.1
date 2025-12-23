@@ -357,3 +357,26 @@
 - [x] Integrar sons no ExerciseCard
 - [ ] Integrar sons no sistema de gamificação
 - [ ] Adicionar feedback visual + sonoro simultâneo
+
+
+## Expansão Final de Conteúdo (11 páginas)
+- [ ] Expandir Página 2 de Adição (Reta Numérica) - 5000+ palavras
+- [ ] Expandir Página 3 de Adição (Exercícios) - 5000+ palavras
+- [ ] Expandir Página 1 de Subtração - 5000+ palavras
+- [ ] Expandir Página 2 de Subtração - 5000+ palavras
+- [ ] Expandir Página 3 de Subtração - 5000+ palavras
+- [ ] Expandir Página 1 de Multiplicação - 5000+ palavras
+- [ ] Expandir Página 2 de Multiplicação - 5000+ palavras
+- [ ] Expandir Página 3 de Multiplicação - 5000+ palavras
+- [ ] Expandir Página 1 de Divisão - 5000+ palavras
+- [ ] Expandir Página 2 de Divisão - 5000+ palavras
+- [ ] Expandir Página 3 de Divisão - 5000+ palavras
+
+## Integração Global de Sons
+- [x] Adicionar SoundToggle no App.tsx (botão flutuante global)
+- [ ] Testar SoundToggle em todas as páginas
+
+## Sons de Gamificação
+- [x] Integrar playLevelUp no XPDisplay
+- [x] Integrar playAchievement no AchievementsDisplay
+- [ ] Testar sons de gamificação

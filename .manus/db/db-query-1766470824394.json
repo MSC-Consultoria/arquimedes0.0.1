@@ -1,0 +1,73 @@
+{
+  "query": "SELECT id, title, slug, moduleId, LENGTH(mainText) as mainText_length FROM pages ORDER BY moduleId, `order`",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute SELECT id, title, slug, moduleId, LENGTH(mainText) as mainText_length FROM pages ORDER BY moduleId, `order`",
+  "rows": [
+    {
+      "id": "1",
+      "title": "O que é Adicionar (Combinar)",
+      "slug": "o-que-e-adicionar",
+      "moduleId": "1",
+      "mainText_length": "463"
+    },
+    {
+      "id": "2",
+      "title": "A Reta Numérica: Visualizando o Movimento",
+      "slug": "reta-numerica",
+      "moduleId": "1",
+      "mainText_length": "398"
+    },
+    {
+      "id": "3",
+      "title": "O que é Subtrair (Separar e Comparar)",
+      "slug": "o-que-e-subtrair",
+      "moduleId": "1",
+      "mainText_length": "551"
+    },
+    {
+      "id": "4",
+      "title": "Multiplicação: Uma Forma Rápida de Somar",
+      "slug": "soma-repetida",
+      "moduleId": "2",
+      "mainText_length": "416"
+    },
+    {
+      "id": "5",
+      "title": "A Tabuada: Entendendo o Padrão",
+      "slug": "tabuada",
+      "moduleId": "2",
+      "mainText_length": "436"
+    },
+    {
+      "id": "6",
+      "title": "Visualização em Matrizes: A Conexão com a Área",
+      "slug": "matrizes",
+      "moduleId": "2",
+      "mainText_length": "462"
+    },
+    {
+      "id": "7",
+      "title": "Divisão: A Operação Inversa da Multiplicação",
+      "slug": "operacao-inversa",
+      "moduleId": "3",
+      "mainText_length": "430"
+    },
+    {
+      "id": "8",
+      "title": "Repartição Justa (O Quociente)",
+      "slug": "quociente",
+      "moduleId": "3",
+      "mainText_length": "325"
+    },
+    {
+      "id": "9",
+      "title": "O Conceito de Resto",
+      "slug": "resto",
+      "moduleId": "3",
+      "mainText_length": "378"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\tmoduleId\tmainText_length\n1\tO que é Adicionar (Combinar)\to-que-e-adicionar\t1\t463\n2\tA Reta Numérica: Visualizando o Movimento\treta-numerica\t1\t398\n3\tO que é Subtrair (Separar e Comparar)\to-que-e-subtrair\t1\t551\n4\tMultiplicação: Uma Forma Rápida de Somar\tsoma-repetida\t2\t416\n5\tA Tabuada: Entendendo o Padrão\ttabuada\t2\t436\n6\tVisualização em Matrizes: A Conexão com a Área\tmatrizes\t2\t462\n7\tDivisão: A Operação Inversa da Multiplicação\toperacao-inversa\t3\t430\n8\tRepartição Justa (O Quociente)\tquociente\t3\t325\n9\tO Conceito de Resto\tresto\t3\t378\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

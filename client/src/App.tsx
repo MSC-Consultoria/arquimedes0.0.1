@@ -9,6 +9,7 @@ import DisciplinePage from "./pages/DisciplinePage";
 import ModulePage from "./pages/ModulePage";
 import LessonPage from "./pages/LessonPage";
 import VisualsDemo from "./pages/VisualsDemo";
+import { SoundToggle } from "./components/SoundToggle";
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <SoundToggle />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
