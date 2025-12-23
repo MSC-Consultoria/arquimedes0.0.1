@@ -120,3 +120,16 @@
 - [ ] Configurar Row Level Security (RLS)
 - [ ] Criar scripts de exportação/importação
 - [x] Documentar integração
+
+
+## Otimização SEO
+- [x] Adicionar meta description (50-160 caracteres)
+- [x] Adicionar meta keywords
+- [x] Adicionar Open Graph tags (Facebook/LinkedIn)
+- [x] Adicionar Twitter Card tags
+- [x] Adicionar canonical URL
+- [x] Otimizar títulos das páginas
+- [x] Criar componente SEO para páginas dinâmicas
+- [x] Atualizar lang para pt-BR
+- [ ] Adicionar structured data (Schema.org)
+- [ ] Criar imagem og-image.png para compartilhamento social

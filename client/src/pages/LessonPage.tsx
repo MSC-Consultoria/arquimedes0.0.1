@@ -9,6 +9,7 @@ import { ExerciseCard } from "@/components/ExerciseCard";
 import { ArrowLeft, ArrowRight, BookOpen, Clock, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { SEO } from "@/components/SEO";
 
 export default function LessonPage() {
   const params = useParams<{ disciplineSlug: string; moduleSlug: string; pageSlug: string }>();
@@ -124,8 +125,20 @@ export default function LessonPage() {
     );
   }
 
+  // SEO dinâmico
+  const seoTitle = page ? `${page.title} - ${module?.name}` : 'Carregando...';
+  const seoDescription = page?.mainText?.substring(0, 155) || 'Aprenda matemática de forma clara e prática.';
+  const seoKeywords = `${page?.title}, ${module?.name}, ${discipline?.name}, matemática, aula online`;
+
   return (
-    <div className="min-h-screen bg-muted/30">
+    <>
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        canonical={`https://arquimedes.manus.space/disciplina/${discipline.slug}/modulo/${module.slug}/aula/${page.slug}`}
+      />
+      <div className="min-h-screen bg-muted/30">
       {/* Header */}
       <div className="bg-background border-b">
         <div className="container max-w-4xl py-6">
@@ -250,5 +263,6 @@ export default function LessonPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
