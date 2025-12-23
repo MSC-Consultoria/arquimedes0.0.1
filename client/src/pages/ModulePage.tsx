@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Progress } from "@/components/ui/progress";
-import { ArrowLeft, BookOpen, CheckCircle2, Clock, Video, Award } from "lucide-react";
-import YouTubePlayer from "@/components/YouTubePlayer";
+import { ArrowLeft, BookOpen, CheckCircle2, Clock, Award } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function ModulePage() {
@@ -38,11 +37,7 @@ export default function ModulePage() {
     enabled: isAuthenticated,
   });
 
-  // Fetch videos for this module
-  const { data: videos = [] } = trpc.standaloneVideos.getByModule.useQuery(
-    { moduleId: module?.id || 0 },
-    { enabled: !!module }
-  );
+  // Vídeos removidos - serão movidos para Sala de Vídeos futura
 
   const isLoading = loadingDiscipline || loadingModule || loadingPages;
 
@@ -126,38 +121,7 @@ export default function ModulePage() {
         </div>
       </div>
 
-      {/* Videos Section */}
-      {videos.length > 0 && (
-        <div className="container max-w-4xl py-8">
-          <div className="space-y-6">
-            <div className="flex items-center gap-2 mb-6">
-              <Video className="h-6 w-6 text-primary" />
-              <h2 className="text-2xl font-bold">Vídeos Educacionais</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {videos.map((video) => (
-                <Card key={video.id} className="overflow-hidden">
-                  <CardContent className="p-0">
-                    <YouTubePlayer youtubeId={video.youtubeId} title={video.title} />
-                    <div className="p-4">
-                      <h3 className="font-semibold text-lg mb-2">{video.title}</h3>
-                      {video.description && (
-                        <p className="text-sm text-muted-foreground">{video.description}</p>
-                      )}
-                      {video.duration && (
-                        <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
-                          <Clock className="h-4 w-4" />
-                          <span>{video.duration}</span>
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Vídeos removidos - serão movidos para Sala de Vídeos futura */}
 
       {/* Pages List */}
       <div className="container max-w-4xl py-8">

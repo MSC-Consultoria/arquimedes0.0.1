@@ -396,3 +396,22 @@
 
 #### 🟢 Bug #3: Erro TypeScript em AchievementsPage (Não-bloqueador)
 - [ ] Corrigir tipagem do tRPC para getUserAchievements
+
+
+### 🔴 Bug #4: Vídeos do YouTube Quebrando Formatação das Aulas (CRÍTICO)
+- [ ] Remover todos os vídeos do YouTube das páginas de aula
+- [ ] Investigar por que 560+ vídeos aparecem antes do conteúdo
+- [ ] Preparar estrutura para futura "Sala de Vídeos" separada
+- [ ] Testar aula 1 após remoção dos vídeos
+
+### 🔴 Bug #5: Escaneabilidade Ruim do Conteúdo das Aulas (ALTA PRIORIDADE)
+- [ ] Quebrar texto longo em seções menores
+- [ ] Adicionar cards visuais para destacar conceitos importantes
+- [ ] Intercalar exercícios práticos no meio do conteúdo
+- [ ] Adicionar elementos visuais (ícones, divisores, boxes)
+- [ ] Melhorar hierarquia de títulos e subtítulos
+- [ ] Testar legibilidade em mobile e desktop
+
+### ✅ Correções Aplicadas (23/12/2025)
+- [x] Bug #4: Vídeos do YouTube removidos da página de módulos (ModulePage.tsx)
+- [x] Bug #5: Escaneabilidade do conteúdo melhorada (ícones, seções, blockquotes, listas)

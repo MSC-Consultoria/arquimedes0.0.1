@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, title, (mainText LIKE '%youtube%') as has_youtube, (mainText LIKE '%video%') as has_video, (mainText LIKE '%iframe%') as has_iframe FROM pages WHERE slug = 'o-que-e-adicionar';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute SELECT id, title, (mainText LIKE '%youtube%') as has_youtube, (mainText LIKE '%video%') as has_video, (mainText LIKE '%iframe%') as has_iframe FROM pages WHERE slug = 'o-que-e-adicionar';",
+  "rows": [
+    {
+      "id": "1",
+      "title": "O que é Adicionar (Combinar)",
+      "has_youtube": "0",
+      "has_video": "1",
+      "has_iframe": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\thas_youtube\thas_video\thas_iframe\n1\tO que é Adicionar (Combinar)\t0\t1\t0\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}
