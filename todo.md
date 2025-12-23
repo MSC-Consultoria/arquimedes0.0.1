@@ -74,13 +74,17 @@
 
 
 ## Preparação do Repositório GitHub
-- [ ] Criar README.md completo com arquitetura e documentação
-- [ ] Adicionar CONTRIBUTING.md com guia de contribuição
-- [ ] Criar LICENSE (MIT)
+- [x] Criar README.md completo com arquitetura e documentação
+- [x] Adicionar CONTRIBUTING.md com guia de contribuição
+- [x] Criar LICENSE (MIT)
 - [ ] Adicionar .github/workflows para CI/CD
-- [ ] Criar ARCHITECTURE.md com diagramas
-- [ ] Adicionar DATABASE.md com guia de acesso ao banco
-- [ ] Gerar screenshots da aplicação
-- [ ] Criar .gitignore apropriado
-- [ ] Inicializar repositório Git
-- [ ] Fazer commit inicial
+- [x] Criar ARCHITECTURE.md com diagramas
+- [x] Adicionar DATABASE.md com guia de acesso ao banco
+- [x] Gerar screenshots da aplicação
+- [x] Criar .gitignore apropriado
+- [x] Inicializar repositório Git
+- [x] Fazer commit inicial
+- [x] Criar CHANGELOG.md
+- [x] Criar templates de issues (bug report, feature request)
+- [x] Criar template de pull request
+- [x] Criar guia de deploy no GitHub (DEPLOY_GITHUB.md)
