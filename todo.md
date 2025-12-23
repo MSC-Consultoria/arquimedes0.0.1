@@ -194,3 +194,13 @@
 - [ ] Adicionar ícone de check para módulos 100% completos
 - [ ] Testar cálculos com diferentes estados de progresso
 - [x] Adicionar loading state durante fetch de progresso (enabled: isAuthenticated)
+
+
+## Push para GitHub
+- [ ] Atualizar README.md com funcionalidades atuais
+- [ ] Atualizar CHANGELOG.md com todas as versões (v0.2.0 até v0.4.1)
+- [ ] Criar issues para próximos passos
+- [ ] Adicionar remote do GitHub
+- [ ] Fazer commit de todas as mudanças
+- [ ] Push para repositório remoto
+- [ ] Verificar se push foi bem-sucedido
