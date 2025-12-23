@@ -9,7 +9,10 @@ import {
   pageProgress, PageProgress, InsertPageProgress,
   exerciseAttempts, ExerciseAttempt, InsertExerciseAttempt,
   generatedExercises, GeneratedExercise, InsertGeneratedExercise,
-  achievements, Achievement, InsertAchievement
+  achievements, Achievement, InsertAchievement,
+  streaks, Streak, InsertStreak,
+  userXP, UserXP, InsertUserXP,
+  xpTransactions, XPTransaction, InsertXPTransaction
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -332,15 +335,6 @@ export async function createAchievement(data: InsertAchievement): Promise<Achiev
   return inserted[0]!;
 }
 
-export async function getUserAchievements(userId: number): Promise<Achievement[]> {
-  const db = await getDb();
-  if (!db) return [];
-  
-  return await db.select().from(achievements)
-    .where(eq(achievements.userId, userId))
-    .orderBy(desc(achievements.createdAt));
-}
-
 // ============= PROGRESS OPERATIONS =============
 
 export async function getModuleProgress(userId: number, moduleId: number): Promise<{ completed: number; total: number; percentage: number }> {
@@ -389,4 +383,227 @@ export async function getAllModulesProgress(userId: number): Promise<Map<number,
   }
   
   return progressMap;
+}
+
+
+// ============= GAMIFICATION OPERATIONS =============
+
+/**
+ * Get or create user streak
+ */
+export async function getUserStreak(userId: number): Promise<Streak | null> {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const result = await db.select().from(streaks)
+    .where(eq(streaks.userId, userId))
+    .limit(1);
+  
+  if (result.length > 0) {
+    return result[0]!;
+  }
+  
+  // Create new streak
+  await db.insert(streaks).values({
+    userId,
+    currentStreak: 0,
+    longestStreak: 0,
+    lastActivityDate: null,
+  });
+  
+  const newResult = await db.select().from(streaks)
+    .where(eq(streaks.userId, userId))
+    .limit(1);
+  
+  return newResult[0] || null;
+}
+
+/**
+ * Update user streak based on activity
+ */
+export async function updateStreak(userId: number): Promise<Streak | null> {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const streak = await getUserStreak(userId);
+  if (!streak) return null;
+  
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  
+  if (!streak.lastActivityDate) {
+    // First activity ever
+    await db.update(streaks)
+      .set({
+        currentStreak: 1,
+        longestStreak: 1,
+        lastActivityDate: now,
+      })
+      .where(eq(streaks.userId, userId));
+  } else {
+    const lastActivity = new Date(streak.lastActivityDate);
+    const lastActivityDay = new Date(lastActivity.getFullYear(), lastActivity.getMonth(), lastActivity.getDate());
+    
+    const daysDiff = Math.floor((today.getTime() - lastActivityDay.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (daysDiff === 0) {
+      // Same day, no update needed
+      return streak;
+    } else if (daysDiff === 1) {
+      // Consecutive day
+      const newStreak = streak.currentStreak + 1;
+      const newLongest = Math.max(newStreak, streak.longestStreak);
+      
+      await db.update(streaks)
+        .set({
+          currentStreak: newStreak,
+          longestStreak: newLongest,
+          lastActivityDate: now,
+        })
+        .where(eq(streaks.userId, userId));
+    } else {
+      // Streak broken
+      await db.update(streaks)
+        .set({
+          currentStreak: 1,
+          lastActivityDate: now,
+        })
+        .where(eq(streaks.userId, userId));
+    }
+  }
+  
+  return getUserStreak(userId);
+}
+
+/**
+ * Get or create user XP
+ */
+export async function getUserXP(userId: number): Promise<UserXP | null> {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const result = await db.select().from(userXP)
+    .where(eq(userXP.userId, userId))
+    .limit(1);
+  
+  if (result.length > 0) {
+    return result[0]!;
+  }
+  
+  // Create new XP record
+  await db.insert(userXP).values({
+    userId,
+    totalXP: 0,
+    level: 1,
+    xpToNextLevel: 100,
+  });
+  
+  const newResult = await db.select().from(userXP)
+    .where(eq(userXP.userId, userId))
+    .limit(1);
+  
+  return newResult[0] || null;
+}
+
+/**
+ * Award XP to user
+ */
+export async function awardXP(userId: number, amount: number, reason: string, relatedId?: number): Promise<UserXP | null> {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const xp = await getUserXP(userId);
+  if (!xp) return null;
+  
+  const newTotalXP = xp.totalXP + amount;
+  let newLevel = xp.level;
+  let newXPToNext = xp.xpToNextLevel;
+  
+  // Calculate level up (simple formula: level * 100)
+  while (newTotalXP >= (newLevel * 100)) {
+    newLevel++;
+  }
+  newXPToNext = (newLevel * 100) - newTotalXP;
+  
+  // Update XP
+  await db.update(userXP)
+    .set({
+      totalXP: newTotalXP,
+      level: newLevel,
+      xpToNextLevel: newXPToNext,
+    })
+    .where(eq(userXP.userId, userId));
+  
+  // Record transaction
+  await db.insert(xpTransactions).values({
+    userId,
+    amount,
+    reason,
+    relatedId: relatedId || null,
+  });
+  
+  return getUserXP(userId);
+}
+
+/**
+ * Get user achievements
+ */
+export async function getUserAchievements(userId: number): Promise<Achievement[]> {
+  const db = await getDb();
+  if (!db) return [];
+  
+  return db.select().from(achievements)
+    .where(eq(achievements.userId, userId))
+    .orderBy(desc(achievements.createdAt));
+}
+
+/**
+ * Award achievement to user
+ */
+export async function awardAchievement(
+  userId: number, 
+  type: "module_completed" | "perfect_score" | "streak" | "first_lesson",
+  title: string,
+  description?: string,
+  relatedId?: number
+): Promise<Achievement | null> {
+  const db = await getDb();
+  if (!db) return null;
+  
+  // Check if achievement already exists
+  const existing = await db.select().from(achievements)
+    .where(
+      and(
+        eq(achievements.userId, userId),
+        eq(achievements.type, type),
+        relatedId ? eq(achievements.relatedId, relatedId) : sql`${achievements.relatedId} IS NULL`
+      )
+    )
+    .limit(1);
+  
+  if (existing.length > 0) {
+    return existing[0]!;
+  }
+  
+  // Create achievement
+  await db.insert(achievements).values({
+    userId,
+    type,
+    title,
+    description: description || null,
+    relatedId: relatedId || null,
+  });
+  
+  const newResult = await db.select().from(achievements)
+    .where(
+      and(
+        eq(achievements.userId, userId),
+        eq(achievements.type, type),
+        relatedId ? eq(achievements.relatedId, relatedId) : sql`${achievements.relatedId} IS NULL`
+      )
+    )
+    .orderBy(desc(achievements.createdAt))
+    .limit(1);
+  
+  return newResult[0] || null;
 }

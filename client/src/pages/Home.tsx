@@ -7,6 +7,9 @@ import { BookOpen, Target, TrendingUp, Award, ArrowRight, LogOut, Sparkles } fro
 import { getModuleIcon, getModuleColor } from "@/components/MathIcons";
 import { MobileNav } from "@/components/MobileNav";
 import { Link } from "wouter";
+import StreakDisplay from "@/components/StreakDisplay";
+import XPDisplay from "@/components/XPDisplay";
+import AchievementsDisplay from "@/components/AchievementsDisplay";
 
 export default function Home() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -105,6 +108,23 @@ export default function Home() {
                 <div className="text-2xl font-bold">{dashboard.totalAchievements}</div>
               </CardContent>
             </Card>
+          </div>
+        )}
+
+        {/* Gamification Section */}
+        {isAuthenticated && (
+          <div className="space-y-4 sm:space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <Sparkles className="h-6 w-6 text-yellow-500" />
+              Seu Progresso
+            </h2>
+            
+            <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
+              <StreakDisplay />
+              <XPDisplay />
+            </div>
+            
+            <AchievementsDisplay />
           </div>
         )}
 

@@ -290,6 +290,32 @@ Retorne APENAS um JSON com:
   }),
 
   // ============= DASHBOARD =============
+  gamification: router({
+    streak: protectedProcedure.query(async ({ ctx }) => {
+      const streak = await db.getUserStreak(ctx.user.id);
+      return streak || { currentStreak: 0, longestStreak: 0, lastActivityDate: null };
+    }),
+    
+    xp: protectedProcedure.query(async ({ ctx }) => {
+      const xp = await db.getUserXP(ctx.user.id);
+      return xp || { totalXP: 0, level: 1, xpToNextLevel: 100 };
+    }),
+    
+    achievements: protectedProcedure.query(async ({ ctx }) => {
+      return await db.getUserAchievements(ctx.user.id);
+    }),
+    
+    awardXP: protectedProcedure
+      .input(z.object({
+        amount: z.number(),
+        reason: z.string(),
+        relatedId: z.number().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        return await db.awardXP(ctx.user.id, input.amount, input.reason, input.relatedId);
+      }),
+  }),
+  
   dashboard: router({
     summary: protectedProcedure.query(async ({ ctx }) => {
       const allProgress = await db.getAllUserProgress(ctx.user.id);

@@ -182,3 +182,56 @@ export const achievements = mysqlTable("achievements", {
 
 export type Achievement = typeof achievements.$inferSelect;
 export type InsertAchievement = typeof achievements.$inferInsert;
+
+/**
+ * User streaks (daily activity tracking)
+ */
+export const streaks = mysqlTable("streaks", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().unique(),
+  
+  currentStreak: int("currentStreak").default(0).notNull(),
+  longestStreak: int("longestStreak").default(0).notNull(),
+  lastActivityDate: timestamp("lastActivityDate"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Streak = typeof streaks.$inferSelect;
+export type InsertStreak = typeof streaks.$inferInsert;
+
+/**
+ * User XP (experience points) and levels
+ */
+export const userXP = mysqlTable("userXP", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().unique(),
+  
+  totalXP: int("totalXP").default(0).notNull(),
+  level: int("level").default(1).notNull(),
+  xpToNextLevel: int("xpToNextLevel").default(100).notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type UserXP = typeof userXP.$inferSelect;
+export type InsertUserXP = typeof userXP.$inferInsert;
+
+/**
+ * XP transactions (history of XP gains)
+ */
+export const xpTransactions = mysqlTable("xpTransactions", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  
+  amount: int("amount").notNull(),
+  reason: varchar("reason", { length: 255 }).notNull(), // "lesson_completed", "perfect_score", etc.
+  relatedId: int("relatedId"), // pageId, exerciseId, etc.
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type XPTransaction = typeof xpTransactions.$inferSelect;
+export type InsertXPTransaction = typeof xpTransactions.$inferInsert;

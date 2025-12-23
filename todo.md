@@ -197,10 +197,103 @@
 
 
 ## Push para GitHub
-- [ ] Atualizar README.md com funcionalidades atuais
-- [ ] Atualizar CHANGELOG.md com todas as versões (v0.2.0 até v0.4.1)
-- [ ] Criar issues para próximos passos
-- [ ] Adicionar remote do GitHub
-- [ ] Fazer commit de todas as mudanças
-- [ ] Push para repositório remoto
-- [ ] Verificar se push foi bem-sucedido
+- [x] Atualizar README.md com funcionalidades atuais
+- [x] Atualizar CHANGELOG.md com todas as versões (v0.2.0 até v0.4.1)
+- [x] Criar issues para próximos passos (7 issues criadas)
+- [x] Adicionar remote do GitHub
+- [x] Fazer commit de todas as mudanças (commit 7e853b1)
+- [x] Push para repositório remoto (278 objetos enviados)
+- [x] Verificar se push foi bem-sucedido
+
+### Issues Criadas
+- Issue #1: Ícone de check verde para módulos 100% completos
+- Issue #2: Sistema de busca rápida no menu hambúrguer
+- Issue #3: Modo offline (PWA) com Service Worker
+- Issue #4: Expandir conteúdo das aulas de Multiplicação
+- Issue #5: Expandir conteúdo das aulas de Divisão
+- Issue #6: Suporte a vídeos do YouTube nas aulas
+- Issue #7: Diagramas interativos SVG
+
+### Repositório
+- URL: https://github.com/arquimedes-msc/arquimedes-v.0.2.0
+
+
+## Transformação Visual Inspirada no Brilliant (v0.5.0)
+
+### Gamificação Completa
+- [x] Implementar sistema de Streaks (sequências de dias consecutivos)
+- [x] Criar banco de dados para rastrear streaks por usuário
+- [ ] Adicionar notificações de streak em risco
+- [x] Criar sistema de Achievements (conquistas/badges)
+- [ ] Definir conquistas (ex: "Primeira Aula", "Streak de 7 dias", "Módulo Completo")
+- [x] Criar componente visual de badge
+- [ ] Adicionar página de conquistas do usuário
+- [x] Implementar sistema de XP (pontos de experiência)
+- [x] Criar níveis baseados em XP
+- [ ] Adicionar animações de level-up
+- [x] Criar StreakDisplay component
+- [x] Criar XPDisplay component
+- [x] Criar AchievementsDisplay component
+- [x] Integrar gamificação na Home
+- [x] Criar testes unitários (5 testes passando)
+
+### Componentes Interativos Avançados
+- [ ] Criar componente Drag-and-Drop para ordenação
+- [ ] Criar componente Slider interativo para valores
+- [ ] Criar Canvas de exploração livre (pré-teste)
+- [ ] Implementar componente de matching (arrastar para conectar)
+- [ ] Criar componente de preenchimento de lacunas
+- [ ] Adicionar componente de múltipla escolha visual
+- [ ] Criar componente de desenho livre (para geometria)
+
+### Feedback Visual e Sonoro
+- [ ] Adicionar sons de acerto (positivo)
+- [ ] Adicionar sons de erro (neutro, não punitivo)
+- [ ] Criar animações de confete para conquistas
+- [ ] Implementar vibração no mobile para feedback tátil
+- [ ] Adicionar partículas visuais em acertos
+- [ ] Criar transições suaves entre estados
+- [ ] Implementar micro-animações em botões
+
+### Expansão de Conteúdo - 4 Operações Básicas
+- [ ] Expandir Adição Página 1 (adicionar 3+ exemplos práticos)
+- [ ] Expandir Adição Página 2 (adicionar exercícios interativos)
+- [ ] Expandir Adição Página 3 (adicionar desafios progressivos)
+- [ ] Expandir Subtração Página 1 (2000+ palavras)
+- [ ] Expandir Subtração Página 2 (adicionar visualizações)
+- [ ] Expandir Subtração Página 3 (exercícios variados)
+- [ ] Expandir Multiplicação Página 1 (contextos do cotidiano)
+- [ ] Expandir Multiplicação Página 2 (estratégias de memorização)
+- [ ] Expandir Multiplicação Página 3 (aplicações práticas)
+- [ ] Expandir Divisão Página 1 (conceitos profundos)
+- [ ] Expandir Divisão Página 2 (divisão com resto)
+- [ ] Expandir Divisão Página 3 (problemas complexos)
+
+### Novos Módulos de Matemática
+- [ ] Criar Módulo 5: Proporção e Razão
+  - [ ] Página 1: O que é Proporção
+  - [ ] Página 2: Razão e Comparação
+  - [ ] Página 3: Regra de Três Simples
+- [ ] Criar Módulo 6: Porcentagem
+  - [ ] Página 1: Conceito de Porcentagem
+  - [ ] Página 2: Cálculos de Porcentagem
+  - [ ] Página 3: Aplicações Práticas (descontos, juros)
+- [ ] Criar Módulo 7: Exponenciação
+  - [ ] Página 1: Potências e Expoentes
+  - [ ] Página 2: Propriedades das Potências
+  - [ ] Página 3: Notação Científica
+- [ ] Criar Módulo 8: Fatoração
+  - [ ] Página 1: Números Primos
+  - [ ] Página 2: Fatoração em Primos
+  - [ ] Página 3: MDC e MMC
+
+### Melhorias Visuais Gerais
+- [ ] Redesenhar página inicial com hero mais impactante
+- [ ] Criar ilustrações customizadas para cada módulo
+- [ ] Adicionar animações de entrada (fade-in, slide-in)
+- [ ] Melhorar tipografia (hierarquia visual)
+- [ ] Criar sistema de cores por módulo (color-coding)
+- [ ] Adicionar dark mode
+- [ ] Melhorar espaçamentos e respiração visual
+- [ ] Criar loading states animados
+- [ ] Adicionar empty states ilustrados
