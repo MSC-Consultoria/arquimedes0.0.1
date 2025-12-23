@@ -1373,3 +1373,54 @@
 - [x] Total: 3 páginas, 6000+ palavras de conteúdo
 - [ ] Testar navegação completa
 - [ ] Salvar checkpoint
+
+
+## 🎮 Sala de Exercícios Interativos + Melhorias de UX
+
+### Sala de Exercícios Interativos
+- [ ] Criar página ExerciseRoom.tsx
+- [ ] Organizar exercícios por módulo (Adição, Subtração, Multiplicação, Divisão, Frações, Proporção, Porcentagem)
+- [ ] Distribuição de dificuldade: 60% fácil, 30% médio, 10% difícil
+- [ ] Exercícios práticos do cotidiano (compras, receitas, tempo, dinheiro)
+- [ ] Integrar componentes interativos:
+  * FillInBlanks para operações matemáticas
+  * InteractiveSlider para estimativas
+  * MatchingGame para conceitos e equivalências
+  * VisualMultipleChoice para problemas contextualizados
+- [ ] Sistema de feedback imediato (sons, confete, vibração)
+- [ ] Adicionar link na Sidebar
+
+### Sistema de Level Progressivo
+- [x] Ajustar curva de XP para subir mais rápido no início
+- [x] Level 1→2: 100 XP (mantido)
+- [x] Level 2→3: 150 XP (reduzido de 200)
+- [x] Level 3→4: 200 XP (reduzido de 300)
+- [x] Level 4→5: 300 XP (reduzido de 500)
+- [x] Após level 5: fórmula level*100 (progressivo)
+- [x] Atualizar função awardXP no db.ts com nova lógica
+
+### Inscrição Automática em Matemática
+- [x] Integrar autoEnrollInAritmetica no oauth.ts (callback OAuth)
+- [x] Integrar autoEnrollInAritmetica no /api/dev/login (dev mode)
+- [x] Todos usuários automaticamente inscritos em "Matemática Aritmética" ao fazer login
+- [x] Tratamento de erros com console.warn (não bloqueia login)
+
+### Barra de Progresso Visual nas Aulas
+- [x] Integrado diretamente no LessonPage.tsx (sem componente separado)
+- [x] Mostrar "Página X de Y" no topo da aula
+- [x] Mostrar porcentagem de conclusão do módulo em tempo real
+- [x] Design responsivo com cores azuis e barra animada
+- [x] Posição: logo após breadcrumb, antes do título da aula
+
+### Reset de Usuários e Validação
+- [ ] Criar script de reset de dados de teste
+- [ ] Limpar progresso de usuários existentes
+- [ ] Validar fluxo completo: cadastro → inscrição automática → primeira aula → exercícios → level up
+- [ ] Testar em diferentes dispositivos
+
+### Testes e Documentação
+- [ ] Testar Sala de Exercícios com todos os componentes
+- [ ] Testar progressão de level com novos valores de XP
+- [ ] Testar inscrição automática em novo usuário
+- [ ] Testar barra de progresso em diferentes módulos
+- [ ] Salvar checkpoint v2.39.0

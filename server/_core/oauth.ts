@@ -37,6 +37,14 @@ export function registerOAuthRoutes(app: Express) {
         lastSignedIn: new Date(),
       });
 
+      // Inscrição automática em Matemática Aritmética
+      const user = await db.getUserByOpenId(userInfo.openId);
+      if (user) {
+        await db.autoEnrollInAritmetica(user.id).catch(err => {
+          console.warn('[OAuth] Failed to auto-enroll user:', err);
+        });
+      }
+
       const sessionToken = await sdk.createSessionToken(userInfo.openId, {
         name: userInfo.name || "",
         expiresInMs: ONE_YEAR_MS,
@@ -70,6 +78,14 @@ export function registerOAuthRoutes(app: Express) {
           ...mockUser,
           lastSignedIn: new Date(),
         });
+
+        // 1.5. Inscrição automática em Matemática Aritmética
+        const user = await db.getUserByOpenId(mockUser.openId);
+        if (user) {
+          await db.autoEnrollInAritmetica(user.id).catch(err => {
+            console.warn('[Dev] Failed to auto-enroll user:', err);
+          });
+        }
 
         // 2. Gerar token de sessão
         const sessionToken = await sdk.createSessionToken(mockUser.openId, {

@@ -529,11 +529,23 @@ export async function awardXP(userId: number, amount: number, reason: string, re
   let newLevel = xp.level;
   let newXPToNext = xp.xpToNextLevel;
   
-  // Calculate level up (simple formula: level * 100)
-  while (newTotalXP >= (newLevel * 100)) {
+  // Calculate level up (progressiva: mais rápido no início)
+  // Level 1→2: 100 XP, 2→3: 150 XP, 3→4: 200 XP, 4→5: 300 XP, depois level*100
+  const getXPForLevel = (level: number) => {
+    if (level === 1) return 100;
+    if (level === 2) return 150;
+    if (level === 3) return 200;
+    if (level === 4) return 300;
+    return level * 100;
+  };
+  
+  let xpRequired = 0;
+  while (true) {
+    xpRequired += getXPForLevel(newLevel);
+    if (newTotalXP < xpRequired) break;
     newLevel++;
   }
-  newXPToNext = (newLevel * 100) - newTotalXP;
+  newXPToNext = xpRequired - newTotalXP;
   
   // Update XP
   await db.update(userXP)

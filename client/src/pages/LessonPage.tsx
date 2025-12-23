@@ -188,6 +188,26 @@ export default function LessonPage() {
             <span className="text-foreground">{page.title}</span>
           </div>
 
+          {/* Barra de Progresso do Módulo */}
+          {allPages.length > 0 && (
+            <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-blue-900 dark:text-blue-100">
+                  Página {currentIndex + 1} de {allPages.length}
+                </span>
+                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  {Math.round(((currentIndex + 1) / allPages.length) * 100)}% do módulo
+                </span>
+              </div>
+              <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-full h-2">
+                <div 
+                  className="bg-blue-600 dark:bg-blue-500 h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${((currentIndex + 1) / allPages.length) * 100}%` }}
+                />
+              </div>
+            </div>
+          )}
+
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
               <h1 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight">{page.title}</h1>
