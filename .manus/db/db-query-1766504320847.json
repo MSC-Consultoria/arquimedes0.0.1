@@ -1,0 +1,80 @@
+{
+  "query": "SELECT id, name, slug, `order`, \n  (SELECT COUNT(*) FROM pages WHERE moduleId = m.id) as total_pages\nFROM modules m \nWHERE disciplineId = 1 \nORDER BY `order` \nLIMIT 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute SELECT id, name, slug, `order`, \n  (SELECT COUNT(*) FROM pages WHERE moduleId = m.id) as total_pages\nFROM modules m \nWHERE disciplineId = 1 \nORDER BY `order` \nLIMIT 10",
+  "rows": [
+    {
+      "id": "1",
+      "name": "Adição",
+      "slug": "adicao",
+      "order": "1",
+      "total_pages": "3"
+    },
+    {
+      "id": "90002",
+      "name": "Subtração",
+      "slug": "subtracao",
+      "order": "3",
+      "total_pages": "0"
+    },
+    {
+      "id": "2",
+      "name": "Multiplicação",
+      "slug": "multiplicacao",
+      "order": "3",
+      "total_pages": "3"
+    },
+    {
+      "id": "3",
+      "name": "Divisão",
+      "slug": "divisao",
+      "order": "4",
+      "total_pages": "3"
+    },
+    {
+      "id": "30001",
+      "name": "Divisão",
+      "slug": "divisao",
+      "order": "5",
+      "total_pages": "3"
+    },
+    {
+      "id": "60001",
+      "name": "Frações",
+      "slug": "fracoes",
+      "order": "5",
+      "total_pages": "0"
+    },
+    {
+      "id": "90001",
+      "name": "Proporção e Razão",
+      "slug": "proporcao-e-razao",
+      "order": "6",
+      "total_pages": "0"
+    },
+    {
+      "id": "60002",
+      "name": "Decimais",
+      "slug": "decimais",
+      "order": "6",
+      "total_pages": "0"
+    },
+    {
+      "id": "60003",
+      "name": "Porcentagem",
+      "slug": "porcentagem",
+      "order": "7",
+      "total_pages": "4"
+    },
+    {
+      "id": "60004",
+      "name": "Razão e Proporção",
+      "slug": "razao-proporcao",
+      "order": "8",
+      "total_pages": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\torder\ttotal_pages\n1\tAdição\tadicao\t1\t3\n90002\tSubtração\tsubtracao\t3\t0\n2\tMultiplicação\tmultiplicacao\t3\t3\n3\tDivisão\tdivisao\t4\t3\n30001\tDivisão\tdivisao\t5\t3\n60001\tFrações\tfracoes\t5\t0\n90001\tProporção e Razão\tproporcao-e-razao\t6\t0\n60002\tDecimais\tdecimais\t6\t0\n60003\tPorcentagem\tporcentagem\t7\t4\n60004\tRazão e Proporção\trazao-proporcao\t8\t0\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

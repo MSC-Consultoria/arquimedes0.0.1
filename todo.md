@@ -1289,3 +1289,24 @@
 - [ ] Verificar responsividade mobile
 - [ ] Garantir acessibilidade (contraste, foco)
 - [ ] Salvar checkpoint v2.35.0
+
+
+## 🔄 Reorganização de Módulos
+
+### Dividir Módulo 1 em Adição e Subtração ✅ COMPLETO
+- [x] Verificar estrutura atual do Módulo 1 e suas 6 páginas
+- [x] Renomear Módulo 1 de "Adição e Subtração" para "Adição"
+- [x] Manter apenas 3 primeiras páginas no Módulo 1 (Adição)
+- [x] Criar novo Módulo 2 "Subtração" (ID 18)
+- [x] Mover 3 últimas páginas do Módulo 1 para o novo Módulo 2
+- [x] Reorganizar ordem dos demais módulos (incrementar +1)
+- [x] Nova estrutura:
+  * 1. Adição (3 páginas)
+  * 2. Subtração (3 páginas)
+  * 3. Multiplicação (3 páginas)
+  * 4. Divisão (3 páginas)
+  * 5. Frações (0 páginas - oculto)
+  * 6. Proporção e Razão (0 páginas - oculto)
+  * 7. Porcentagem (3 páginas)
+- [ ] Testar navegação completa
+- [ ] Salvar checkpoint
