@@ -1,0 +1,16 @@
+{
+  "query": "SELECT m.id, m.name, m.order, COUNT(p.id) as num_pages\nFROM modules m\nLEFT JOIN pages p ON p.moduleId = m.id\nWHERE m.id IN (3, 4)\nGROUP BY m.id, m.name, m.order\nORDER BY m.order;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute SELECT m.id, m.name, m.order, COUNT(p.id) as num_pages\nFROM modules m\nLEFT JOIN pages p ON p.moduleId = m.id\nWHERE m.id IN (3, 4)\nGROUP BY m.id, m.name, m.order\nORDER BY m.order;",
+  "rows": [
+    {
+      "id": "3",
+      "name": "Divisão",
+      "order": "4",
+      "num_pages": "4"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\torder\tnum_pages\n3\tDivisão\t4\t4\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}
