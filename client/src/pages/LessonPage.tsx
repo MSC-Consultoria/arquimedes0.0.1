@@ -10,6 +10,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Clock, CheckCircle2 } from "lucide-rea
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { SEO } from "@/components/SEO";
+import { MobileNav } from "@/components/MobileNav";
 
 export default function LessonPage() {
   const params = useParams<{ disciplineSlug: string; moduleSlug: string; pageSlug: string }>();
@@ -132,6 +133,7 @@ export default function LessonPage() {
 
   return (
     <>
+      <MobileNav />
       <SEO 
         title={seoTitle}
         description={seoDescription}

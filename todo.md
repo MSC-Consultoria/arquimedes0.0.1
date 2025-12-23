@@ -164,3 +164,21 @@
 - [ ] Testar em viewport 390px (iPhone 12/13/14)
 - [ ] Garantir scroll suave e performance
 - [ ] Adicionar meta viewport tag
+
+
+## Menu Hambúrguer Mobile
+- [x] Criar componente MobileNav com ícone hambúrguer
+- [x] Implementar Sheet/Drawer lateral deslizante
+- [x] Adicionar lista de disciplinas no menu
+- [x] Adicionar lista de módulos expandíveis (Accordion)
+- [x] Implementar navegação para páginas/aulas
+- [x] Adicionar animações de abertura/fechamento (shadcn Sheet)
+- [x] Garantir overlay escuro ao abrir menu
+- [x] Adicionar botão de fechar (X) automático
+- [x] Integrar com autenticação (mostrar perfil e logout)
+- [x] Adicionar ícones coloridos por módulo
+- [x] Adicionar botão fixo no canto superior esquerdo
+- [x] Integrar MobileNav na Home
+- [x] Integrar MobileNav no LessonPage
+- [ ] Testar gestos de swipe para fechar
+- [ ] Adicionar MobileNav em outras páginas

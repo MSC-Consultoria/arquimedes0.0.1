@@ -5,6 +5,7 @@ import { getLoginUrl } from "@/const";
 import { trpc } from "@/lib/trpc";
 import { BookOpen, Target, TrendingUp, Award, ArrowRight, LogOut, Sparkles } from "lucide-react";
 import { getModuleIcon, getModuleColor } from "@/components/MathIcons";
+import { MobileNav } from "@/components/MobileNav";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
+      <MobileNav />
       {/* Hero Section */}
       <div className="gradient-primary text-primary-foreground relative overflow-hidden">
         {/* Background decoration */}
