@@ -13,6 +13,7 @@ import LessonPage from "./pages/LessonPage";
 import ProfilePage from "./pages/ProfilePage";
 import VisualsDemo from "./pages/VisualsDemo";
 import ComponentsDemo from "./pages/ComponentsDemo";
+import InteractiveDemo from "./pages/InteractiveDemo";
 import ExerciseRoomPage from "./pages/ExerciseRoomPage";
 import VideoRoomPage from "./pages/VideoRoomPage";
 import DailyChallengePage from "./pages/DailyChallengePage";
@@ -34,7 +35,8 @@ function Router() {
       <Route path="/disciplinas" component={DisciplinesPage} />
       <Route path="/minhas-disciplinas" component={DisciplinesPage} />
       <Route path="/visuals" component={VisualsDemo} />
-      <Route path="/components" component={ComponentsDemo} />
+        <Route path="/demo" component={ComponentsDemo} />
+        <Route path="/interactive-demo" component={InteractiveDemo} />
       <Route path="/disciplina/:disciplineSlug" component={DisciplinePage} />
       <Route path="/disciplina/:disciplineSlug/modulo/:moduleSlug" component={ModulePage} />
       <Route
