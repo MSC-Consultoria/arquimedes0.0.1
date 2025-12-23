@@ -23,8 +23,8 @@
 ## Sistema de Conteúdo
 - [x] Criar componente para renderização de texto formatado
 - [x] Implementar suporte a equações LaTeX
-- [ ] Adicionar suporte a embeds de YouTube
-- [ ] Criar componente para exibição de diagramas e imagens
+- [x] Adicionar suporte a embeds de YouTube
+- [x] Criar componente para exibição de diagramas e imagens
 - [x] Desenvolver estrutura de página de aula
 
 ## Exercícios Interativos
@@ -61,10 +61,10 @@
 - [x] Implementar histórico pessoal de progresso
 
 ## Polimento e Testes
-- [ ] Garantir responsividade mobile
+- [x] Garantir responsividade mobile
 - [ ] Testar acessibilidade
 - [ ] Validar todos os fluxos de usuário
-- [ ] Escrever testes unitários para backend
+- [x] Escrever testes unitários para backend (50 testes passando)
 - [ ] Otimizar performance de carregamento
 
 ## Deploy
@@ -915,3 +915,16 @@
 - [x] Adicionar lógica de matrícula no completeOnboarding
 - [x] Testar matrícula automática com novo usuário (3 testes passando)
 - [x] Verificar que Dashboard mostra Aritmética após onboarding
+
+
+## Plano de Testes de Acessibilidade (v2.20.0)
+- [x] Criar documento de plano de testes de acessibilidade (60+ páginas)
+- [x] Definir critérios WCAG 2.1 AA aplicáveis
+- [x] Criar checklist de auditoria ARIA
+- [x] Criar checklist de navegação por teclado
+- [x] Documentar atalhos de teclado esperados
+- [x] Criar scripts de teste automatizados (axe-core + Puppeteer)
+- [ ] Testar com leitores de tela (NVDA, JAWS, VoiceOver)
+- [ ] Validar contraste de cores (WCAG AA)
+- [ ] Testar zoom até 200%
+- [ ] Validar foco visível em todos os elementos interativos
