@@ -1724,7 +1724,8 @@ export async function markExerciseComplete(
   exerciseId?: number,
   isCorrect: boolean = true,
   selectedAnswer?: number,
-  uniqueId?: string
+  uniqueId?: string,
+  pointsEarned?: number
 ): Promise<void> {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
@@ -1761,6 +1762,7 @@ export async function markExerciseComplete(
       uniqueId,
       isCorrect,
       selectedAnswer,
+      pointsEarned,
     });
   }
 }
@@ -1816,7 +1818,7 @@ export async function getUserCompletedExercisesDetailed(userId: number): Promise
 /**
  * Get user's completed interactive exercises (by uniqueId)
  */
-export async function getUserCompletedInteractiveExercises(userId: number): Promise<string[]> {
+export async function getUserCompletedInteractiveExercises(userId: number): Promise<{ uniqueId: string; pointsEarned: number }[]> {
   const db = await getDb();
   if (!db) return [];
 
@@ -1830,7 +1832,12 @@ export async function getUserCompletedInteractiveExercises(userId: number): Prom
       )
     );
 
-  return completions.map(c => c.uniqueId!).filter(id => id !== null);
+  return completions
+    .filter(c => c.uniqueId !== null)
+    .map(c => ({
+      uniqueId: c.uniqueId!,
+      pointsEarned: c.pointsEarned || 0,
+    }));
 }
 
 /**

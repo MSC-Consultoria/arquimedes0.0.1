@@ -1107,3 +1107,44 @@
 - [x] Badges progressivas com emojis (🥉🥈🥇💎)
 - [x] Grid responsivo 4 colunas desktop
 - [x] Scroll completo funcionando
+
+## 🚨 URGENTE - Corrigir Persistência de Exercícios
+
+### Bugs Identificados
+- [ ] Exercícios Interativos: 6 completados mostrados, mas F5 reseta para 0
+- [ ] Sala de Exercícios: Badges "✓ Concluído" aparecem, mas F5 remove tudo
+- [ ] Taxa de acerto não persiste após recarregar página
+- [ ] Pontos ganhos não são salvos permanentemente
+
+### Exercícios Interativos - Correções
+- [ ] Verificar se markCompleteInteractive mutation está sendo chamada
+- [ ] Inicializar estado completedExercises com dados do banco ao carregar
+- [ ] Garantir que pontos sejam creditados no banco
+- [ ] Testar persistência após F5
+
+### Sala de Exercícios Estáticos - Correções
+- [ ] Verificar se markComplete mutation está sendo chamada corretamente
+- [ ] Inicializar estado answeredExercises com dados do banco (getCompletedDetailed)
+- [ ] Garantir que selectedAnswer seja salvo no banco
+- [ ] Testar persistência após F5
+
+### Nova Aba: Exercícios Feitos
+- [ ] Criar página ExerciseHistoryPage.tsx
+- [ ] Listar todos os exercícios completados (interativos + estáticos)
+- [ ] Mostrar data de conclusão, pontos ganhos, taxa de acerto
+- [ ] Filtros por módulo, tipo, data
+- [ ] Adicionar link na Sidebar
+
+### Testes
+- [ ] Completar exercício interativo → F5 → Verificar se mantém
+- [ ] Completar exercício estático → F5 → Verificar se mantém
+- [ ] Logout → Login → Verificar se progresso persiste
+- [ ] Navegar para outra página → Voltar → Verificar estado
+
+## ✅ CONCLUÍDO - Persistência de Exercícios (v2.46.0)
+- [x] Adicionar campo pointsEarned na tabela exercise_completions
+- [x] Atualizar markExerciseComplete para aceitar pointsEarned
+- [x] Atualizar mutation markInteractiveComplete para enviar pointsEarned
+- [x] Atualizar InteractiveExerciseRoomPage para calcular total de pontos ao carregar
+- [x] Testar persistência após F5 (Exercícios Interativos: 100% funcional)
+- [x] Testar persistência após F5 (Sala de Exercícios: badges funcionam, pontos precisam de novos exercícios)

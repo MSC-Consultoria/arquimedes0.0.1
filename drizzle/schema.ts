@@ -461,6 +461,7 @@ export const exerciseCompletions = mysqlTable("exercise_completions", {
   uniqueId: varchar("uniqueId", { length: 255 }), // ID string para exercícios interativos (ex: "adicao-fill-1")
   isCorrect: boolean("isCorrect").notNull(),
   selectedAnswer: int("selectedAnswer"), // Índice da resposta selecionada (0-3 para múltipla escolha)
+  pointsEarned: int("pointsEarned").default(0), // Pontos ganhos ao completar o exercício
   completedAt: timestamp("completedAt").defaultNow().notNull(),
 });
 

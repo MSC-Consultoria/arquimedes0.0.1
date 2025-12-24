@@ -560,9 +560,10 @@ Retorne APENAS um JSON com:
       .input(z.object({
         uniqueId: z.string(),
         isCorrect: z.boolean(),
+        pointsEarned: z.number().optional(),
       }))
       .mutation(async ({ ctx, input }) => {
-        await db.markExerciseComplete(ctx.user.id, undefined, input.isCorrect, undefined, input.uniqueId);
+        await db.markExerciseComplete(ctx.user.id, undefined, input.isCorrect, undefined, input.uniqueId, input.pointsEarned);
         return { success: true };
       }),
     

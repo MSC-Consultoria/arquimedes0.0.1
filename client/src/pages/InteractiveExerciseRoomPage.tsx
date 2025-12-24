@@ -21,14 +21,16 @@ export default function InteractiveExerciseRoomPage() {
   const haptic = useHaptic();
 
   // Query de exercícios interativos completados
-  const { data: completedInteractiveIds = [] } = trpc.standaloneExercises.getCompletedInteractive.useQuery();
+  const { data: completedInteractiveData = [] } = trpc.standaloneExercises.getCompletedInteractive.useQuery();
   
   // Inicializar estado com exercícios já completados do banco
   useEffect(() => {
-    if (completedInteractiveIds.length > 0) {
-      setCompletedExercises(new Set(completedInteractiveIds));
+    if (completedInteractiveData.length > 0) {
+      setCompletedExercises(new Set(completedInteractiveData.map(c => c.uniqueId)));
+      const totalPts = completedInteractiveData.reduce((sum, c) => sum + c.pointsEarned, 0);
+      setTotalPoints(totalPts);
     }
-  }, [completedInteractiveIds]);
+  }, [completedInteractiveData]);
 
   const addPointsMutation = trpc.points.addPoints.useMutation({
     onSuccess: () => {
@@ -64,6 +66,7 @@ export default function InteractiveExerciseRoomPage() {
       await markInteractiveCompleteMutation.mutateAsync({
         uniqueId: exerciseId,
         isCorrect: true,
+        pointsEarned: points,
       });
     } else {
       playError();
