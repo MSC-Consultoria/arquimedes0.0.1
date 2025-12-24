@@ -281,10 +281,21 @@ export type InsertUserEnrollment = typeof userEnrollments.$inferInsert;
  */
 export const standaloneExercises = mysqlTable("standalone_exercises", {
   id: int("id").autoincrement().primaryKey(),
+  uniqueId: varchar("uniqueId", { length: 50 }).unique(), // Formato: EX-ARIT-ADD-001
   title: varchar("title", { length: 255 }).notNull(),
   question: text("question").notNull(),
-  options: json("options").notNull(), // Array de strings: ["Opção A", "Opção B", "Opção C", "Opção D"]
-  correctAnswer: int("correctAnswer").notNull(), // Índice da opção correta (0-3)
+  
+  // Tipo de exercício (múltipla escolha, preencher lacunas, slider, conectar)
+  exerciseType: mysqlEnum("exerciseType", ["multiple_choice", "fill_blanks", "slider", "matching"]).default("multiple_choice").notNull(),
+  
+  // Dados específicos por tipo
+  options: json("options"), // Array de strings para multiple_choice: ["Opção A", "Opção B", "Opção C", "Opção D"]
+  correctAnswer: text("correctAnswer"), // Índice (0-3) para multiple_choice, valor correto para outros tipos
+  
+  // Explicação passo-a-passo (novo campo)
+  stepByStepExplanation: text("stepByStepExplanation"), // Explicação detalhada da resolução
+  hint: text("hint"), // Dica estratégica (não entrega resposta)
+  
   difficulty: mysqlEnum("difficulty", ["easy", "moderate", "hard"]).notNull(), // fácil, moderado, difícil
   points: int("points").notNull(), // 5 (fácil), 10 (moderado), 15 (difícil)
   disciplineId: int("disciplineId"), // Opcional: vinculado a disciplina

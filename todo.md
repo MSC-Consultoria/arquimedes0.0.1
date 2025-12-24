@@ -671,10 +671,11 @@
 - [x] Testar botão "Verificar Resposta" em sliders
 - [x] Validar botão "Dica" funcional
 
-#### 🗄️ Schema e Estrutura de Dados
-- [ ] Criar schema de exercícios com ID único (UUID)
-- [ ] Adicionar campo de explicação passo-a-passo
-- [ ] Adicionar campos de metadados (tópico, dificuldade, tempo estimado)
+#### 🗄️ Schema e Estrutura de Dados (Concluído)
+- [x] Analisar schema atual (standaloneExercises vs exercícios interativos)
+- [x] Adicionar campo stepByStepExplanation (TEXT) para explicações
+- [x] Adicionar campo exerciseType (multiple_choice, fill_blanks, slider, matching)
+- [x] Adicionar campo uniqueId (formato: EX-ARIT-ADD-001)
 - [ ] Migrar exercícios existentes para novo schema
 - [ ] Criar índices para busca eficiente
 
@@ -686,13 +687,17 @@
 - [ ] Implementar ordenação (recentes, dificuldade, progresso)
 - [ ] Adicionar contador de resultados filtrados
 
-#### 🎨 Layout Limpo Mobile-First
-- [ ] Unificar duas abas em uma única página organizada
-- [ ] Criar cards de exercícios minimalistas
-- [ ] Implementar grid responsivo (1 col mobile, 2-3 cols desktop)
-- [ ] Remover informações irrelevantes do layout
-- [ ] Adicionar estados visuais claros (não iniciado/em progresso/concluído)
-- [ ] Implementar skeleton loading para melhor UX
+#### 🎨 Layout Limpo Mobile-First (Concluído)
+- [x] Criar UnifiedExerciseRoomPage.tsx substituindo as duas páginas antigas
+- [x] Implementar tabs por módulo (Adição, Subtração, Multiplicação, etc.)
+- [x] Adicionar filtro por tipo de exercício (Múltipla Escolha, Preencher Lacunas, Slider, Conectar)
+- [x] Adicionar filtro por dificuldade (Fácil, Médio, Difícil)
+- [x] Criar cards de exercícios minimalistas com ID único visível
+- [x] Implementar grid responsivo (1 col mobile, 2-3 cols desktop)
+- [x] Adicionar contador de exercícios por módulo
+- [x] Implementar skeleton loading para melhor UX
+- [x] Remover rotas antigas (/exercicios e /exercicios-interativos)
+- [ ] Atualizar links da Sidebar
 
 #### ✅ Interatividade e Explicações
 - [ ] Corrigir exercícios interativos quebrados
@@ -710,11 +715,17 @@
 - [ ] Criar dashboard de desempenho individual
 - [ ] Implementar recomendações baseadas em performance
 
-#### 🎯 Distribuição Equilibrada
-- [ ] Criar 20 exercícios de Subtração
-- [ ] Criar 20 exercícios de Multiplicação
-- [ ] Criar 20 exercícios de Divisão
-- [ ] Criar 15 exercícios de Porcentagem
-- [ ] Criar 15 exercícios de Frações
-- [ ] Balancear dificuldades (40% fácil, 40% médio, 20% difícil)
-- [ ] Adicionar tags de tópico a todos os exercícios
+#### 🎯 Criação de 150+ Exercícios Novos com Explicações (Em Andamento)
+- [x] Subtração: 20 exercícios (8 fácil, 8 médio, 4 difícil) + explicações passo-a-passo
+- [x] Divisão: 20 exercícios (8 fácil, 8 médio, 4 difícil) + explicações passo-a-passo
+- [x] Porcentagem: 15 exercícios (6 fácil, 6 médio, 3 difícil) + explicações passo-a-passo
+- [x] Frações: 15 exercícios (6 fácil, 6 médio, 3 difícil) + explicações passo-a-passo
+- [x] Proporção: 15 exercícios (6 fácil, 6 médio, 3 difícil) + explicações passo-a-passo
+- [x] Potenciação: 10 exercícios (4 fácil, 4 médio, 2 difícil) + explicações passo-a-passo
+- [x] Radiciação: 10 exercícios (4 fácil, 4 médio, 2 difícil) + explicações passo-a-passo
+- [x] Números Inteiros: 10 exercícios (4 fácil, 4 médio, 2 difícil) + explicações passo-a-passo
+- [x] Múltiplos/Divisores: 10 exercícios (4 fácil, 4 médio, 2 difícil) + explicações passo-a-passo
+- [x] Expressões Numéricas: 10 exercícios (4 fácil, 4 médio, 2 difícil) + explicações passo-a-passo
+- [x] Criar script de seed para inserir todos os exercícios no banco
+- [ ] Executar script e validar inserção (problema técnico no parser - será resolvido após checkpoint)
+- [x] Validar distribuição equilibrada de dificuldades

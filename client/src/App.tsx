@@ -15,8 +15,8 @@ import ProfilePage from "./pages/ProfilePage";
 import VisualsDemo from "./pages/VisualsDemo";
 import ComponentsDemo from "./pages/ComponentsDemo";
 import InteractiveDemo from "./pages/InteractiveDemo";
-import ExerciseRoomPage from "./pages/ExerciseRoomPage";
-import InteractiveExerciseRoomPage from "./pages/InteractiveExerciseRoomPage";
+import UnifiedExerciseRoomPage from "./pages/UnifiedExerciseRoomPage";
+// import InteractiveExerciseRoomPage from "./pages/InteractiveExerciseRoomPage"; // Substituído por UnifiedExerciseRoomPage
 import VideoRoomPage from "./pages/VideoRoomPage";
 import DailyChallengePage from "./pages/DailyChallengePage";
 import DisciplinesPage from "./pages/DisciplinesPage";
@@ -31,8 +31,8 @@ function Router() {
       <Route path="/login" component={LoginPage} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/perfil" component={ProfilePage} />
-      <Route path="/exercicios" component={ExerciseRoomPage} />
-      <Route path="/exercicios-interativos" component={InteractiveExerciseRoomPage} />
+      <Route path="/exercicios" component={UnifiedExerciseRoomPage} />
+      {/* <Route path="/exercicios-interativos" element={<InteractiveExerciseRoomPage />} /> */}
       <Route path="/videos" component={VideoRoomPage} />
       <Route path="/desafio-do-dia" component={DailyChallengePage} />
       <Route path="/conquistas" component={AchievementsPage} />
