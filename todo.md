@@ -866,3 +866,13 @@
 - [x] Reposicionar toast do rodapé para o topo da página (position: "top-center")
 - [x] Adicionar auto-dismiss em 5 segundos (duration: 5000)
 - [x] Testar em mobile e desktop
+
+
+## 📝 Melhorias de Conteúdo
+
+### Expansão de Aulas de Porcentagem
+- [x] Expandir Aula 2: Cálculos de Porcentagem (de resumido para completo) - 4 tipos de cálculos + 3 exercícios
+- [x] Expandir Aula 3: Aplicações de Porcentagem (de resumido para completo) - 6 categorias + 3 exercícios
+- [x] Adicionar exercícios práticos com respostas detalhadas (6 exercícios com <details>)
+- [x] Incluir casos de uso do cotidiano brasileiro (Black Friday, INSS, IR, ICMS, etc.)
+- [x] Testar navegação e leitura completa
