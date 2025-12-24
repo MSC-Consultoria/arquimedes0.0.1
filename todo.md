@@ -230,15 +230,15 @@
 
 
 ## 21. Documentação e Deploy no GitHub (Nova Funcionalidade)
-- [ ] Criar README.md completo do projeto
-- [ ] Criar CONTRIBUTING.md com guia de contribuição
-- [ ] Criar LICENSE.md com licença do projeto
-- [ ] Criar CHANGELOG.md com histórico de versões
-- [ ] Criar .gitignore adequado para o projeto
-- [ ] Organizar estrutura de pastas e arquivos
-- [ ] Mover documentações de pesquisa para pasta docs/
-- [ ] Criar repositório no GitHub (MSC-Consultoria/artemis)
-- [ ] Configurar repositório adequadamente
-- [ ] Fazer commit inicial com todo o código
-- [ ] Push para o GitHub
-- [ ] Verificar deploy no GitHub
+- [x] Criar README.md completo do projeto
+- [x] Criar CONTRIBUTING.md com guia de contribuição
+- [x] Criar LICENSE.md com licença do projeto
+- [x] Criar CHANGELOG.md com histórico de versões
+- [x] Criar .gitignore adequado para o projeto
+- [x] Organizar estrutura de pastas e arquivos
+- [x] Mover documentações de pesquisa para pasta docs/
+- [x] Criar repositório no GitHub (MSC-Consultoria/artemis)
+- [x] Configurar repositório adequadamente
+- [x] Fazer commit inicial com todo o código
+- [x] Push para o GitHub
+- [x] Verificar deploy no GitHub
