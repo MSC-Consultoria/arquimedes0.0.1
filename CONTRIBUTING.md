@@ -1,468 +1,233 @@
-# 🤝 Guia de Contribuição - Projeto Arquimedes
+# Contribuindo para o Artemis
 
-Obrigado por considerar contribuir com o **Arquimedes**! Este documento fornece diretrizes para contribuir com o projeto de forma eficaz e organizada.
+Primeiramente, obrigado por considerar contribuir para o Artemis! É graças a pessoas como você que o Artemis pode se tornar uma ferramenta ainda melhor para candidatos à OAB.
 
----
+## Código de Conduta
 
-## 📋 Índice
+Este projeto e todos os participantes estão sob o [Código de Conduta](CODE_OF_CONDUCT.md). Ao participar, espera-se que você mantenha este código. Por favor, reporte comportamentos inaceitáveis para suporte@mscconsultoria.com.br.
 
-1. [Código de Conduta](#código-de-conduta)
-2. [Como Posso Contribuir?](#como-posso-contribuir)
-3. [Configuração do Ambiente](#configuração-do-ambiente)
-4. [Processo de Contribuição](#processo-de-contribuição)
-5. [Padrões de Código](#padrões-de-código)
-6. [Estrutura do Projeto](#estrutura-do-projeto)
-7. [Testes](#testes)
-8. [Documentação](#documentação)
+## Como Posso Contribuir?
 
----
+### Reportando Bugs
 
-## 📜 Código de Conduta
+Esta seção orienta você no processo de envio de um relatório de bug para o Artemis. Seguir essas diretrizes ajuda os mantenedores e a comunidade a entender seu relatório, reproduzir o comportamento e encontrar relatórios relacionados.
 
-Este projeto segue um Código de Conduta para garantir um ambiente acolhedor e respeitoso para todos os contribuidores. Ao participar, você concorda em seguir estas diretrizes:
+**Antes de criar um relatório de bug**, verifique se o problema já não foi reportado. Se encontrar um relatório existente e ainda aberto, adicione um comentário ao invés de abrir um novo.
 
-- **Seja respeitoso:** Trate todos com respeito e consideração
-- **Seja colaborativo:** Trabalhe em equipe e ajude outros contribuidores
-- **Seja construtivo:** Forneça feedback construtivo e aceite críticas
-- **Seja inclusivo:** Valorize perspectivas diversas
+**Como Enviar um Bom Relatório de Bug:**
 
----
+- **Use um título claro e descritivo** para identificar o problema
+- **Descreva os passos exatos para reproduzir o problema** com o máximo de detalhes possível
+- **Forneça exemplos específicos** para demonstrar os passos
+- **Descreva o comportamento observado** e explique qual era o comportamento esperado
+- **Inclua screenshots e GIFs animados** se possível
+- **Inclua detalhes sobre sua configuração e ambiente**
 
-## 🎯 Como Posso Contribuir?
+### Sugerindo Melhorias
 
-### 1. 📝 Criação de Conteúdo Educacional
-**Ideal para:** Educadores, professores de matemática, pedagogos
+Esta seção orienta você no processo de envio de uma sugestão de melhoria para o Artemis, incluindo recursos completamente novos e melhorias menores em funcionalidades existentes.
 
-- Escrever páginas de aulas em Markdown
-- Criar exercícios práticos contextualizados
-- Desenvolver exemplos do cotidiano brasileiro
-- Revisar conteúdo existente para clareza e precisão
+**Antes de criar uma sugestão de melhoria**, verifique se a sugestão já não foi feita. Se encontrar uma sugestão existente, adicione um comentário com suas ideias adicionais.
 
-**Habilidades necessárias:**
-- Conhecimento de matemática (nível básico a avançado)
-- Habilidade de explicar conceitos de forma clara
-- Experiência com ensino para adultos (desejável)
+**Como Enviar uma Boa Sugestão de Melhoria:**
 
-### 2. 🎯 Criação de Exercícios
-**Ideal para:** Professores, designers instrucionais
+- **Use um título claro e descritivo** para identificar a sugestão
+- **Forneça uma descrição passo a passo da melhoria sugerida** com o máximo de detalhes possível
+- **Forneça exemplos específicos** para demonstrar os passos ou aponte exemplos de outros projetos
+- **Descreva o comportamento atual** e explique qual comportamento você esperava ver e por quê
+- **Explique por que essa melhoria seria útil** para a maioria dos usuários do Artemis
 
-- Desenvolver problemas práticos
-- Criar exercícios interativos (FillInBlanks, Slider, Matching)
-- Escrever dicas estratégicas
-- Balancear dificuldade dos exercícios
+### Seu Primeiro Código de Contribuição
 
-**Habilidades necessárias:**
-- Criatividade para contextualização
-- Conhecimento de pedagogia
-- Noções de gamificação (desejável)
+Não sabe por onde começar? Você pode começar procurando por issues marcadas como `good first issue` e `help wanted`:
 
-### 3. 🎨 Design Visual e UX
-**Ideal para:** Designers, UX/UI designers
+- **Good first issue** - issues que devem exigir apenas algumas linhas de código e um ou dois testes
+- **Help wanted** - issues que devem ser um pouco mais envolvidas que issues `good first issue`
 
-- Melhorar interface e experiência do usuário
-- Criar ilustrações e diagramas
-- Desenvolver componentes visuais interativos
-- Melhorar acessibilidade
+### Pull Requests
 
-**Habilidades necessárias:**
-- Design UI/UX
-- Figma ou ferramentas similares
-- Noções de acessibilidade (WCAG)
-- Tailwind CSS (desejável)
+O processo descrito aqui tem vários objetivos:
 
-### 4. 💻 Desenvolvimento Frontend
-**Ideal para:** Desenvolvedores React, frontend engineers
+- Manter a qualidade do Artemis
+- Corrigir problemas que são importantes para os usuários
+- Engajar a comunidade na elaboração do melhor Artemis possível
+- Habilitar um sistema sustentável para os mantenedores revisarem contribuições
 
-- Implementar novos componentes
-- Melhorar performance
-- Corrigir bugs
-- Adicionar funcionalidades
+**Siga estas etapas para ter sua contribuição considerada pelos mantenedores:**
 
-**Habilidades necessárias:**
-- React 19 e TypeScript
-- Tailwind CSS 4
-- tRPC e React Query
-- Git e GitHub
+1. Siga todas as instruções no [template de pull request](PULL_REQUEST_TEMPLATE.md)
+2. Siga os [guias de estilo](#guias-de-estilo)
+3. Depois de enviar seu pull request, verifique se todos os [status checks](https://help.github.com/articles/about-status-checks/) estão passando
 
-### 5. 🔧 Desenvolvimento Backend
-**Ideal para:** Desenvolvedores Node.js, backend engineers
+Enquanto os pré-requisitos acima devem ser satisfeitos antes de ter seu pull request revisado, o(s) revisor(es) pode(m) solicitar que você complete trabalho adicional de design, testes ou outras mudanças antes que seu pull request possa ser finalmente aceito.
 
-- Implementar novos endpoints tRPC
-- Otimizar queries do banco de dados
-- Melhorar performance do servidor
-- Adicionar integrações
+## Guias de Estilo
 
-**Habilidades necessárias:**
-- Node.js e TypeScript
-- tRPC e Express
-- Drizzle ORM
-- MySQL/TiDB
+### Mensagens de Commit do Git
 
-### 6. 🧪 Testes
-**Ideal para:** QA engineers, desenvolvedores
+- Use o tempo presente ("Adiciona feature" não "Adicionou feature")
+- Use o modo imperativo ("Move cursor para..." não "Move cursor para...")
+- Limite a primeira linha a 72 caracteres ou menos
+- Referencie issues e pull requests liberalmente após a primeira linha
+- Considere começar a mensagem de commit com um emoji aplicável:
+    - 🎨 `:art:` ao melhorar o formato/estrutura do código
+    - 🐎 `:racehorse:` ao melhorar performance
+    - 🚱 `:non-potable_water:` ao consertar vazamentos de memória
+    - 📝 `:memo:` ao escrever documentação
+    - 🐧 `:penguin:` ao corrigir algo no Linux
+    - 🍎 `:apple:` ao corrigir algo no macOS
+    - 🏁 `:checkered_flag:` ao corrigir algo no Windows
+    - 🐛 `:bug:` ao corrigir um bug
+    - 🔥 `:fire:` ao remover código ou arquivos
+    - 💚 `:green_heart:` ao corrigir o build do CI
+    - ✅ `:white_check_mark:` ao adicionar testes
+    - 🔒 `:lock:` ao lidar com segurança
+    - ⬆️ `:arrow_up:` ao atualizar dependências
+    - ⬇️ `:arrow_down:` ao fazer downgrade de dependências
+    - 👕 `:shirt:` ao remover avisos do linter
 
-- Escrever testes unitários
-- Criar testes E2E
-- Testar acessibilidade
-- Reportar bugs
+### Guia de Estilo TypeScript
 
-**Habilidades necessárias:**
-- Vitest (testes unitários)
-- Playwright (E2E) (desejável)
-- Conhecimento de testing best practices
+- Use 2 espaços para indentação
+- Prefira `const` sobre `let`. Nunca use `var`
+- Use arrow functions quando possível
+- Use template strings ao invés de concatenação de strings
+- Use tipos explícitos quando a inferência não for clara
+- Evite `any` - use tipos específicos ou `unknown`
+- Use interfaces para objetos públicos, types para uniões/intersecções
+- Nomeie interfaces com PascalCase (ex: `UserProfile`)
+- Nomeie funções e variáveis com camelCase (ex: `getUserData`)
+- Nomeie constantes com UPPER_SNAKE_CASE (ex: `MAX_RETRIES`)
+- Use comentários JSDoc para funções públicas
 
-### 7. 📚 Documentação
-**Ideal para:** Technical writers, desenvolvedores
-
-- Melhorar documentação técnica
-- Escrever tutoriais
-- Criar guias de uso
-- Traduzir documentação
-
-**Habilidades necessárias:**
-- Escrita técnica clara
-- Markdown
-- Conhecimento do projeto
-
----
-
-## 🛠️ Configuração do Ambiente
-
-### Pré-requisitos
-- **Node.js** 22+ ([Download](https://nodejs.org/))
-- **pnpm** 9+ (`npm install -g pnpm`)
-- **Git** ([Download](https://git-scm.com/))
-- **MySQL** 8+ ou **TiDB** (para desenvolvimento local)
-
-### Instalação
-
-1. **Fork o repositório**
-   ```bash
-   # Clique em "Fork" no GitHub
-   ```
-
-2. **Clone seu fork**
-   ```bash
-   git clone https://github.com/SEU-USUARIO/arquimedes0.0.1.git
-   cd arquimedes0.0.1
-   ```
-
-3. **Adicione o repositório original como upstream**
-   ```bash
-   git remote add upstream https://github.com/MSC-Consultoria/arquimedes0.0.1.git
-   ```
-
-4. **Instale as dependências**
-   ```bash
-   pnpm install
-   ```
-
-5. **Configure as variáveis de ambiente**
-   ```bash
-   cp .env.example .env
-   # Edite .env com suas credenciais
-   ```
-
-6. **Execute as migrations do banco**
-   ```bash
-   pnpm db:push
-   ```
-
-7. **Popule o banco com dados de exemplo**
-   ```bash
-   pnpm seed
-   ```
-
-8. **Inicie o servidor de desenvolvimento**
-   ```bash
-   pnpm dev
-   ```
-
-9. **Acesse a aplicação**
-   ```
-   http://localhost:3000
-   ```
-
----
-
-## 🔄 Processo de Contribuição
-
-### 1. Escolha uma Issue
-- Navegue pelas [issues abertas](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues)
-- Procure por labels `good first issue` ou `help wanted`
-- Comente na issue dizendo que você vai trabalhar nela
-
-### 2. Crie uma Branch
-```bash
-# Atualize seu fork
-git checkout main
-git pull upstream main
-
-# Crie uma branch para sua feature/bugfix
-git checkout -b feature/nome-da-feature
-# ou
-git checkout -b bugfix/nome-do-bug
-```
-
-### 3. Faça suas Mudanças
-- Escreva código limpo e bem documentado
-- Siga os [padrões de código](#padrões-de-código)
-- Adicione testes quando aplicável
-- Atualize a documentação se necessário
-
-### 4. Commit suas Mudanças
-```bash
-git add .
-git commit -m "feat: Adiciona nova funcionalidade X"
-```
-
-**Formato de commit messages:**
-- `feat:` Nova funcionalidade
-- `fix:` Correção de bug
-- `docs:` Mudanças na documentação
-- `style:` Formatação, ponto e vírgula, etc
-- `refactor:` Refatoração de código
-- `test:` Adicionar ou corrigir testes
-- `chore:` Manutenção, dependências, etc
-
-### 5. Push para seu Fork
-```bash
-git push origin feature/nome-da-feature
-```
-
-### 6. Abra um Pull Request
-- Vá para o repositório original no GitHub
-- Clique em "New Pull Request"
-- Selecione sua branch
-- Preencha o template de PR
-- Aguarde review
-
-### 7. Responda ao Review
-- Responda comentários dos reviewers
-- Faça ajustes solicitados
-- Push das mudanças (o PR será atualizado automaticamente)
-
-### 8. Merge
-- Após aprovação, um mantenedor fará o merge
-- Sua branch será deletada automaticamente
-
----
-
-## 📏 Padrões de Código
-
-### TypeScript
-- Use TypeScript estrito (`strict: true`)
-- Evite `any`, prefira tipos específicos
-- Use interfaces para objetos complexos
-- Documente funções públicas com JSDoc
+**Exemplo:**
 
 ```typescript
 /**
- * Calcula a área de um retângulo
- * @param width - Largura do retângulo
- * @param height - Altura do retângulo
- * @returns Área do retângulo
+ * Busca dados do usuário por ID
+ * @param userId - ID único do usuário
+ * @returns Promise com dados do usuário
  */
-function calculateArea(width: number, height: number): number {
-  return width * height;
+async function getUserData(userId: string): Promise<UserProfile> {
+  const response = await fetch(`/api/users/${userId}`);
+  return response.json();
 }
 ```
 
-### React
+### Guia de Estilo React
+
 - Use componentes funcionais com hooks
-- Prefira `const` para componentes
+- Prefira composição sobre herança
+- Mantenha componentes pequenos e focados
 - Use TypeScript para props
 - Extraia lógica complexa para custom hooks
+- Use Context API para estado global
+- Evite prop drilling - use Context quando necessário
+- Nomeie arquivos de componentes com PascalCase (ex: `UserProfile.tsx`)
+- Um componente por arquivo (exceto componentes muito pequenos e relacionados)
 
-```tsx
-interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  variant?: 'primary' | 'secondary';
+**Exemplo:**
+
+```typescript
+interface UserProfileProps {
+  userId: string;
+  onUpdate?: (user: User) => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, variant = 'primary' }) => {
+export function UserProfile({ userId, onUpdate }: UserProfileProps) {
+  const { user, loading } = useUser(userId);
+
+  if (loading) return <LoadingSpinner />;
+  if (!user) return <ErrorMessage />;
+
   return (
-    <button onClick={onClick} className={`btn btn-${variant}`}>
-      {label}
-    </button>
+    <div className="user-profile">
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+    </div>
   );
-};
+}
 ```
 
-### Tailwind CSS
-- Use classes utilitárias do Tailwind
-- Evite CSS customizado quando possível
-- Use `@apply` apenas para padrões repetidos
-- Siga a ordem: layout → spacing → sizing → typography → visual → misc
+### Guia de Estilo CSS/Tailwind
+
+- Use Tailwind CSS classes quando possível
+- Evite CSS customizado a menos que absolutamente necessário
+- Use variáveis CSS para cores e espaçamentos
+- Prefira classes utilitárias sobre componentes customizados
+- Use `@apply` com moderação - prefira composição
+- Mantenha consistência com o design system
+
+**Exemplo:**
 
 ```tsx
-<div className="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
-  {/* Conteúdo */}
+<div className="flex items-center justify-between p-4 bg-background text-foreground rounded-lg shadow-md">
+  <h3 className="text-lg font-semibold">{title}</h3>
+  <Button variant="outline" size="sm">Ação</Button>
 </div>
 ```
 
-### tRPC
-- Organize routers por feature
-- Use `publicProcedure` ou `protectedProcedure`
-- Valide inputs com Zod
-- Documente endpoints complexos
+### Guia de Estilo de Testes
+
+- Escreva testes para toda nova funcionalidade
+- Use `describe` para agrupar testes relacionados
+- Use `it` ou `test` para casos de teste individuais
+- Nomeie testes de forma descritiva
+- Siga o padrão AAA (Arrange, Act, Assert)
+- Mock dependências externas
+- Teste casos de sucesso e erro
+
+**Exemplo:**
 
 ```typescript
-export const userRouter = router({
-  getProfile: protectedProcedure
-    .input(z.object({ userId: z.number() }))
-    .query(async ({ input, ctx }) => {
-      return await db.getUserProfile(input.userId);
-    }),
-});
-```
-
-### Naming Conventions
-- **Componentes:** PascalCase (`UserProfile.tsx`)
-- **Funções:** camelCase (`calculateTotal()`)
-- **Constantes:** UPPER_SNAKE_CASE (`MAX_RETRIES`)
-- **Arquivos:** kebab-case (`user-profile.ts`)
-- **CSS classes:** kebab-case (`btn-primary`)
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-arquimedes/
-├── client/                 # Frontend React
-│   ├── public/            # Assets estáticos
-│   └── src/
-│       ├── components/    # Componentes React
-│       │   ├── ui/        # Componentes shadcn/ui
-│       │   └── interactive/ # Componentes interativos
-│       ├── pages/         # Páginas da aplicação
-│       ├── hooks/         # Custom hooks
-│       ├── contexts/      # React contexts
-│       └── lib/           # Utilitários
-├── server/                # Backend Express + tRPC
-│   ├── routers.ts         # Definição de routers tRPC
-│   ├── db.ts              # Helpers de banco de dados
-│   └── _core/             # Infraestrutura
-├── drizzle/               # Schema e migrations
-│   └── schema.ts          # Definição de tabelas
-├── shared/                # Código compartilhado
-├── storage/               # Helpers de S3
-├── curriculum/            # Planejamento curricular
-├── content/               # Conteúdo educacional
-└── docs/                  # Documentação
-```
-
----
-
-## 🧪 Testes
-
-### Executar Testes
-```bash
-# Todos os testes
-pnpm test
-
-# Modo watch
-pnpm test:watch
-
-# Com cobertura
-pnpm test:coverage
-```
-
-### Escrever Testes
-```typescript
-import { describe, it, expect } from 'vitest';
-import { calculateArea } from './math';
-
-describe('calculateArea', () => {
-  it('should calculate rectangle area correctly', () => {
-    expect(calculateArea(5, 10)).toBe(50);
+describe("getUserData", () => {
+  it("deve retornar dados do usuário quando ID é válido", async () => {
+    // Arrange
+    const userId = "123";
+    const mockUser = { id: "123", name: "João" };
+    
+    // Act
+    const result = await getUserData(userId);
+    
+    // Assert
+    expect(result).toEqual(mockUser);
   });
 
-  it('should handle zero dimensions', () => {
-    expect(calculateArea(0, 10)).toBe(0);
+  it("deve lançar erro quando ID é inválido", async () => {
+    // Arrange
+    const userId = "invalid";
+    
+    // Act & Assert
+    await expect(getUserData(userId)).rejects.toThrow();
   });
 });
 ```
 
-### Cobertura Mínima
-- **Backend:** 80%+
-- **Frontend:** 60%+ (desejável)
+## Estrutura de Branches
+
+- `main` - Branch principal, sempre estável
+- `develop` - Branch de desenvolvimento
+- `feature/*` - Branches para novas funcionalidades
+- `bugfix/*` - Branches para correções de bugs
+- `hotfix/*` - Branches para correções urgentes em produção
+- `release/*` - Branches para preparação de releases
+
+## Processo de Revisão
+
+1. **Automated checks** - CI/CD executa testes e linting
+2. **Code review** - Pelo menos um mantenedor revisa o código
+3. **Testing** - Funcionalidade é testada manualmente se necessário
+4. **Approval** - Mantenedor aprova o PR
+5. **Merge** - PR é mesclado na branch apropriada
+
+## Reconhecimento
+
+Contribuidores serão reconhecidos no README.md e no CHANGELOG.md.
+
+## Dúvidas?
+
+Sinta-se à vontade para abrir uma issue com a tag `question` ou enviar um email para suporte@mscconsultoria.com.br.
 
 ---
 
-## 📚 Documentação
-
-### Documentar Código
-- Use JSDoc para funções públicas
-- Adicione comentários para lógica complexa
-- Mantenha README.md atualizado
-- Atualize CHANGELOG.md
-
-### Documentar Conteúdo Educacional
-- Use Markdown para aulas
-- Inclua exemplos práticos
-- Adicione exercícios intercalados
-- Estime tempo de leitura
-
----
-
-## 🎨 Áreas que Precisam de Ajuda
-
-### Alta Prioridade
-1. 📝 **Conteúdo de Aritmética** - Módulos 6-10 (15 aulas)
-2. 🐛 **Correção de Bugs** - 12 erros TypeScript
-3. 📚 **Documentação Técnica** - ARCHITECTURE.md, API_REFERENCE.md
-
-### Média Prioridade
-1. 🎯 **Álgebra Básica** - 20 aulas
-2. 🧪 **Testes E2E** - Playwright
-3. 🎨 **Modo Escuro** - Theme switcher
-
-### Baixa Prioridade
-1. 📏 **Geometria Básica** - 21 aulas
-2. 🔧 **PWA** - Service worker
-3. 🌐 **Internacionalização** - i18n
-
----
-
-## 💬 Comunicação
-
-### Canais
-- **Issues:** Para bugs e features
-- **Pull Requests:** Para código
-- **Discussions:** Para perguntas e ideias
-
-### Dicas
-- Seja claro e objetivo
-- Forneça contexto suficiente
-- Inclua screenshots quando relevante
-- Seja paciente e respeitoso
-
----
-
-## 🏆 Reconhecimento
-
-Todos os contribuidores serão reconhecidos:
-- **README.md:** Lista de contribuidores
-- **CHANGELOG.md:** Créditos por versão
-- **GitHub:** Contributors page
-
----
-
-## 📞 Precisa de Ajuda?
-
-- **Issues:** [GitHub Issues](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/MSC-Consultoria/arquimedes0.0.1/discussions)
-- **Email:** contato@mscconsultorias.com.br
-
----
-
-## 📄 Licença
-
-Ao contribuir, você concorda que suas contribuições serão licenciadas sob a [Licença MIT](LICENSE).
-
----
-
-**Obrigado por contribuir com o Arquimedes! Juntos, estamos democratizando o acesso à educação matemática de qualidade. 🎓✨**
+Obrigado por contribuir para o Artemis! 🏛️⚖️
