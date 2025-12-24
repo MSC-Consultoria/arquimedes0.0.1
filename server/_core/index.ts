@@ -6,6 +6,7 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
+import { generateSitemap, generateRobotsTxt } from "../sitemap";
 import { serveStatic, setupVite } from "./vite";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -35,6 +36,23 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
+  
+  // SEO endpoints
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      const sitemap = await generateSitemap();
+      res.header("Content-Type", "application/xml");
+      res.send(sitemap);
+    } catch (error) {
+      console.error("Error generating sitemap:", error);
+      res.status(500).send("Error generating sitemap");
+    }
+  });
+  
+  app.get("/robots.txt", (req, res) => {
+    res.header("Content-Type", "text/plain");
+    res.send(generateRobotsTxt());
+  });
   // tRPC API
   app.use(
     "/api/trpc",
