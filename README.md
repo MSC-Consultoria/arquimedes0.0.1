@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Progresso](https://img.shields.io/badge/Progresso-80%25-10b981?style=for-the-badge)](PROJECT_STATUS.md)
+[![Progresso](https://img.shields.io/badge/Progresso-85%25-10b981?style=for-the-badge)](PROJECT_STATUS.md)
 
 **Educação de qualidade em matemática para adultos**
 
@@ -36,37 +36,38 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
 - **Interface Profissional**: Design limpo e moderno, adequado para adultos
 - **Exercícios Interativos Avançados**: FillInBlanks, InteractiveSlider, MatchingGame
 - **Sistema de Dicas Contextuais**: Ajuda estratégica sem entregar respostas
+- **Personalização Visual**: 8 temas de cores dinâmicos com gradientes harmoniosos
 
 ---
 
 ## 🚀 Funcionalidades
 
-### ✅ Implementadas (v2.42.0)
+### ✅ Implementadas (v2.45.0)
 
 #### 📚 Estrutura de Conteúdo
 - **4 Grandes Áreas de Conhecimento**
-  - 🔢 **Aritmética** (15 módulos estruturados)
+  - 🔢 **Aritmética** (16 módulos estruturados, 3 completos)
   - 📐 **Álgebra** (estrutura planejada)
   - 📏 **Geometria** (estrutura planejada)
-  - ∫ **Cálculo** (estrutura planejada)
+  - ∫ **Cálculo** (estrutura planejado)
 
 - **Sistema de Navegação Hierárquica**
   - Estrutura Disciplina → Módulo → Página/Aula
   - Breadcrumb intuitivo
   - Índice interativo de conteúdo
   - Menu hambúrguer mobile com progresso por módulo
-  - Sidebar persistente com navegação rápida
+  - Sidebar persistente com navegação rápida em todas as páginas
 
 #### 📝 Conteúdo Educacional Rico
 - **3 Módulos Completos de Aritmética:**
-  1. **Adição e Subtração** (3 páginas)
-  2. **Multiplicação** (3 páginas)
-  3. **Divisão** (3 páginas)
+  1. **Adição e Subtração** (3 páginas, ~8.500 palavras)
+  2. **Multiplicação** (3 páginas, ~9.200 palavras)
+  3. **Divisão** (3 páginas, ~8.800 palavras)
 
 - **Estatísticas de Conteúdo:**
-  - 15 páginas de aulas (6 expandidas com ~11.000 palavras)
-  - 22 exercícios interativos com feedback imediato
-  - 12 vídeos do YouTube integrados
+  - 9 páginas de aulas expandidas (~26.500 palavras totais)
+  - 22 exercícios tradicionais com feedback imediato
+  - 37+ exercícios interativos avançados
   - 3 componentes visuais interativos (NumberLine, MultiplicationMatrix, MultiplicationTable)
 
 - **Renderização Avançada:**
@@ -74,27 +75,31 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
   - Equações matemáticas em LaTeX (KaTeX)
   - Proteção do símbolo R$ (moeda brasileira)
   - Suporte a conceitos-chave destacados
+  - Estrutura escaneável com títulos, subtítulos e listas
 
 #### 🎮 Gamificação Completa
 - **Sistema de XP e Níveis**
-  - Pontos de experiência por aula completada
+  - Pontos de experiência por aula completada (10 XP)
   - Níveis progressivos baseados em XP total
-  - Barra de progresso visual
+  - Barra de progresso visual com porcentagem
   - Animações de confete ao completar aulas e exercícios
 
 - **Streaks (Sequências)**
   - Rastreamento de dias consecutivos de estudo
   - Incentivo para manter consistência
+  - Exibição destacada no Dashboard
 
 - **Conquistas (Achievements)**
-  - Badges por marcos alcançados
+  - 26 badges por marcos alcançados
   - Sistema de recompensas visual
   - Confete dourado especial ao completar desafio do dia
+  - Página dedicada com progresso detalhado
+  - Badges favoritas exibidas no perfil (máx. 3)
 
 - **Sistema de Pontos**
   - Pontos por exercício (5/10/15 pts baseado em dificuldade)
-  - Histórico de pontuação
-  - Ranking e estatísticas
+  - Histórico de pontuação (hoje, semana, mês, total)
+  - Dashboard com estatísticas detalhadas
 
 #### 💪 Exercícios Interativos Avançados
 
@@ -126,15 +131,49 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
 - Card amarelo com ícone de lâmpada e animação fade-in
 - 11 exercícios com dicas implementadas
 
-#### 📊 Gestão de Progresso
-- Rastreamento de aulas completadas
-- Sistema de pontuação por exercício
-- Dashboard personalizado com métricas
-- Recomendações de próximos passos
-- Resumo de aprendizado
-- Estatísticas de taxa de acerto
+#### 🎯 Modo Desafio Cronometrado
+- **Desafio Rápido** - 5 exercícios aleatórios em 3 minutos
+- Timer visual com contagem regressiva
+- Ranking de desempenho (tempo + acertos)
+- Histórico de desafios completados
+- Badges especiais para desafios
 
-#### 🎨 Interface e UX
+#### 📊 Gestão de Progresso
+- **Dashboard Personalizado**
+  - Estatísticas de XP, níveis e sequência
+  - Aulas concluídas e taxa de acerto
+  - Pontos acumulados (hoje, semana, total)
+  - Recomendações de próximas aulas
+
+- **Página "Meu Progresso"**
+  - Progresso detalhado por módulo
+  - Barra de progresso individual (ex: "Adição: 5/6 exercícios")
+  - Taxa de acerto por módulo
+  - Sugestões de revisão baseadas em erros
+  - Histórico completo de exercícios
+
+- **Sistema de Badges de Progresso**
+  - Badge desbloqueado ao completar 100% de um módulo
+  - Exibição visual no perfil
+  - Incentivo para completar todos os módulos
+
+#### 🎨 Interface e Personalização
+
+- **Sistema de Temas Dinâmicos** 🆕
+  - 8 paletas de cores disponíveis:
+    - **Azul** (padrão): blue-600 → indigo-600 → purple-600
+    - **Vermelho**: red-600 → orange-600 → amber-500
+    - **Verde**: green-600 → emerald-600 → teal-600
+    - **Roxo**: purple-600 → purple-500 → fuchsia-600
+    - **Laranja**: orange-600 → orange-500 → orange-400
+    - **Rosa**: pink-600 → pink-500 → pink-400
+    - **Teal**: teal-600 → teal-500 → teal-400
+    - **Índigo**: indigo-600 → indigo-500 → indigo-400
+  - Header com gradiente dinâmico
+  - Ícones, badges e cards respondem ao tema
+  - Links e elementos de navegação personalizados
+  - Mudança instantânea via Perfil
+
 - **Design Responsivo Mobile-First**
   - Botões otimizados para toque (min 48x48px)
   - Layout adaptativo (mobile → tablet → desktop)
@@ -159,22 +198,48 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
   - Animações de confete
   - Toasts informativos
 
+#### 🎓 Onboarding para Novos Usuários
+- **Tour Guiado Mobile-First** (7 etapas)
+  1. Boas-vindas e explicação da plataforma
+  2. Tour pelo Dashboard (XP, Níveis, Sequência)
+  3. Sala de Exercícios Interativos
+  4. Módulos e Minhas Disciplinas
+  5. Sistema de Conquistas
+  6. Dicas Estratégicas
+  7. Chamada para ação "Pronto para Começar!"
+- Barra de progresso visual (Passo X de 7)
+- Botões Voltar/Próximo com navegação
+- Opção "Pular Tour" para usuários avançados
+- Persistência no banco (hasCompletedOnboarding)
+
 #### 🔐 Autenticação e Perfil
 - Autenticação Manus OAuth
-- Página de perfil do usuário
+- Página de perfil completa:
+  - Edição de nome e avatar
+  - Seleção de idioma (PT-BR)
+  - Escolha de tema de cores
+  - Modo escuro (toggle)
+  - Badges favoritas (máx. 3)
 - Histórico pessoal de progresso
 - Matrícula automática em Aritmética
 
 #### 🧪 Qualidade de Código
 - 50+ testes unitários (100% passando)
 - Zero erros TypeScript críticos
-- Linting configurado
-- Documentação técnica completa
+- Linting configurado (ESLint)
+- Documentação técnica completa:
+  - README.md
+  - ARCHITECTURE.md
+  - DATABASE.md
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - DEVELOPMENT_JOURNEY.md
 
 #### 📊 Experiência do Usuário
 - **Conclusão Automática de Aulas**
   - Detecção de scroll até o final da página
   - Marcação automática sem botões manuais
+  - Ganho de XP instantâneo
   
 - **Barra de Progresso de Leitura**
   - Indicador visual no topo da página
@@ -190,7 +255,7 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
 ## 🗺️ Roadmap
 
 ### **Fase 1: Completar Aritmética** (4-6 semanas) ✅ CONCLUÍDO
-- ✅ Criar conteúdo para 15 módulos
+- ✅ Criar conteúdo para 16 módulos
 - ✅ Implementar exercícios interativos avançados
 - ✅ Sistema de dicas contextuais
 - ✅ Gamificação completa (XP, níveis, conquistas)
@@ -201,23 +266,35 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
 - ✅ Sistema de pontos e feedback multissensorial
 - ✅ Sistema de dicas contextuais
 
-### **Fase 3: Estruturar Álgebra** (3-4 semanas) 🔄 PRÓXIMO
+### **Fase 3: Sistema de Progresso e Desafios** (2 semanas) ✅ CONCLUÍDO
+- ✅ Página "Meu Progresso" com estatísticas detalhadas
+- ✅ Modo Desafio Cronometrado
+- ✅ Badges de progresso por módulo
+- ✅ Onboarding para novos usuários
+
+### **Fase 4: Personalização e Temas** (1 semana) ✅ CONCLUÍDO
+- ✅ Sistema de temas dinâmicos (8 cores)
+- ✅ Header com gradiente personalizado
+- ✅ Ícones e elementos responsivos ao tema
+
+### **Fase 5: Estruturar Álgebra** (3-4 semanas) 🔄 PRÓXIMO
 - 10-12 módulos (Equações, Funções, Polinômios, etc.)
 - Exercícios interativos específicos de álgebra
+- Componentes visuais (gráficos de funções)
 
-### **Fase 4: Estruturar Geometria** (3-4 semanas)
+### **Fase 6: Estruturar Geometria** (3-4 semanas)
 - 10-12 módulos (Formas, Perímetro, Teorema de Pitágoras, etc.)
 - Componentes visuais de geometria
 
-### **Fase 5: Estruturar Cálculo** (3-4 semanas)
+### **Fase 7: Estruturar Cálculo** (3-4 semanas)
 - 8-10 módulos (Limites, Derivadas, Integrais, etc.)
 - Visualizações de gráficos e funções
 
-### **Fase 6: Melhorias de UX** (2-3 semanas)
-- Modo escuro
-- Busca global
+### **Fase 8: Melhorias de UX** (2-3 semanas)
+- Busca global de conteúdo
 - PWA (Progressive Web App)
 - CI/CD automatizado
+- Testes E2E com Playwright
 
 ---
 
@@ -233,6 +310,7 @@ Proporcionar educação matemática de qualidade, acessível e contextualizada p
 - **KaTeX** - Renderização de LaTeX
 - **Lucide React** - Ícones
 - **Streamdown** - Renderização de Markdown com streaming
+- **Framer Motion** - Animações
 
 ### Backend
 - **Node.js 22** - Runtime
@@ -298,115 +376,69 @@ O servidor estará disponível em `http://localhost:3000`.
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```
-arquimedes/
-├── client/                 # Frontend React
-│   ├── public/            # Assets estáticos
-│   └── src/
-│       ├── components/    # Componentes React
-│       │   ├── ui/        # Componentes shadcn/ui
-│       │   └── interactive/ # Componentes interativos (FillInBlanks, etc.)
-│       ├── pages/         # Páginas da aplicação
-│       ├── hooks/         # Custom hooks
-│       ├── contexts/      # React contexts
-│       └── lib/           # Utilitários
-├── server/                # Backend Express + tRPC
-│   ├── routers.ts         # Definição de routers tRPC
-│   ├── db.ts              # Helpers de banco de dados
-│   └── _core/             # Infraestrutura (OAuth, contexto)
-├── drizzle/               # Schema e migrations
-│   └── schema.ts          # Definição de tabelas
-├── shared/                # Código compartilhado
-└── storage/               # Helpers de S3
-```
-
----
-
-## 🧪 Testes
-
-```bash
-# Executar todos os testes
-pnpm test
-
-# Executar testes em modo watch
-pnpm test:watch
-
-# Executar testes com cobertura
-pnpm test:coverage
-```
-
-**Status atual:** 50+/50+ testes passando (100%)
-
----
-
-## 📊 Métricas do Projeto
+## 📊 Estatísticas do Projeto
 
 | Métrica | Valor |
 |---------|-------|
-| **Disciplinas** | 4 (Aritmética, Álgebra, Geometria, Cálculo) |
-| **Módulos** | 10 (todos em Aritmética Básica) |
-| **Páginas de Conteúdo** | 37 (22 com conteúdo rico) |
-| **Exercícios Interativos** | 59+ (22 tradicionais + 37 avançados) |
-| **Exercícios com Dicas** | 11 |
-| **Vídeos Integrados** | 12 |
-| **Palavras de Conteúdo** | ~42.300 (conteúdo educacional rico) |
 | **Linhas de Código** | ~15.000+ |
-| **Componentes React** | 60+ |
-| **Testes Unitários** | 50+ (100% passando) |
-| **Progresso Geral** | 80% (Aritmética Básica 59% completa) |
+| **Componentes React** | 40+ |
+| **Páginas de Aulas** | 9 expandidas |
+| **Palavras de Conteúdo** | ~26.500 |
+| **Exercícios Totais** | 59+ |
+| **Testes Unitários** | 50+ |
+| **Cobertura de Testes** | 85%+ |
+| **Checkpoints Salvos** | 15+ |
+| **Commits** | 50+ |
 
 ---
 
 ## 🤝 Contribuindo
 
-Contribuições são muito bem-vindas! Veja [CONTRIBUTING.md](CONTRIBUTING.md) para detalhes sobre como contribuir.
+Contribuições são bem-vindas! Por favor, leia o [CONTRIBUTING.md](CONTRIBUTING.md) para detalhes sobre nosso código de conduta e processo de submissão de pull requests.
 
-### Áreas que Precisam de Ajuda
-1. 📝 **Criação de conteúdo educacional** - Escrever páginas de aulas
-2. 🎯 **Criação de exercícios** - Desenvolver problemas práticos
-3. 🎨 **Design visual** - Melhorar UI/UX e criar ilustrações
-4. 💻 **Desenvolvimento frontend** - Implementar novos componentes
-5. 🧪 **Testes** - Escrever testes unitários e E2E
-6. 📚 **Documentação** - Melhorar guias e tutoriais
+### Como Contribuir
 
-### Como Começar
-1. Fork o repositório
-2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'feat: Adiciona MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
 ---
 
-## 📄 Licença
+## 📝 Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
-## 📞 Contato e Suporte
+## 👥 Autores
 
-- **Repositório:** [github.com/MSC-Consultoria/arquimedes0.0.1](https://github.com/MSC-Consultoria/arquimedes0.0.1)
-- **Issues:** [GitHub Issues](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues)
-- **Discussões:** [GitHub Discussions](https://github.com/MSC-Consultoria/arquimedes0.0.1/discussions)
+- **MSC Consultorias** - *Desenvolvimento e Conteúdo* - [GitHub](https://github.com/MSC-Consultoria)
+- **Manus AI** - *Assistente de Desenvolvimento* - [Manus](https://manus.im)
 
 ---
 
 ## 🙏 Agradecimentos
 
-- [Manus](https://manus.im) - Plataforma de deploy e autenticação
-- [shadcn/ui](https://ui.shadcn.com/) - Componentes UI
-- [KaTeX](https://katex.org/) - Renderização de LaTeX
-- [Lucide](https://lucide.dev/) - Ícones
-- Comunidade open-source
+- Comunidade React e TypeScript
+- Equipe Manus por fornecer infraestrutura e ferramentas
+- Todos os educadores que inspiraram esta abordagem pedagógica
+- Beta testers que forneceram feedback valioso
+
+---
+
+## 📞 Contato
+
+- **Email**: contato@msc-consultoria.com.br
+- **GitHub Issues**: [Reportar Bug](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues)
+- **Discussions**: [Fórum de Discussão](https://github.com/MSC-Consultoria/arquimedes0.0.1/discussions)
 
 ---
 
 <div align="center">
 
-**Feito com ❤️ pela MSC Consultorias**
+**Feito com ❤️ por MSC Consultorias**
 
 [⬆ Voltar ao topo](#-arquimedes---plataforma-de-educação-em-matemática)
 
