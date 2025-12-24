@@ -1212,3 +1212,12 @@
 - [x] Remover exercícios completados dos Exercícios Interativos
 - [x] Mostrar apenas exercícios não completados
 - [x] Testar que exercícios somem após completar
+
+
+## 🔧 Correção de Tema Padrão (24/12/2024)
+- [x] Alterar tema padrão de dark para light no ThemeContext
+- [x] Ajustar variáveis CSS para tema claro como padrão
+- [x] Garantir que usuário pode escolher tema escuro quando quiser
+- [x] Testar tema claro padrão no browser
+- [x] Verificar persistência da escolha do usuário
+- [x] Resetar darkMode do usuário para false no banco de dados
