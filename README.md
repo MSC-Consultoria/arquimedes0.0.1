@@ -346,16 +346,16 @@ pnpm test:coverage
 | Métrica | Valor |
 |---------|-------|
 | **Disciplinas** | 4 (Aritmética, Álgebra, Geometria, Cálculo) |
-| **Módulos** | 16 (todos em Aritmética) |
-| **Páginas de Conteúdo** | 15 (6 expandidas) |
+| **Módulos** | 10 (todos em Aritmética Básica) |
+| **Páginas de Conteúdo** | 37 (22 com conteúdo rico) |
 | **Exercícios Interativos** | 59+ (22 tradicionais + 37 avançados) |
 | **Exercícios com Dicas** | 11 |
 | **Vídeos Integrados** | 12 |
-| **Palavras de Conteúdo** | ~11.000 (páginas expandidas) |
+| **Palavras de Conteúdo** | ~42.300 (conteúdo educacional rico) |
 | **Linhas de Código** | ~15.000+ |
 | **Componentes React** | 60+ |
 | **Testes Unitários** | 50+ (100% passando) |
-| **Progresso Geral** | 80% |
+| **Progresso Geral** | 80% (Aritmética Básica 59% completa) |
 
 ---
 
