@@ -175,7 +175,18 @@ export const achievements = mysqlTable("achievements", {
   id: int("id").autoincrement().primaryKey(),
   userId: int("userId").notNull(),
   
-  type: mysqlEnum("type", ["module_completed", "perfect_score", "streak", "first_lesson"]).notNull(),
+  type: mysqlEnum("type", [
+    // Legacy types
+    "module_completed", "perfect_score", "streak", "first_lesson",
+    // Learning badges (Aprendizado)
+    "learning_bronze", "learning_silver", "learning_gold", "learning_platinum",
+    // Practice badges (Prática)
+    "practice_bronze", "practice_silver", "practice_gold", "practice_platinum",
+    // Consistency badges (Consistência)
+    "consistency_bronze", "consistency_silver", "consistency_gold", "consistency_platinum",
+    // Mastery badges (Maestria)
+    "mastery_bronze", "mastery_silver", "mastery_gold", "mastery_platinum"
+  ]).notNull(),
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description"),
   

@@ -876,3 +876,20 @@
 - [x] Adicionar exercícios práticos com respostas detalhadas (6 exercícios com <details>)
 - [x] Incluir casos de uso do cotidiano brasileiro (Black Friday, INSS, IR, ICMS, etc.)
 - [x] Testar navegação e leitura completa
+
+
+## 🏅 Sistema de Badges/Medalhas
+
+### Sistema Progressivo de Badges (Bronze → Prata → Ouro → Platina)
+- [x] Criar achievements progressivos no banco (4 categorias x 4 níveis = 16 badges)
+- [x] Definir critérios para cada nível:
+  - Aprendizado: 1, 5, 10, 25 aulas
+  - Prática: 10, 50, 100, 250 exercícios
+  - Consistência: 3, 7, 15, 30 dias seguidos
+  - Maestria: 1, 3, 5, 10 módulos
+- [x] Criar componente `Badge.tsx` com designs SVG para cada nível
+- [x] Implementar paleta de cores: Bronze (#CD7F32), Prata (#C0C0C0), Ouro (#FFD700), Platina (#E5E4E2)
+- [x] Adicionar estados visuais: bloqueado (grayscale), desbloqueado (colorido + animação)
+- [ ] Atualizar página de Conquistas para usar badges progressivos
+- [ ] Implementar lógica de desbloque automático (bronze → prata → ouro → platina)
+- [ ] Testar responsividade e animações
