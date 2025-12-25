@@ -266,7 +266,7 @@ export function FunctionGraph() {
               <div>
                 <span className="text-slate-600">Raiz:</span>
                 <span className="ml-2 font-medium">
-                  {properties.root !== null ? `x = ${properties.root.toFixed(2)}` : "Não existe"}
+                  {properties.root !== null && properties.root !== undefined ? `x = ${properties.root.toFixed(2)}` : "Não existe"}
                 </span>
               </div>
               <div>

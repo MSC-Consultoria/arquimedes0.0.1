@@ -1023,7 +1023,7 @@ export async function submitStandaloneExercise(
     throw new Error("Exercise not found");
   }
 
-  const isCorrect = exercise[0].correctAnswer === userAnswer;
+  const isCorrect = String(exercise[0].correctAnswer) === String(userAnswer);
 
   await db.insert(standaloneExerciseAttempts).values({
     userId,
@@ -1326,7 +1326,7 @@ export async function submitDailyChallengeAnswer(
     throw new Error("Exercise not found");
   }
 
-  const isCorrect = exercise[0].correctAnswer === userAnswer;
+  const isCorrect = String(exercise[0].correctAnswer) === String(userAnswer);
   const pointsEarned = isCorrect ? exercise[0].points * 2 : 0; // Pontos dobrados!
 
   // Registrar tentativa

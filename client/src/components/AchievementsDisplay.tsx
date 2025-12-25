@@ -5,18 +5,42 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useSounds } from "@/lib/sounds";
 
-const achievementIcons = {
+const achievementIcons: Record<string, typeof Trophy> = {
   module_completed: Trophy,
   perfect_score: Zap,
   streak: Award,
   first_lesson: BookOpen,
+  learning_bronze: Trophy,
+  learning_silver: Trophy,
+  learning_gold: Trophy,
+  learning_platinum: Trophy,
+  practice_bronze: Zap,
+  practice_silver: Zap,
+  practice_gold: Zap,
+  practice_platinum: Zap,
+  mastery_bronze: Award,
+  mastery_silver: Award,
+  mastery_gold: Award,
+  mastery_platinum: Award,
 };
 
-const achievementColors = {
+const achievementColors: Record<string, string> = {
   module_completed: "from-yellow-400 to-orange-500",
   perfect_score: "from-purple-400 to-pink-500",
   streak: "from-orange-400 to-red-500",
   first_lesson: "from-blue-400 to-cyan-500",
+  learning_bronze: "from-amber-600 to-amber-700",
+  learning_silver: "from-gray-400 to-gray-500",
+  learning_gold: "from-yellow-400 to-yellow-500",
+  learning_platinum: "from-cyan-400 to-cyan-500",
+  practice_bronze: "from-amber-600 to-amber-700",
+  practice_silver: "from-gray-400 to-gray-500",
+  practice_gold: "from-yellow-400 to-yellow-500",
+  practice_platinum: "from-cyan-400 to-cyan-500",
+  mastery_bronze: "from-amber-600 to-amber-700",
+  mastery_silver: "from-gray-400 to-gray-500",
+  mastery_gold: "from-yellow-400 to-yellow-500",
+  mastery_platinum: "from-cyan-400 to-cyan-500",
 };
 
 export default function AchievementsDisplay() {

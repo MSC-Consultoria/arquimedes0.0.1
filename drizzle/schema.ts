@@ -301,7 +301,7 @@ export const standaloneExercises = mysqlTable("standalone_exercises", {
   exerciseType: mysqlEnum("exerciseType", ["multiple_choice", "fill_blanks", "slider", "matching"]).default("multiple_choice").notNull(),
   
   // Dados específicos por tipo
-  options: json("options"), // Array de strings para multiple_choice: ["Opção A", "Opção B", "Opção C", "Opção D"]
+  options: json("options").$type<string[]>(), // Array de strings para multiple_choice: ["Opção A", "Opção B", "Opção C", "Opção D"]
   correctAnswer: text("correctAnswer"), // Índice (0-3) para multiple_choice, valor correto para outros tipos
   
   // Explicação passo-a-passo (novo campo)
