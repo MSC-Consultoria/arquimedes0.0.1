@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { toJsonLdScript } from '@/lib/structuredData';
 
 interface StructuredDataProps {
-  data: any;
+  data: Record<string, unknown>;
 }
 
 /**

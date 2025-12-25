@@ -175,6 +175,6 @@ export function generateFAQStructuredData(faqs: Array<{ question: string; answer
 /**
  * Converte objeto structured data para JSON-LD script tag
  */
-export function toJsonLdScript(data: any): string {
+export function toJsonLdScript(data: Record<string, unknown>): string {
   return JSON.stringify(data, null, 2);
 }

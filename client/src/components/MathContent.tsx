@@ -4,6 +4,15 @@ import rehypeRaw from 'rehype-raw';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
 import { Card } from './ui/card';
+import type { ReactNode } from 'react';
+
+interface MarkdownComponentProps {
+  children?: ReactNode;
+  href?: string;
+  className?: string;
+  src?: string;
+  alt?: string;
+}
 import { YouTubeEmbed } from './YouTubeEmbed';
 import { extractYouTubeId } from '@/lib/youtube';
 
@@ -78,27 +87,27 @@ export function MathContent({ content, className = "", videoUrl, videoTitle }: M
 }
 
 const markdownComponents = {
-  h1: ({ children }: any) => (
+  h1: ({ children }: MarkdownComponentProps) => (
     <h1 className="text-3xl font-bold text-blue-900 mt-8 mb-4 border-b-2 border-blue-200 pb-2">
       {children}
     </h1>
   ),
-  h2: ({ children }: any) => (
+  h2: ({ children }: MarkdownComponentProps) => (
     <h2 className="text-2xl font-bold text-blue-800 mt-6 mb-3">
       {children}
     </h2>
   ),
-  h3: ({ children }: any) => (
+  h3: ({ children }: MarkdownComponentProps) => (
     <h3 className="text-xl font-semibold text-blue-700 mt-5 mb-2">
       {children}
     </h3>
   ),
-  p: ({ children }: any) => (
+  p: ({ children }: MarkdownComponentProps) => (
     <p className="text-gray-700 leading-relaxed mb-4 text-base">
       {children}
     </p>
   ),
-  a: ({ href, children }: any) => (
+  a: ({ href, children }: MarkdownComponentProps) => (
     <a
       href={href}
       className="text-blue-600 hover:text-blue-800 underline font-medium"
@@ -108,22 +117,22 @@ const markdownComponents = {
       {children}
     </a>
   ),
-  strong: ({ children }: any) => (
+  strong: ({ children }: MarkdownComponentProps) => (
     <strong className="font-bold text-blue-900">
       {children}
     </strong>
   ),
-  ul: ({ children }: any) => (
+  ul: ({ children }: MarkdownComponentProps) => (
     <ul className="list-disc list-inside space-y-2 my-4 ml-4">
       {children}
     </ul>
   ),
-  ol: ({ children }: any) => (
+  ol: ({ children }: MarkdownComponentProps) => (
     <ol className="list-decimal list-inside space-y-2 my-4 ml-4">
       {children}
     </ol>
   ),
-  blockquote: ({ children }: any) => (
+  blockquote: ({ children }: MarkdownComponentProps) => (
     <Card className="my-4 border-l-4 border-blue-500 bg-blue-50 p-4">
       <div className="text-gray-800 italic">
         {children}

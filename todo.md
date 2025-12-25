@@ -67,3 +67,11 @@
 | Vídeos integrados | 15+ |
 | Testes unitários | 50+ |
 | Erros TypeScript | 0 |
+
+
+## Qualidade de Código - Recomendações Jules (25/12/2024)
+
+- [x] Remover arquivos Demo (ComponentsDemo, VisualsDemo, InteractiveDemo)
+- [x] Modularizar server/db.ts (estrutura criada em server/db/)
+- [x] Corrigir tipagens fracas no código próprio (MathContent.tsx, StructuredData.tsx)
+- [ ] Sincronizar com GitHub
