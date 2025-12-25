@@ -1,9 +1,0 @@
-{
-  "query": "UPDATE modules \nSET name = 'Adição', \n    slug = 'adicao',\n    description = 'Aprenda os fundamentos da adição, suas propriedades e técnicas de cálculo com reagrupamento.'\nWHERE id = 1",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3791tceNk2iYTis.4402e8216d86 --database T5Ee3HJGcPdFeU4iAe9r9p --execute UPDATE modules \nSET name = 'Adição', \n    slug = 'adicao',\n    description = 'Aprenda os fundamentos da adição, suas propriedades e técnicas de cálculo com reagrupamento.'\nWHERE id = 1",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 60
-}

@@ -9,6 +9,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { FillInBlanks } from "@/components/interactive/FillInBlanks";
 import { InteractiveSlider } from "@/components/interactive/InteractiveSlider";
 import { MatchingGame } from "@/components/interactive/MatchingGame";
+import { ModulePerformanceSummary } from "@/components/interactive/ModulePerformanceSummary";
 import { useSounds } from "@/lib/sounds";
 import { useHaptic } from "@/lib/useHaptic";
 import { trpc } from "@/lib/trpc";
@@ -344,6 +345,21 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Adição */}
+              <ModulePerformanceSummary
+                moduleName="Adição"
+                moduleEmoji="➕"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "adicao-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "adicao-fill-2", type: "fill-in-blanks", points: 5 },
+                  { id: "adicao-fill-3", type: "fill-in-blanks", points: 5 },
+                  { id: "adicao-slider-1", type: "slider", points: 10 },
+                  { id: "adicao-slider-2", type: "slider", points: 10 },
+                  { id: "adicao-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
 
             {/* Módulo 2: Subtração */}
@@ -366,8 +382,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Carlos pagou R$ 50 por uma compra de R$ 37. Ele recebeu R$ [blank] de troco."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["13", "treze"] }]}
+                    text="Carlos pagou R$ 50 por uma compra de R$ 37. Ele recebeu R$ {1} de troco."
+                    blanks={[{ id: "1", correctAnswer: "13", acceptableAnswers: ["treze"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("subtracao-fill-1", 5, isCorrect)}
                   />
                 </CardContent>
@@ -388,8 +404,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Luís tem 28 anos e sua irmã tem 19 anos. A diferença de idade entre eles é de [blank] anos."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["9", "nove"] }]}
+                    text="Luís tem 28 anos e sua irmã tem 19 anos. A diferença de idade entre eles é de {1} anos."
+                    blanks={[{ id: "1", correctAnswer: "9", acceptableAnswers: ["nove"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("subtracao-fill-2", 5, isCorrect)}
                   />
                 </CardContent>
@@ -446,6 +462,19 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Subtração */}
+              <ModulePerformanceSummary
+                moduleName="Subtração"
+                moduleEmoji="➖"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "subtracao-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "subtracao-fill-2", type: "fill-in-blanks", points: 5 },
+                  { id: "subtracao-slider-1", type: "slider", points: 10 },
+                  { id: "subtracao-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
 
             {/* Módulo 3: Multiplicação */}
@@ -468,8 +497,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Se cada caixa tem 6 ovos e você comprou 4 caixas, você tem [blank] ovos no total."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["24", "vinte e quatro"] }]}
+                    text="Se cada caixa tem 6 ovos e você comprou 4 caixas, você tem {1} ovos no total."
+                    blanks={[{ id: "1", correctAnswer: "24", acceptableAnswers: ["vinte e quatro"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("multiplicacao-fill-1", 5, isCorrect)}
                   />
                 </CardContent>
@@ -490,8 +519,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Cada caneta custa R$ 3. Se você comprar 7 canetas, vai gastar R$ [blank]."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["21", "vinte e um"] }]}
+                    text="Cada caneta custa R$ 3. Se você comprar 7 canetas, vai gastar R$ {1}."
+                    blanks={[{ id: "1", correctAnswer: "21", acceptableAnswers: ["vinte e um"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("multiplicacao-fill-2", 5, isCorrect)}
                   />
                 </CardContent>
@@ -548,6 +577,19 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Multiplicação */}
+              <ModulePerformanceSummary
+                moduleName="Multiplicação"
+                moduleEmoji="✖️"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "multiplicacao-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "multiplicacao-fill-2", type: "fill-in-blanks", points: 5 },
+                  { id: "multiplicacao-slider-1", type: "slider", points: 10 },
+                  { id: "multiplicacao-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
 
             {/* Módulo 4: Divisão */}
@@ -570,8 +612,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="12 chocolates serão divididos igualmente entre 3 crianças. Cada criança receberá [blank] chocolates."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["4", "quatro"] }]}
+                    text="12 chocolates serão divididos igualmente entre 3 crianças. Cada criança receberá {1} chocolates."
+                    blanks={[{ id: "1", correctAnswer: "4", acceptableAnswers: ["quatro"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("divisao-fill-1", 5, isCorrect)}
                   />
                 </CardContent>
@@ -592,8 +634,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Um pacote com 5 canetas custa R$ 15. Cada caneta custa R$ [blank]."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["3", "três"] }]}
+                    text="Um pacote com 5 canetas custa R$ 15. Cada caneta custa R$ {1}."
+                    blanks={[{ id: "1", correctAnswer: "3", acceptableAnswers: ["três"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("divisao-fill-2", 5, isCorrect)}
                   />
                 </CardContent>
@@ -650,6 +692,19 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Divisão */}
+              <ModulePerformanceSummary
+                moduleName="Divisão"
+                moduleEmoji="➗"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "divisao-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "divisao-fill-2", type: "fill-in-blanks", points: 5 },
+                  { id: "divisao-slider-1", type: "slider", points: 10 },
+                  { id: "divisao-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
 
             {/* Módulo 5: Frações */}
@@ -672,8 +727,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Uma pizza foi dividida em 8 fatias. Você comeu 4 fatias. Você comeu [blank]/8 da pizza, que é o mesmo que 1/2."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["4", "quatro"] }]}
+                    text="Uma pizza foi dividida em 8 fatias. Você comeu 4 fatias. Você comeu {1}/8 da pizza, que é o mesmo que 1/2."
+                    blanks={[{ id: "1", correctAnswer: "4", acceptableAnswers: ["quatro"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("fracoes-fill-1", 5, isCorrect)}
                   />
                 </CardContent>
@@ -730,6 +785,18 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Frações */}
+              <ModulePerformanceSummary
+                moduleName="Frações"
+                moduleEmoji="🍕"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "fracoes-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "fracoes-slider-1", type: "slider", points: 10 },
+                  { id: "fracoes-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
 
             {/* Módulo 6: Proporção */}
@@ -752,8 +819,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Se 2 kg de arroz custam R$ 10, então 6 kg custam R$ [blank]."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["30", "trinta"] }]}
+                    text="Se 2 kg de arroz custam R$ 10, então 6 kg custam R$ {1}."
+                    blanks={[{ id: "1", correctAnswer: "30", acceptableAnswers: ["trinta"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("proporcao-fill-1", 5, isCorrect)}
                   />
                 </CardContent>
@@ -810,6 +877,18 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Proporção */}
+              <ModulePerformanceSummary
+                moduleName="Proporção e Razão"
+                moduleEmoji="⚖️"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "proporcao-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "proporcao-slider-1", type: "slider", points: 10 },
+                  { id: "proporcao-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
 
             {/* Módulo 7: Porcentagem */}
@@ -832,8 +911,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Uma camisa de R$ 100 está com 10% de desconto. O desconto é de R$ [blank]."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["10", "dez"] }]}
+                    text="Uma camisa de R$ 100 está com 10% de desconto. O desconto é de R$ {1}."
+                    blanks={[{ id: "1", correctAnswer: "10", acceptableAnswers: ["dez"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("porcentagem-fill-1", 5, isCorrect)}
                   />
                 </CardContent>
@@ -854,8 +933,8 @@ export default function InteractiveExerciseRoomPage() {
                 <CardContent>
                   <FillInBlanks
                     showFeedback={true}
-                    text="Um produto de R$ 50 com 20% de desconto custa R$ [blank]."
-                    blanks={[{ id: "1", correctAnswer: "", acceptableAnswers: ["40", "quarenta"] }]}
+                    text="Um produto de R$ 50 com 20% de desconto custa R$ {1}."
+                    blanks={[{ id: "1", correctAnswer: "40", acceptableAnswers: ["quarenta"] }]}
                     onComplete={(isCorrect) => handleExerciseComplete("porcentagem-fill-2", 5, isCorrect)}
                   />
                 </CardContent>
@@ -912,6 +991,19 @@ export default function InteractiveExerciseRoomPage() {
                   />
                 </CardContent>
               </Card>
+
+              {/* Resumo de Desempenho - Porcentagem */}
+              <ModulePerformanceSummary
+                moduleName="Porcentagem"
+                moduleEmoji="💯"
+                completedExercises={completedExercises}
+                exerciseDefinitions={[
+                  { id: "porcentagem-fill-1", type: "fill-in-blanks", points: 5 },
+                  { id: "porcentagem-fill-2", type: "fill-in-blanks", points: 5 },
+                  { id: "porcentagem-slider-1", type: "slider", points: 10 },
+                  { id: "porcentagem-match-1", type: "matching", points: 15 },
+                ]}
+              />
             </TabsContent>
           </Tabs>
         </div>

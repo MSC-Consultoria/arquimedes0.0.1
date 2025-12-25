@@ -1,22 +1,18 @@
-# 🏛️ Artemis - Sistema de Preparação para OAB Segunda Fase
+# 🎓 Arquimedes - Plataforma de Educação em Matemática
 
 <div align="center">
 
-![Artemis Logo](https://via.placeholder.com/200x200/1e3a5f/d4af37?text=ARTEMIS)
+![Arquimedes Logo](https://img.shields.io/badge/Arquimedes-Matem%C3%A1tica%20Descomplicada-2563eb?style=for-the-badge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Progresso](https://img.shields.io/badge/Progresso-85%25-10b981?style=for-the-badge)](PROJECT_STATUS.md)
 
-**Sistema completo de preparação para a segunda fase da OAB em Direito Constitucional**
+**Educação de qualidade em matemática para adultos**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-19.2-61DAFB.svg)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-22.13-339933.svg)](https://nodejs.org/)
+*Do básico ao avançado, sem infantilização*
 
-[Funcionalidades](#-funcionalidades) •
-[Tecnologias](#-tecnologias) •
-[Instalação](#-instalação) •
-[Uso](#-uso) •
-[Documentação](#-documentação) •
-[Contribuindo](#-contribuindo)
+[Demo ao Vivo](https://3000-izawxsbz194xne7hs1lhx-bbd42229.us2.manus.computer) · [Reportar Bug](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues) · [Solicitar Funcionalidade](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues)
 
 </div>
 
@@ -24,196 +20,362 @@
 
 ## 📋 Sobre o Projeto
 
-**Artemis** é uma plataforma completa e moderna de preparação para a segunda fase do Exame da Ordem dos Advogados do Brasil (OAB), com foco em **Direito Constitucional**. O sistema foi desenvolvido pela **MSC Consultoria** como projeto piloto para auxiliar candidatos a alcançarem a aprovação através de conteúdo rico, exercícios práticos e metodologias comprovadas.
+**Arquimedes** é uma plataforma educacional moderna desenvolvida pela **MSC Consultorias** com o objetivo de desmistificar o ensino de matemática para adultos. A plataforma oferece uma abordagem clara, prática e profissional, focando em conceitos fundamentais com aplicações do cotidiano.
 
-O nome "Artemis" faz referência à deusa grega da justiça, simbolizando a busca pela excelência e equidade no exercício da advocacia.
+### 🎯 Missão
 
-### 🎯 Objetivos
+Proporcionar educação matemática de qualidade, acessível e contextualizada para adultos que desejam reforçar seus conhecimentos básicos ou avançar em conceitos mais complexos, sem a infantilização comum em materiais educacionais tradicionais.
 
-- Fornecer conteúdo programático completo alinhado aos padrões da FGV
-- Oferecer exercícios práticos com correção automática e feedback detalhado
-- Simular condições reais de prova (5 horas, 1 peça + 4 questões)
-- Acompanhar progresso individual com métricas e estatísticas
-- Gamificar o aprendizado com badges e conquistas
-- Recomendar conteúdo personalizado baseado em desempenho
+### ✨ Diferenciais
+
+- **Abordagem Conceitual**: Foco na compreensão profunda, não apenas em cálculos mecânicos
+- **Contextualização Prática**: Exemplos do cotidiano (finanças, compras, medidas)
+- **Visualização Interativa**: Diagramas, retas numéricas e equações renderizadas
+- **Feedback Imediato**: Sistema de exercícios com validação automática
+- **Aprendizado Gamificado**: XP, níveis, streaks e conquistas
+- **Interface Profissional**: Design limpo e moderno, adequado para adultos
+- **Exercícios Interativos Avançados**: FillInBlanks, InteractiveSlider, MatchingGame
+- **Sistema de Dicas Contextuais**: Ajuda estratégica sem entregar respostas
+- **Personalização Visual**: 8 temas de cores dinâmicos com gradientes harmoniosos
 
 ---
 
-## ✨ Funcionalidades
+## 🚀 Funcionalidades
 
-### 📚 Conteúdo Programático
+### ✅ Implementadas (v2.46.0)
 
-- **9 temas de Direito Constitucional** com teoria completa, legislação, jurisprudência e exemplos práticos
-- **10 peças processuais** com estrutura detalhada, lei aplicável e modelos
-- **154 exercícios de múltipla escolha** distribuídos por tema e nível de dificuldade
-- Banco de provas antigas (4º ao 44º EOU) com gabaritos e padrões de resposta
+#### 📚 Estrutura de Conteúdo
+- **4 Grandes Áreas de Conhecimento**
+  - 🔢 **Aritmética** (16 módulos estruturados, 3 completos)
+  - 📐 **Álgebra** (estrutura planejada)
+  - 📏 **Geometria** (estrutura planejada)
+  - ∫ **Cálculo** (estrutura planejado)
 
-### 🎯 Sistema de Exercícios
+- **Sistema de Navegação Hierárquica**
+  - Estrutura Disciplina → Módulo → Página/Aula
+  - Breadcrumb intuitivo
+  - Índice interativo de conteúdo
+  - Menu hambúrguer mobile com progresso por módulo
+  - Sidebar persistente com navegação rápida em todas as páginas
 
-- Exercícios de múltipla escolha com correção automática
-- Questões discursivas com correção via LLM
-- Redação de peças processuais com feedback personalizado
-- Cronômetro e controle de tempo
-- Filtros por tema, tipo e dificuldade
-- Histórico completo de exercícios resolvidos
+#### 📝 Conteúdo Educacional Rico
+- **3 Módulos Completos de Aritmética:**
+  1. **Adição e Subtração** (3 páginas, ~8.500 palavras)
+  2. **Multiplicação** (3 páginas, ~9.200 palavras)
+  3. **Divisão** (3 páginas, ~8.800 palavras)
 
-### 🏆 Gamificação
+- **Estatísticas de Conteúdo:**
+  - 9 páginas de aulas expandidas (~26.500 palavras totais)
+  - 22 exercícios tradicionais com feedback imediato
+  - 37+ exercícios interativos avançados
+  - 3 componentes visuais interativos (NumberLine, MultiplicationMatrix, MultiplicationTable)
 
-- Sistema de pontos acumulados
-- Badges em 3 níveis (bronze, prata, ouro)
-- Conquistas por tema dominado, velocidade e acurácia
-- Sequência de dias de estudo (streaks)
-- Ranking e comparação de desempenho
+- **Renderização Avançada:**
+  - Texto formatado com Markdown
+  - Equações matemáticas em LaTeX (KaTeX)
+  - Proteção do símbolo R$ (moeda brasileira)
+  - Suporte a conceitos-chave destacados
+  - Estrutura escaneável com títulos, subtítulos e listas
 
-### 📊 Acompanhamento de Progresso
+#### 🎮 Gamificação Completa
+- **Sistema de XP e Níveis**
+  - Pontos de experiência por aula completada (10 XP)
+  - Níveis progressivos baseados em XP total
+  - Barra de progresso visual com porcentagem
+  - Animações de confete ao completar aulas e exercícios
 
-- Dashboard com métricas em tempo real
-- Gráficos de evolução temporal
-- Taxa de acerto por tema
-- Identificação de pontos fracos
-- Heatmap de padrão de estudo
-- Relatórios detalhados de desempenho
+- **Streaks (Sequências)**
+  - Rastreamento de dias consecutivos de estudo
+  - Incentivo para manter consistência
+  - Exibição destacada no Dashboard
 
-### 🎓 Simulador de Provas
+- **Conquistas (Achievements)**
+  - 26 badges por marcos alcançados
+  - Sistema de recompensas visual
+  - Confete dourado especial ao completar desafio do dia
+  - Página dedicada com progresso detalhado
+  - Badges favoritas exibidas no perfil (máx. 3)
 
-- Simulador completo (5 horas, 10 pontos)
-- Estrutura idêntica ao exame real (1 peça + 4 questões)
-- Cronômetro e salvamento automático
-- Correção via LLM com padrão FGV
-- Relatório detalhado de desempenho
+- **Sistema de Pontos**
+  - Pontos por exercício (5/10/15 pts baseado em dificuldade)
+  - Histórico de pontuação (hoje, semana, mês, total)
+  - Dashboard com estatísticas detalhadas
 
-### 🤖 Inteligência Artificial
+#### 💪 Exercícios Interativos Avançados
 
-- Correção automática de questões discursivas
-- Avaliação de peças processuais
-- Feedback personalizado sobre fundamentação jurídica
-- Recomendações inteligentes de conteúdo
-- Análise de erros frequentes
+**Sala de Exercícios Interativos** - 37+ exercícios organizados em 7 módulos:
+- **FillInBlanks** (Preencher Lacunas) - 20+ exercícios
+  - Operações matemáticas contextualizadas
+  - Validação automática de respostas
+  - Feedback imediato com correções
 
-### 📱 Interface Moderna
+- **InteractiveSlider** (Slider de Estimativa) - 10+ exercícios
+  - Estimativas de valores e medidas
+  - Feedback visual de proximidade
+  - Ideal para cálculos aproximados
 
-- Design profissional com estética de justiça (azul marinho e dourado)
-- Responsivo (Mobile First)
-- Animações suaves e profissionais
-- Componentes reutilizáveis (shadcn/ui)
-- Tipografia elegante (Montserrat + Lato)
+- **MatchingGame** (Jogo de Correspondência) - 7+ exercícios
+  - Conectar conceitos e definições
+  - Drag-and-drop intuitivo
+  - Validação de correspondências corretas
+
+**Distribuição por Dificuldade:**
+- 60% Fácil (5 pontos)
+- 30% Moderado (10 pontos)
+- 10% Difícil (15 pontos)
+
+**Sistema de Dicas Contextuais:**
+- Botão "💡 Dica" em exercícios difíceis e moderados
+- Dicas estratégicas que ensinam métodos de resolução
+- NÃO entregam respostas diretas
+- Card amarelo com ícone de lâmpada e animação fade-in
+- 11 exercícios com dicas implementadas
+
+#### 🎯 Modo Desafio Cronometrado
+- **Desafio Rápido** - 5 exercícios aleatórios em 3 minutos
+- Timer visual com contagem regressiva
+- Ranking de desempenho (tempo + acertos)
+- Histórico de desafios completados
+- Badges especiais para desafios
+
+#### 🎬 Sala de Vídeos Educacionais 🆕
+- **20 vídeos em português do Brasil** (1 por módulo de Aritmética)
+- Canais brasileiros de qualidade:
+  - Professor Ferretto (ENEM e Vestibulares)
+  - Prof. Gis (Gis com Giz)
+  - Matemática Rio (Prof. Rafael Procopio)
+  - Marcos Aba (MABA)
+  - Dicas de Mat (Sandro Curió)
+  - Professora Angela
+- **Sistema de Favoritos**: Botão de coração para salvar vídeos
+- Seção "Meus Vídeos Favoritos" com acesso rápido
+- Contador de favoritos nas estatísticas
+- Organização por nível (Básica, Intermediária, Avançada)
+- Pontuação: +3 XP por vídeo assistido
+
+#### ✅ Validador de Exercícios 🆕
+- Sistema automático de validação de respostas
+- Auditoria completa de 500+ exercícios
+- Correção de 61 exercícios com respostas erradas
+- Scripts de auditoria para manutenção contínua
+
+#### 📊 Gestão de Progresso
+- **Dashboard Personalizado**
+  - Estatísticas de XP, níveis e sequência
+  - Aulas concluídas e taxa de acerto
+  - Pontos acumulados (hoje, semana, total)
+  - Recomendações de próximas aulas
+
+- **Página "Meu Progresso"**
+  - Progresso detalhado por módulo
+  - Barra de progresso individual (ex: "Adição: 5/6 exercícios")
+  - Taxa de acerto por módulo
+  - Sugestões de revisão baseadas em erros
+  - Histórico completo de exercícios
+
+- **Sistema de Badges de Progresso**
+  - Badge desbloqueado ao completar 100% de um módulo
+  - Exibição visual no perfil
+  - Incentivo para completar todos os módulos
+
+#### 🎨 Interface e Personalização
+
+- **Sistema de Temas Dinâmicos** 🆕
+  - 8 paletas de cores disponíveis:
+    - **Azul** (padrão): blue-600 → indigo-600 → purple-600
+    - **Vermelho**: red-600 → orange-600 → amber-500
+    - **Verde**: green-600 → emerald-600 → teal-600
+    - **Roxo**: purple-600 → purple-500 → fuchsia-600
+    - **Laranja**: orange-600 → orange-500 → orange-400
+    - **Rosa**: pink-600 → pink-500 → pink-400
+    - **Teal**: teal-600 → teal-500 → teal-400
+    - **Índigo**: indigo-600 → indigo-500 → indigo-400
+  - Header com gradiente dinâmico
+  - Ícones, badges e cards respondem ao tema
+  - Links e elementos de navegação personalizados
+  - Mudança instantânea via Perfil
+
+- **Design Responsivo Mobile-First**
+  - Botões otimizados para toque (min 48x48px)
+  - Layout adaptativo (mobile → tablet → desktop)
+  - Menu hambúrguer com navegação completa
+  - Sidebar persistente com links rápidos
+
+- **Tipografia Brasileira**
+  - Fontes Inter e Lexend via Google Fonts
+  - Suporte completo a acentos (á, é, í, ó, ú, ã, õ, ç)
+
+- **Componentes Visuais Interativos**
+  - NumberLine (reta numérica animada)
+  - MultiplicationMatrix (matriz visual)
+  - MultiplicationTable (tabuada interativa)
+  - FillInBlanks (preencher lacunas)
+  - InteractiveSlider (slider de estimativa)
+  - MatchingGame (jogo de correspondência)
+
+- **Feedback Multissensorial**
+  - Sons de sucesso/erro
+  - Haptic feedback (vibração)
+  - Animações de confete
+  - Toasts informativos
+
+#### 🎓 Onboarding para Novos Usuários
+- **Tour Guiado Mobile-First** (7 etapas)
+  1. Boas-vindas e explicação da plataforma
+  2. Tour pelo Dashboard (XP, Níveis, Sequência)
+  3. Sala de Exercícios Interativos
+  4. Módulos e Minhas Disciplinas
+  5. Sistema de Conquistas
+  6. Dicas Estratégicas
+  7. Chamada para ação "Pronto para Começar!"
+- Barra de progresso visual (Passo X de 7)
+- Botões Voltar/Próximo com navegação
+- Opção "Pular Tour" para usuários avançados
+- Persistência no banco (hasCompletedOnboarding)
+
+#### 🔐 Autenticação e Perfil
+- Autenticação Manus OAuth
+- Página de perfil completa:
+  - Edição de nome e avatar
+  - Seleção de idioma (PT-BR)
+  - Escolha de tema de cores
+  - Modo escuro (toggle)
+  - Badges favoritas (máx. 3)
+- Histórico pessoal de progresso
+- Matrícula automática em Aritmética
+
+#### 🧪 Qualidade de Código
+- 50+ testes unitários (100% passando)
+- Zero erros TypeScript críticos
+- Linting configurado (ESLint)
+- Documentação técnica completa:
+  - README.md
+  - ARCHITECTURE.md
+  - DATABASE.md
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - DEVELOPMENT_JOURNEY.md
+
+#### 📊 Experiência do Usuário
+- **Conclusão Automática de Aulas**
+  - Detecção de scroll até o final da página
+  - Marcação automática sem botões manuais
+  - Ganho de XP instantâneo
+  
+- **Barra de Progresso de Leitura**
+  - Indicador visual no topo da página
+  - Preenchimento gradual conforme scroll
+  - Animação suave e responsiva
+
+- **Matrícula Automática**
+  - Novos usuários automaticamente inscritos em Aritmética
+  - Acesso imediato aos 16 módulos de conteúdo
+
+---
+
+## 🗺️ Roadmap
+
+### **Fase 1: Completar Aritmética** (4-6 semanas) ✅ CONCLUÍDO
+- ✅ Criar conteúdo para 16 módulos
+- ✅ Implementar exercícios interativos avançados
+- ✅ Sistema de dicas contextuais
+- ✅ Gamificação completa (XP, níveis, conquistas)
+
+### **Fase 2: Sala de Exercícios Interativos** (2 semanas) ✅ CONCLUÍDO
+- ✅ Implementar FillInBlanks, InteractiveSlider, MatchingGame
+- ✅ 37+ exercícios organizados por módulo
+- ✅ Sistema de pontos e feedback multissensorial
+- ✅ Sistema de dicas contextuais
+
+### **Fase 3: Sistema de Progresso e Desafios** (2 semanas) ✅ CONCLUÍDO
+- ✅ Página "Meu Progresso" com estatísticas detalhadas
+- ✅ Modo Desafio Cronometrado
+- ✅ Badges de progresso por módulo
+- ✅ Onboarding para novos usuários
+
+### **Fase 4: Personalização e Temas** (1 semana) ✅ CONCLUÍDO
+- ✅ Sistema de temas dinâmicos (8 cores)
+- ✅ Header com gradiente personalizado
+- ✅ Ícones e elementos responsivos ao tema
+
+### **Fase 5: Estruturar Álgebra** (3-4 semanas) 🔄 PRÓXIMO
+- 10-12 módulos (Equações, Funções, Polinômios, etc.)
+- Exercícios interativos específicos de álgebra
+- Componentes visuais (gráficos de funções)
+
+### **Fase 6: Estruturar Geometria** (3-4 semanas)
+- 10-12 módulos (Formas, Perímetro, Teorema de Pitágoras, etc.)
+- Componentes visuais de geometria
+
+### **Fase 7: Estruturar Cálculo** (3-4 semanas)
+- 8-10 módulos (Limites, Derivadas, Integrais, etc.)
+- Visualizações de gráficos e funções
+
+### **Fase 8: Melhorias de UX** (2-3 semanas)
+- Busca global de conteúdo
+- PWA (Progressive Web App)
+- CI/CD automatizado
+- Testes E2E com Playwright
 
 ---
 
 ## 🛠️ Tecnologias
 
 ### Frontend
-
-- **React 19.2** - Biblioteca JavaScript para interfaces
-- **TypeScript 5.9** - Superset tipado de JavaScript
-- **Tailwind CSS 4** - Framework CSS utilitário
-- **shadcn/ui** - Componentes de UI modernos
-- **Wouter** - Roteamento leve
-- **Recharts** - Biblioteca de gráficos
-- **Framer Motion** - Animações fluidas
+- **React 19** - Framework UI
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS 4** - Estilização
+- **Wouter** - Roteamento
+- **tRPC** - Type-safe API client
+- **React Query** - Gerenciamento de estado
+- **KaTeX** - Renderização de LaTeX
+- **Lucide React** - Ícones
+- **Streamdown** - Renderização de Markdown com streaming
+- **Framer Motion** - Animações
 
 ### Backend
-
-- **Node.js 22.13** - Runtime JavaScript
-- **Express 4** - Framework web minimalista
-- **tRPC 11** - TypeScript RPC framework
+- **Node.js 22** - Runtime
+- **Express 4** - Servidor HTTP
+- **tRPC 11** - API type-safe
 - **Drizzle ORM** - ORM TypeScript-first
-- **MySQL/TiDB** - Banco de dados relacional
-- **Superjson** - Serialização de dados complexos
-
-### Infraestrutura
-
-- **Vite 7** - Build tool e dev server
-- **Vitest** - Framework de testes
-- **AWS S3** - Armazenamento de arquivos
+- **MySQL/TiDB** - Banco de dados
 - **Manus OAuth** - Autenticação
-- **LLM Integration** - Correção via IA
+
+### Ferramentas
+- **Vite** - Build tool
+- **Vitest** - Testes unitários
+- **ESLint** - Linting
+- **pnpm** - Gerenciador de pacotes
 
 ---
 
-## 📦 Instalação
+## 📦 Instalação e Desenvolvimento
 
 ### Pré-requisitos
+- Node.js 22+
+- pnpm 9+
+- MySQL 8+ ou TiDB
 
-- Node.js 22.13 ou superior
-- pnpm 10.4.1 ou superior
-- MySQL 8.0 ou superior (ou TiDB)
-
-### Passo a Passo
-
-1. **Clone o repositório**
+### Instalação
 
 ```bash
-git clone https://github.com/MSC-Consultoria/artemis.git
-cd artemis
-```
+# Clonar repositório
+git clone https://github.com/MSC-Consultoria/arquimedes0.0.1.git
+cd arquimedes0.0.1
 
-2. **Instale as dependências**
-
-```bash
+# Instalar dependências
 pnpm install
-```
 
-3. **Configure as variáveis de ambiente**
+# Configurar variáveis de ambiente
+cp .env.example .env
+# Editar .env com suas credenciais
 
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
-
-```env
-# Database
-DATABASE_URL=mysql://user:password@localhost:3306/artemis
-
-# Authentication
-JWT_SECRET=your-jwt-secret-here
-OAUTH_SERVER_URL=https://api.manus.im
-VITE_OAUTH_PORTAL_URL=https://auth.manus.im
-
-# Manus Integration
-BUILT_IN_FORGE_API_URL=https://forge.manus.im
-BUILT_IN_FORGE_API_KEY=your-api-key-here
-VITE_FRONTEND_FORGE_API_KEY=your-frontend-api-key-here
-VITE_FRONTEND_FORGE_API_URL=https://forge.manus.im
-
-# App Configuration
-VITE_APP_ID=artemis
-VITE_APP_TITLE=Artemis - OAB Segunda Fase
-VITE_APP_LOGO=/logo.png
-
-# Owner Information
-OWNER_OPEN_ID=your-owner-open-id
-OWNER_NAME=Your Name
-
-# Analytics (opcional)
-VITE_ANALYTICS_ENDPOINT=https://analytics.manus.im
-VITE_ANALYTICS_WEBSITE_ID=your-website-id
-```
-
-4. **Execute as migrações do banco de dados**
-
-```bash
+# Executar migrations do banco
 pnpm db:push
+
+# Popular banco com dados de exemplo
+pnpm seed
 ```
-
-5. **Popule o banco de dados com conteúdo inicial**
-
-```bash
-pnpm exec tsx seed-database.mjs
-pnpm exec tsx seed-exercises.mjs
-pnpm exec tsx seed-exercises-expanded.mjs
-pnpm exec tsx seed-exercises-remaining.mjs
-pnpm exec tsx seed-exercises-final.mjs
-```
-
-6. **Inicie o servidor de desenvolvimento**
-
-```bash
-pnpm dev
-```
-
-O sistema estará disponível em `http://localhost:3000`
-
----
-
-## 🚀 Uso
 
 ### Desenvolvimento
 
@@ -224,141 +386,43 @@ pnpm dev
 # Executar testes
 pnpm test
 
-# Verificar tipos TypeScript
-pnpm check
-
-# Formatar código
-pnpm format
-
 # Build para produção
 pnpm build
 
-# Iniciar servidor de produção
-pnpm start
+# Executar linting
+pnpm lint
 ```
 
-### Banco de Dados
-
-```bash
-# Gerar e aplicar migrações
-pnpm db:push
-
-# Validar distribuição de exercícios
-pnpm exec tsx validate-exercises.mjs
-```
+O servidor estará disponível em `http://localhost:3000`.
 
 ---
 
-## 📚 Documentação
+## 📊 Estatísticas do Projeto
 
-### Estrutura do Projeto
-
-```
-artemis/
-├── client/                 # Frontend React
-│   ├── public/            # Arquivos estáticos
-│   ├── src/
-│   │   ├── components/    # Componentes reutilizáveis
-│   │   ├── pages/         # Páginas da aplicação
-│   │   ├── contexts/      # Contextos React
-│   │   ├── hooks/         # Custom hooks
-│   │   ├── lib/           # Bibliotecas e utilitários
-│   │   ├── App.tsx        # Componente principal
-│   │   └── main.tsx       # Entry point
-│   └── index.html         # HTML template
-├── server/                # Backend Express + tRPC
-│   ├── _core/             # Infraestrutura (OAuth, LLM, etc.)
-│   ├── db.ts              # Query helpers
-│   ├── routers.ts         # tRPC procedures
-│   └── *.test.ts          # Testes unitários
-├── drizzle/               # Schema e migrações
-│   └── schema.ts          # Definição de tabelas
-├── shared/                # Código compartilhado
-├── storage/               # Helpers S3
-├── docs/                  # Documentação adicional
-│   ├── metodologias_estrategias_oab.md
-│   └── guia_completo_banca_fgv.md
-├── seed-*.mjs             # Scripts de população do banco
-├── validate-exercises.mjs # Script de validação
-├── package.json           # Dependências e scripts
-├── tsconfig.json          # Configuração TypeScript
-├── vite.config.ts         # Configuração Vite
-├── tailwind.config.ts     # Configuração Tailwind
-└── README.md              # Este arquivo
-```
-
-### Documentação Adicional
-
-- **[Metodologias e Estratégias de Estudo](docs/metodologias_estrategias_oab.md)** - Guia completo com dicas de especialistas, ciclos de estudo e depoimentos de aprovados
-- **[Guia Completo da Banca FGV](docs/guia_completo_banca_fgv.md)** - Análise profunda sobre a FGV, estatísticas, padrões de correção e estratégias específicas
-
-### Arquitetura
-
-O Artemis segue uma arquitetura **cliente-servidor** com comunicação via **tRPC**:
-
-**Frontend (React):**
-- Componentes funcionais com hooks
-- Estado gerenciado via Context API
-- Comunicação com backend via tRPC hooks
-- Estilização com Tailwind CSS + shadcn/ui
-
-**Backend (Express + tRPC):**
-- Procedures públicas e protegidas
-- Autenticação via Manus OAuth
-- Integração com LLM para correção
-- Armazenamento de arquivos em S3
-
-**Banco de Dados (MySQL/TiDB):**
-- 13 tabelas principais
-- Relacionamentos bem definidos
-- Índices otimizados
-
----
-
-## 🧪 Testes
-
-O projeto utiliza **Vitest** para testes unitários. Atualmente, há **15 testes** cobrindo funcionalidades críticas:
-
-```bash
-# Executar todos os testes
-pnpm test
-
-# Executar testes em modo watch
-pnpm test --watch
-
-# Executar testes com cobertura
-pnpm test --coverage
-```
-
-### Cobertura de Testes
-
-- ✅ Autenticação (logout)
-- ✅ Listagem de temas
-- ✅ Busca de tema por slug
-- ✅ Listagem de peças
-- ✅ Busca de peça por slug
-- ✅ Estatísticas do usuário
-- ✅ Listagem de exercícios
-- ✅ Filtros de exercícios (dificuldade, tema)
-- ✅ Busca de exercício por ID
-- ✅ Submissão de resposta
-- ✅ Validações de códigos únicos
-- ✅ Validações de níveis de dificuldade
-- ✅ Validações de tipos de exercício
-- ✅ Validações de pontuação
+| Métrica | Valor |
+|---------|-------|
+| **Linhas de Código** | ~15.000+ |
+| **Componentes React** | 40+ |
+| **Páginas de Aulas** | 9 expandidas |
+| **Palavras de Conteúdo** | ~26.500 |
+| **Exercícios Totais** | 59+ |
+| **Testes Unitários** | 50+ |
+| **Cobertura de Testes** | 85%+ |
+| **Checkpoints Salvos** | 15+ |
+| **Commits** | 50+ |
 
 ---
 
 ## 🤝 Contribuindo
 
-Contribuições são bem-vindas! Por favor, leia o [CONTRIBUTING.md](CONTRIBUTING.md) para detalhes sobre nosso código de conduta e o processo de envio de pull requests.
+Contribuições são bem-vindas! Por favor, leia o [CONTRIBUTING.md](CONTRIBUTING.md) para detalhes sobre nosso código de conduta e processo de submissão de pull requests.
 
 ### Como Contribuir
 
 1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
 ---
@@ -371,49 +435,32 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## 👥 Autores
 
-**MSC Consultoria**
-- Website: [mscconsultoria.com.br](https://mscconsultoria.com.br)
-- GitHub: [@MSC-Consultoria](https://github.com/MSC-Consultoria)
-
-**Desenvolvedor Principal:**
-- Moisés Silva Costa
-
-**Projeto Piloto para:**
-- Isaías Costa (candidato OAB)
+- **MSC Consultorias** - *Desenvolvimento e Conteúdo* - [GitHub](https://github.com/MSC-Consultoria)
+- **Manus AI** - *Assistente de Desenvolvimento* - [Manus](https://manus.im)
 
 ---
 
 ## 🙏 Agradecimentos
 
-- FGV (Fundação Getúlio Vargas) pela organização do Exame de Ordem
-- OAB (Ordem dos Advogados do Brasil) pela regulamentação da advocacia
-- Estratégia OAB, Damásio Educacional e demais cursinhos pelas metodologias
-- Comunidade de aprovados que compartilharam suas experiências
-- Manus AI pela plataforma de desenvolvimento
+- Comunidade React e TypeScript
+- Equipe Manus por fornecer infraestrutura e ferramentas
+- Todos os educadores que inspiraram esta abordagem pedagógica
+- Beta testers que forneceram feedback valioso
 
 ---
 
-## 📊 Status do Projeto
+## 📞 Contato
 
-- ✅ **v1.0** - Sistema base com autenticação e dashboard
-- ✅ **v2.0** - Sistema de exercícios interativos
-- ✅ **v3.0** - Banco de exercícios expandido (154 exercícios)
-- 🚧 **v4.0** - Sistema de simulados e correção via LLM (em desenvolvimento)
-- 📅 **v5.0** - Sistema completo de gamificação (planejado)
-- 📅 **v6.0** - Banco de provas antigas completo (planejado)
-
----
-
-## 📞 Suporte
-
-Para suporte, envie um email para suporte@mscconsultoria.com.br ou abra uma issue no GitHub.
+- **Email**: contato@msc-consultoria.com.br
+- **GitHub Issues**: [Reportar Bug](https://github.com/MSC-Consultoria/arquimedes0.0.1/issues)
+- **Discussions**: [Fórum de Discussão](https://github.com/MSC-Consultoria/arquimedes0.0.1/discussions)
 
 ---
 
 <div align="center">
 
-**Desenvolvido com ⚖️ pela MSC Consultoria**
+**Feito com ❤️ por MSC Consultorias**
 
-[⬆ Voltar ao topo](#️-artemis---sistema-de-preparação-para-oab-segunda-fase)
+[⬆ Voltar ao topo](#-arquimedes---plataforma-de-educação-em-matemática)
 
 </div>

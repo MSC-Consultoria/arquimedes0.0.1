@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Check, X, Lightbulb } from "lucide-react";
+import { Check, X, Lightbulb, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSounds } from "@/lib/sounds";
 import { useHaptic } from "@/lib/useHaptic";
@@ -129,17 +129,21 @@ export function FillInBlanks({
             onChange={(e) => handleAnswerChange(blankId, e.target.value)}
             disabled={submitted}
             className={cn(
-              "w-32 h-8 px-2 text-center inline-block transition-all",
-              isCorrect === true && "border-green-500 bg-green-50",
-              isCorrect === false && "border-red-500 bg-red-50"
+              "w-32 h-8 px-2 text-center inline-block transition-all duration-300",
+              isCorrect === true && "border-green-500 bg-green-100 text-green-800 font-bold ring-2 ring-green-300 ring-offset-1",
+              isCorrect === false && "border-red-500 bg-red-50 text-red-700"
             )}
             placeholder="___"
           />
           {isCorrect === true && (
-            <Check className="h-4 w-4 text-green-600 ml-1" />
+            <span className="ml-1 flex items-center animate-in zoom-in duration-300">
+              <Check className="h-5 w-5 text-green-600" />
+            </span>
           )}
           {isCorrect === false && (
-            <X className="h-4 w-4 text-red-600 ml-1" />
+            <span className="ml-1 flex items-center animate-in zoom-in duration-300">
+              <X className="h-5 w-5 text-red-600" />
+            </span>
           )}
         </span>
       );
@@ -158,6 +162,8 @@ export function FillInBlanks({
   const correctCount = submitted
     ? blanks.filter((blank) => isCorrectAnswer(blank.id, answers[blank.id] || "")).length
     : 0;
+
+  const allCorrect = correctCount === blanks.length;
 
   return (
     <Card className={cn("p-6 space-y-6", className)}>
@@ -197,38 +203,45 @@ export function FillInBlanks({
 
         {submitted && showFeedback && (
           <>
-            <div
-              className={cn(
-                "p-4 rounded-lg transition-all duration-300",
-                correctCount === blanks.length
-                  ? "bg-green-50 border border-green-200"
-                  : "bg-amber-50 border border-amber-200"
-              )}
-            >
-              {correctCount === blanks.length ? (
-                <p className="text-green-700 font-semibold">
-                  ✅ Perfeito! Todas as respostas estão corretas!
-                </p>
-              ) : (
+            {/* Feedback de sucesso destacado */}
+            {allCorrect ? (
+              <div className="p-5 rounded-xl bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300 shadow-lg animate-in zoom-in-95 duration-300">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500 flex items-center justify-center animate-bounce">
+                    <Sparkles className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-green-800 font-bold text-lg">
+                      ✅ Perfeito! Todas as respostas estão corretas!
+                    </p>
+                    <p className="text-green-600 text-sm mt-1">
+                      Parabéns! Você dominou este exercício! 🎉
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="p-4 rounded-lg bg-amber-50 border border-amber-200 transition-all duration-300">
                 <p className="text-amber-700 font-semibold">
                   📊 Você acertou {correctCount} de {blanks.length} lacunas.
                   {correctCount < blanks.length && " Revise as marcadas em vermelho."}
                 </p>
-              )}
-            </div>
+              </div>
+            )}
 
-            {correctCount < blanks.length && (
+            {/* Mostrar respostas corretas apenas quando errou */}
+            {!allCorrect && (
               <div className="p-4 rounded-lg bg-muted">
                 <p className="font-semibold mb-2">Respostas corretas:</p>
                 <ul className="space-y-1 text-sm">
                   {blanks.map((blank) => (
-                    <li key={blank.id}>
-                      <span className="font-mono">{blank.id}:</span>{" "}
-                      <span className="text-green-600 font-semibold">
+                    <li key={blank.id} className="flex items-center gap-2">
+                      <span className="font-mono text-muted-foreground">{blank.id}:</span>
+                      <span className="text-green-600 font-bold bg-green-100 px-2 py-0.5 rounded">
                         {blank.correctAnswer}
                       </span>
                       {blank.acceptableAnswers && blank.acceptableAnswers.length > 0 && (
-                        <span className="text-muted-foreground text-xs ml-2">
+                        <span className="text-muted-foreground text-xs">
                           (também aceito: {blank.acceptableAnswers.join(", ")})
                         </span>
                       )}
