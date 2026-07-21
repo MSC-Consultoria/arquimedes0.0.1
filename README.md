@@ -1,60 +1,73 @@
-# arquimedes0.0.1 - Semente futura do Prometheus
+# Arquimedes 0.0.1
 
-> **ARQUIVADO em 2026-06-15** - mantido intencionalmente como snapshot historico.
-> **Destino futuro:** este codigo e a semente conceitual do **Prometheus** (agente IA multi-tenant para WhatsApp) que sera reconstruido em 2026+.
+Snapshot histórico de uma experiência que combinava conteúdo educacional, interface React e a ideia inicial de um atendente de IA multi-tenant.
 
-**Status:** Arquivado (read-only) - Decisao documentada em 2026-06-15
+> **Estado lógico:** arquivado e somente leitura desde 15 de junho de 2026. Não use este código diretamente em produção.
 
----
+## Visão geral
 
-## O que era
+| Item | Definição |
+|---|---|
+| Período ativo | Dezembro de 2025 |
+| Estado | Snapshot histórico |
+| Destino de produto | [MSC Consultoria](https://github.com/Msc-Company-Org/msc-consultoria) |
+| Destino de engenharia de IA | [MSC Labs](https://github.com/Msc-Company-Org/msc-labs) |
+| Destino de conhecimento | [Alexandria](https://github.com/Msc-Company-Org/alexandria) |
 
-Versao 0.0.1 do projeto "Arquimedes" (criado 2025-12-12, abandonado 2025-12-26).
-Tentativa inicial de sistema educacional MSC Consultoria com 142MB de:
-- `client/` - interface React
-- `curriculum/` - conteudo programatico
-- `content/` - assets educacionais
-- `docs/` - documentacao tecnica
-- `LICENSE` (MIT)
-- `PROJECT_OVERVIEW.md` - visao original
-- `TODO_ARCHIVE.md` - lista de pendencias
+## O que foi o projeto
 
-## Por que foi arquivado (e NAO deletado)
+A versão 0.0.1 do Arquimedes reuniu:
 
-Decisao do owner em 2026-06-15 (sessao de curadoria GitHub):
+- uma interface em `client/`;
+- conteúdo em `content/`;
+- currículo em `curriculum/`;
+- documentação técnica em `docs/`;
+- experimentos que anteciparam conceitos posteriormente associados ao Prometheus.
 
-1. **Semente conceitual do Prometheus** - a ideia de "atendente IA multi-tenant com backend robusto + dataset rico" nasceu aqui e deve ser revisitada
-2. **Historico preservado** - 3 branches (`main`, `copilot/initialize-git-repo`, `codex/complete-project-structure-and-documentation`) documentam iteracao
-3. **Possivel fonte de assets** - curriculum/ e content/ podem ter material reutilizavel
+A implementação foi abandonada em dezembro de 2025. Ela não representa os padrões atuais de segurança, arquitetura ou operação.
 
-## Roadmap - Evolucao para Prometheus
+## Estrutura preservada
 
-O **Prometheus Agent** (Msc-Company-Org/prometheus-agent) e a encarnacao atual.
-A evolucao planejada e:
-- **Curto prazo:** consolidar msc-landing-funnel (Msc-Company-Org) como base de captura
-- **Medio prazo:** portar logica de curriculum/dataset para o Prometheus
-- **Longo prazo:** revisa-lo como "v0 do Prometheus" caso queira reescrever do zero
-
-Referencias cruzadas:
-- [Msc-Company-Org/prometheus-agent](https://github.com/Msc-Company-Org/prometheus-agent) - encarnacao atual
-- [Msc-Company-Org/msc-landing-funnel](https://github.com/Msc-Company-Org/msc-landing-funnel) - template base (secao "Roadmap - Prometheus")
-- [Msc-Company-Org/harness-msc](https://github.com/Msc-Company-Org/harness-msc) - harness MSC
-
-## Estrutura preservada (NAO modificar)
-
-```
-client/        # interface (legado)
-components.json
-content/       # assets educacionais (analisar antes de usar)
-curriculum/    # conteudo programatico (analisar antes de usar)
-docs/          # documentacao
-LICENSE        # MIT
-PROJECT_OVERVIEW.md
-TODO_ARCHIVE.md
-TESTING.md
+```text
+client/             interface legada
+content/            ativos educacionais
+curriculum/         conteúdo programático
+docs/               documentação técnica
+LICENSE             licença MIT
+PROJECT_OVERVIEW.md visão original
+TODO_ARCHIVE.md     pendências históricas
+TESTING.md          estratégia de testes da época
 ```
 
-## Contato
+## Valor histórico
 
-Owner: Moises Costa (Finish-Him)
-Para revisitar este codigo, abrir issue no [Msc-Company-Org/prometheus-agent](https://github.com/Msc-Company-Org/prometheus-agent)
+1. Preserva a origem conceitual do Prometheus.
+2. Pode conter conteúdo educacional reutilizável.
+3. Registra decisões e limitações da primeira implementação.
+4. Mantém branches independentes que ainda precisam de classificação.
+
+## Caminho de consolidação
+
+| Conteúdo | Destino recomendado |
+|---|---|
+| Landing e operação comercial do Prometheus | `Msc-Company-Org/msc-consultoria/apps/prometheus-landing` |
+| Runtime, agentes e avaliações de IA | `Msc-Company-Org/msc-labs` |
+| Conteúdo educacional válido | `Msc-Company-Org/msc-academy` |
+| Decisões e documentação transversal | `Msc-Company-Org/alexandria` |
+
+## Regras para reutilização
+
+- não faça merge direto das branches antigas;
+- compare arquivos individualmente;
+- elimine segredos e dependências obsoletas;
+- atualize testes e contratos;
+- registre a proveniência na Alexandria;
+- valide licença, dados pessoais e direitos sobre os conteúdos antes da migração.
+
+## Próxima decisão
+
+Após a curadoria das branches e migração do conteúdo útil, o repositório pode ser marcado como arquivado também nas configurações do GitHub.
+
+## Responsável
+
+Moisés Costa — [Finish-Him](https://github.com/Finish-Him)
