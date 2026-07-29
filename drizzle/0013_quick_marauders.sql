@@ -1,1 +1,0 @@
-ALTER TABLE `userPointsLog` MODIFY COLUMN `action` enum('daily_login','video_watched','exercise_completed','podcast_listened','task_completed','daily_challenge_completed','lesson_completed') NOT NULL;

@@ -1,1 +1,0 @@
-ALTER TABLE `exercise_completions` ADD `selectedAnswer` int;
